@@ -10,7 +10,7 @@ export default function MobileHeader() {
   return (
     <header className="mobile-header">
       <div className="mobile-header-top">
-        <Link to="/" className="logo">
+        <Link to="/" className="mobile-logo">
           <img src={logo} alt="Teakwood Logo" />
         </Link>
 
