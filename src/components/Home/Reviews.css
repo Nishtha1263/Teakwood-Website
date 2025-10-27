@@ -1,14 +1,15 @@
 .reviews-section {
   background: linear-gradient(to bottom, #f9f9f9, #eef5ef);
-  padding: 20px 200px;
-  padding-bottom: 50px;
+  padding: 80px 120px;
+  padding-bottom: 150px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .reviews-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   color: #1f3b29;
   margin-bottom: 60px;
@@ -16,6 +17,7 @@
   position: relative;
 }
 
+/* Floating leaves (desktop only) */
 .review-leaf {
   position: absolute;
   font-size: 1.2rem;
@@ -40,8 +42,11 @@
   100% { transform: translateY(-30px) rotate(-30deg); opacity: 0.2; }
 }
 
+/* Review cards slider */
 .reviews-slider {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -50,7 +55,7 @@
 }
 
 .review {
-  min-width: 300px;
+  flex: 1 1 300px;
   max-width: 350px;
   background: white;
   padding: 30px 25px;
@@ -86,14 +91,41 @@
   font-size: 0.95rem;
 }
 
-@media (max-width: 768px) {
+/* 🧩 Tablets */
+@media (max-width: 1024px) {
+  .reviews-section {
+    padding: 60px 60px;
+  }
+
+  .reviews-title {
+    font-size: 2rem;
+  }
+
   .reviews-slider {
+    gap: 20px;
+  }
+}
+
+/* 📱 Phones */
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 50px 20px;
+  }
+
+  .reviews-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .reviews-slider {
+    flex-wrap: nowrap;
     gap: 15px;
-    padding: 0;
+    padding: 0 10px;
   }
 
   .review {
-    min-width: 80%;
+    flex: 0 0 85%;
+    max-width: none;
   }
 
   .review-text {
@@ -102,5 +134,20 @@
 
   .review-leaf {
     display: none;
+  }
+}
+
+/* 📱 Very small devices */
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 40px 15px;
+  }
+
+  .reviews-title {
+    font-size: 1.6rem;
+  }
+
+  .review {
+    flex: 0 0 90%;
   }
 }
