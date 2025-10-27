@@ -47,7 +47,7 @@
 }
 
 .book-btn {
-  background-color: var(--color-primary);
+  background-color: var(--color-text-dark);
   color: var(--color-white);
   padding: 10px 24px;
   border-radius: 8px;

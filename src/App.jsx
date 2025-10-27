@@ -9,11 +9,13 @@ import Experiences from "./pages/Experiences";
 import Stay from "./pages/Stay";
 import Contact from "./pages/Contact";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <FloatingButtons />
       <main>

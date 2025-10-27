@@ -1,17 +1,17 @@
-.stay-section {
+.stay-home-section {
   background-color: #fff;
   text-align: center;
   padding: 100px 20px;
 }
 
-.stay-title {
+.stay-home-title {
   font-size: 2rem;
   font-weight: 700;
   color: #1f3b29;
   margin-bottom: 60px;
 }
 
-.stay-container {
+.stay-home-container {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -22,7 +22,7 @@
   overflow: hidden;
 }
 
-.stay-option {
+.stay-home-option {
   position: relative;
   flex: 1;
   overflow: hidden;
@@ -30,7 +30,7 @@
   cursor: pointer;
 }
 
-.stay-option img {
+.stay-home-option img {
   width: 100%;
   height: 500px;
   object-fit: cover;
@@ -38,12 +38,12 @@
   filter: brightness(70%);
 }
 
-.stay-option:hover img {
+.stay-home-option:hover img {
   transform: scale(1.08);
   filter: brightness(55%);
 }
 
-.stay-overlay {
+.stay-home-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -55,26 +55,26 @@
   max-width: 80%;
 }
 
-.stay-option:hover .stay-overlay {
+.stay-home-option:hover .stay-home-overlay {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-.stay-overlay h3 {
+.stay-home-overlay h3 {
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 12px;
   color: #fff;
 }
 
-.stay-overlay p {
+.stay-home-overlay p {
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 18px;
   color: #fff;
 }
 
-.stay-btn {
+.stay-home-btn {
   background-color: #2c5d3b;
   color: white;
   border: none;
@@ -85,27 +85,27 @@
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.stay-btn:hover {
+.stay-home-btn:hover {
   background-color: #1e422a;
   transform: translateY(-2px);
 }
 
-.stay-option:hover {
+.stay-home-option:hover {
   flex: 1.2;
 }
 
 /*Responsive */
 @media (max-width: 900px) {
-  .stay-container {
+  .stay-home-container {
     flex-direction: column;
     width: 300px;
   }
 
-  .stay-option img {
+  .stay-home-option img {
     height: 350px;
   }
 
-  .stay-overlay {
+  .stay-home-overlay {
     opacity: 1;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.35);
@@ -114,7 +114,7 @@
     width: 250px;
   }
 
-  .stay-option:hover {
+  .stay-home-option:hover {
     flex: 1;
   }
 }

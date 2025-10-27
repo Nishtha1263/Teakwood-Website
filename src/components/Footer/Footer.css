@@ -144,3 +144,25 @@
     justify-content: center;
   }
 }
+
+.footer-bottom {
+  position: relative;
+  z-index: 10; /* ensures it's above overlays */
+}
+
+.footer-link {
+  color: #fff; /* or whatever your footer text color is */
+  text-decoration: underline;
+  position: relative;
+  z-index: 20; /* ensures the link is clickable */
+}
+
+.floating-buttons {
+  pointer-events: none;
+}
+
+.floating-buttons a,
+.floating-buttons button {
+  pointer-events: auto;
+}
+

@@ -1,11 +1,9 @@
 .reviews-section {
   background: linear-gradient(to bottom, #f9f9f9, #eef5ef);
   padding: 80px 120px;
-  padding-bottom: 150px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
 }
 
 .reviews-title {
@@ -17,7 +15,7 @@
   position: relative;
 }
 
-/* Floating leaves (desktop only) */
+/* Floating leaves */
 .review-leaf {
   position: absolute;
   font-size: 1.2rem;
@@ -42,34 +40,38 @@
   100% { transform: translateY(-30px) rotate(-30deg); opacity: 0.2; }
 }
 
-/* Review cards slider */
+/* Horizontal scroll with hidden scrollbar */
 .reviews-slider {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 30px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 10px;
+  overflow-y: hidden;
   scroll-behavior: smooth;
+  padding: 10px 60px 40px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.reviews-slider::-webkit-scrollbar {
+  display: none;
 }
 
 .review {
-  flex: 1 1 300px;
-  max-width: 350px;
-  background: white;
+  flex: 0 0 320px;
+  background: #fff;
   padding: 30px 25px;
   border-radius: 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  scroll-snap-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 1s ease;
   position: relative;
   z-index: 1;
+  opacity: 0.95;
 }
 
 .review:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  opacity: 1;
 }
 
 .review-text {
@@ -91,63 +93,38 @@
   font-size: 0.95rem;
 }
 
-/* 🧩 Tablets */
+/* Responsive */
 @media (max-width: 1024px) {
   .reviews-section {
-    padding: 60px 60px;
+    padding: 60px 40px;
   }
-
-  .reviews-title {
-    font-size: 2rem;
-  }
-
-  .reviews-slider {
-    gap: 20px;
+  .review {
+    flex: 0 0 300px;
   }
 }
 
-/* 📱 Phones */
 @media (max-width: 768px) {
   .reviews-section {
     padding: 50px 20px;
   }
-
   .reviews-title {
     font-size: 1.8rem;
     margin-bottom: 40px;
   }
-
   .reviews-slider {
-    flex-wrap: nowrap;
-    gap: 15px;
-    padding: 0 10px;
+    gap: 20px;
+    padding: 10px 20px 30px;
   }
-
   .review {
-    flex: 0 0 85%;
-    max-width: none;
+    flex: 0 0 80%;
   }
-
-  .review-text {
-    font-size: 0.95rem;
-  }
-
   .review-leaf {
     display: none;
   }
 }
 
-/* 📱 Very small devices */
 @media (max-width: 480px) {
-  .reviews-section {
-    padding: 40px 15px;
-  }
-
-  .reviews-title {
-    font-size: 1.6rem;
-  }
-
   .review {
-    flex: 0 0 90%;
+    flex: 0 0 85%;
   }
 }
