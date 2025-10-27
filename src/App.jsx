@@ -9,7 +9,7 @@ import Experiences from "./pages/Experiences";
 import Stay from "./pages/Stay";
 import Contact from "./pages/Contact";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import "./app.css";
+import "./App.css";
 
 function App() {
   return (
