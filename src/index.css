@@ -1,0 +1,53 @@
+/* index.css */
+
+/* === FONT IMPORTS === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* === CSS RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === ROOT VARIABLES === */
+:root {
+  --color-primary: #234F32;
+  --color-accent: #2F6B3C;
+  --color-bg: #FAF7F2;
+  --color-white: #FFFFFF;
+  --color-text-dark: #1A1A1A;
+  --color-text-muted: #5A5A5A;
+
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* === GLOBAL STYLES === */
+html, body {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-dark);
+  background-color: var(--color-bg);
+  scroll-behavior: smooth;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 8px;
+}
+
+/* === LINKS === */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--color-accent);
+}

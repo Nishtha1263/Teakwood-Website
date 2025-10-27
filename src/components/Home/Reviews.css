@@ -1,0 +1,106 @@
+.reviews-section {
+  background: linear-gradient(to bottom, #f9f9f9, #eef5ef);
+  padding: 20px 200px;
+  padding-bottom: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f3b29;
+  margin-bottom: 60px;
+  z-index: 1;
+  position: relative;
+}
+
+.review-leaf {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0.2;
+  animation: floatLeaf 18s infinite linear;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.review-leaf:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.review-leaf:nth-child(2) { top: 30%; left: 85%; animation-delay: 3s; }
+.review-leaf:nth-child(3) { top: 60%; left: 50%; animation-delay: 5s; }
+.review-leaf:nth-child(4) { top: 80%; left: 20%; animation-delay: 7s; }
+.review-leaf:nth-child(5) { top: 25%; left: 70%; animation-delay: 9s; }
+.review-leaf:nth-child(6) { top: 45%; left: 35%; animation-delay: 11s; }
+.review-leaf:nth-child(7) { top: 75%; left: 80%; animation-delay: 13s; }
+.review-leaf:nth-child(8) { top: 55%; left: 10%; animation-delay: 15s; }
+
+@keyframes floatLeaf {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
+  50% { transform: translateY(30px) rotate(30deg); opacity: 0.3; }
+  100% { transform: translateY(-30px) rotate(-30deg); opacity: 0.2; }
+}
+
+.reviews-slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.review {
+  min-width: 300px;
+  max-width: 350px;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.review:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.review-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.review-rating {
+  color: #f6c800;
+  margin-bottom: 10px;
+}
+
+.review-name {
+  color: #1f3b29;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .reviews-slider {
+    gap: 15px;
+    padding: 0;
+  }
+
+  .review {
+    min-width: 80%;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+  }
+
+  .review-leaf {
+    display: none;
+  }
+}
