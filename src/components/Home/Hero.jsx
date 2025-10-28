@@ -18,7 +18,7 @@ const images = [
     title: "Adventure Awaits",
     subtitle: "Trek, zipline, and explore the outdoors like never before",
     button: "Explore Activities",
-    link: "/experiences"
+    link: "/activities"
   },
   {
     src: hero3,

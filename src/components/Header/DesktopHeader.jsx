@@ -17,7 +17,7 @@ export default function DesktopHeader() {
           <NavLink to="/" className="nav-item">Home</NavLink>
           <NavLink to="/packages" className="nav-item">Packages</NavLink>
           <NavLink to="/stay" className="nav-item">Stay</NavLink>
-          <NavLink to="/activites" className="nav-item">Activites</NavLink>
+          <NavLink to="/activities" className="nav-item">Activities</NavLink>
           <NavLink to="/events" className="nav-item">Events</NavLink>
           <NavLink to="/contact" className="nav-item">Contact Us</NavLink>
         </nav>

@@ -1,9 +1,13 @@
 import React from "react";
 import "./ContactHome.css";
+import trekBg from "../../assets/activity-trek.jpg"; // ✅ Import image directly
 
 const Contact = () => {
   return (
-    <section className="contact-home-section">
+    <section
+      className="contact-home-section"
+      style={{ backgroundImage: `url(${trekBg})` }}
+    >
       <div className="contact-home-overlay"></div>
 
       <div className="contact-home-container">
@@ -20,8 +24,15 @@ const Contact = () => {
         </div>
 
         <div className="contact-home-form">
-          {/* 🔁 Replace the URL below with your actual Google Form embed link */}
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdrWrzuKbHzpGBTaeV7awXGBlRDoLfZr3cs9X8uBBlZOBdblQ/viewform?embedded=true" width="640" height="1841" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdrWrzuKbHzpGBTaeV7awXGBlRDoLfZr3cs9X8uBBlZOBdblQ/viewform?embedded=true"
+            frameBorder="0"
+            marginHeight="0"
+            marginWidth="0"
+            title="Teakwood Form"
+          >
+            Loading…
+          </iframe>
         </div>
       </div>
     </section>

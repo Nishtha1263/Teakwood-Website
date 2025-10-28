@@ -6,7 +6,6 @@ import {
   GiWaterfall,
   GiMountainCave,
   GiCampfire,
-  GiSuspensionBridge,
   GiRopeBridge,
   GiWinchesterRifle,
   GiMicrophone,
@@ -14,11 +13,12 @@ import {
   GiBarbecue
 } from "react-icons/gi";
 import { FaTableTennis } from "react-icons/fa";
+import { PiBridge } from "react-icons/pi";
 
 const amenities = [
   { icon: <GiWaterfall />, title: "Waterfall", desc: "Natural waterfall nearby for a refreshing dip." },
   { icon: <GiMountainCave />, title: "Trek", desc: "Explore scenic forest trails with guided treks." },  
-  { icon: <GiSuspensionBridge />, title: "Burma Bridge", desc: "Test your balance on the adventurous Burma bridge." },
+  { icon: <PiBridge />, title: "Burma Bridge", desc: "Test your balance on the adventurous Burma bridge." },
   { icon: <GiRopeBridge />, title: "Zipline", desc: "Fly through the trees on our thrilling zipline ride!" },  
   { icon: <GiWinchesterRifle />, title: "Rifle Shooting", desc: "Try your aim at our air rifle shooting range." },
   { icon: <GiSoccerBall />, title: "Outdoor Games", desc: "Fun sports and group games in open grounds." },
