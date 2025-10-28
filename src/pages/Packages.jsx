@@ -1,14 +1,14 @@
 import { useState } from "react";
 import {Link} from "react-router-dom";
 import "./Packages.css";
-import dayImg from "../assets/hero1.jpeg";
-import nightImg from "../assets/hero2.jpeg";
+import dayImg from "../assets/day.png";
+import nightImg from "../assets/night.png";
 
 export default function Packages() {
   const packages = [
     {
       id: 1,
-      title: "Nature Awaits!",
+      title: "Day Outing",
       subtitle: "Day Outing Package (8:00 AM – 5:00 PM)",
       img: dayImg,
       price: "Adults ₹1200 | Children (5–10 yrs) ₹800",
@@ -19,7 +19,7 @@ export default function Packages() {
     },
     {
       id: 2,
-      title: "Starry Escape",
+      title: "Overnight Stay",
       subtitle: "Overnight Package (11:00 AM – 10:00 AM)",
       img: nightImg,
       price: "Adults ₹1900 | Children (5–10 yrs) ₹1300",

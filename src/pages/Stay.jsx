@@ -7,6 +7,7 @@ import tentMain from "../assets/hero1.jpeg";
 import bathroomImg from "../assets/hero1.jpeg";
 import diningImg from "../assets/hero1.jpeg";
 import commonImg from "../assets/hero1.jpeg";
+import patioImg from "../assets/hero1.jpeg";
 import "./Stay.css";
 
 const Stay = () => {
@@ -21,7 +22,7 @@ const Stay = () => {
         <h1 data-aos="fade-up">Stay at Teakwood</h1>
         <p data-aos="fade-up" data-aos-delay="200">
           Unwind amidst lush greens and tranquil skies. Choose between our cozy
-          wooden cottages or adventurous forest tents — both designed to bring
+          cottages or adventurous forest tents — both designed to bring
           you closer to nature without compromising comfort.
         </p>
       </div>
@@ -32,18 +33,19 @@ const Stay = () => {
           <img src={cottageMain} alt="Teakwood Cottage" />
         </div>
         <div className="stay-details">
-          <h2>Wooden Cottages</h2>
+          <h2>Cottages</h2>
           <p>
-            Our elegant cottages blend rustic charm with modern comfort. Enjoy
-            serene views, cozy interiors, and private balconies surrounded by
-            teak forests — perfect for a peaceful retreat.
+            Our elegant cottages blend charm with modern comfort. Enjoy
+            serene views, cozy interiors, and private patios surrounded by
+            mountains and greenery — perfect for a peaceful retreat.
           </p>
           <ul>
             <li>Private attached bathroom</li>
-            <li>Balcony with forest view</li>
-            <li>Air conditioning / fan</li>
+            <li>Patio with garden view</li>
+            <li>Fan</li>
             <li>Complimentary breakfast</li>
-            <li>24/7 room service on request</li>
+            <li>Work Table</li>
+            <li>Dressing Table</li>
           </ul>
         </div>
       </div>
@@ -54,7 +56,7 @@ const Stay = () => {
           <img src={tentMain} alt="Forest Tents" />
         </div>
         <div className="stay-details">
-          <h2>Forest Tents</h2>
+          <h2>Tents</h2>
           <p>
             Immerse yourself in the wild with our comfortable tents. Experience
             the thrill of camping with all essentials covered — safety, comfort,
@@ -81,6 +83,10 @@ const Stay = () => {
           <div className="common-card" data-aos="zoom-in">
             <img src={bathroomImg} alt="Bathroom" />
             <h3>Clean & Modern Bathrooms</h3>
+          </div>
+          <div className="common-card" data-aos="zoom-in">
+            <img src={patioImg} alt="Patio" />
+            <h3>Patio</h3>
           </div>
           <div className="common-card" data-aos="zoom-in" data-aos-delay="150">
             <img src={diningImg} alt="Dining" />

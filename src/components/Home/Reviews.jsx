@@ -3,6 +3,7 @@ import "./Reviews.css";
 import { FaStar } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
 
 const reviews = [
   {
@@ -33,53 +34,66 @@ const reviews = [
 ];
 
 const Reviews = () => {
-  const sliderRef = useRef(null);
+  const controls = useAnimation();
+  const x = useMotionValue(0);
+  const contentWidth = useRef(0);
+  const containerWidth = useRef(0);
+
+  const duplicatedReviews = [...reviews, ...reviews];
 
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
-
-    const slider = sliderRef.current;
-    let scrollAmount = 0;
-
-    const autoScroll = setInterval(() => {
-      if (!slider) return;
-      slider.scrollLeft += 1; // smooth horizontal movement
-      scrollAmount += 1;
-
-      // reset when reaching end
-      if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
-        slider.scrollLeft = 0;
-        scrollAmount = 0;
-      }
-    }, 25); // speed control
-
-    return () => clearInterval(autoScroll);
   }, []);
+
+  useEffect(() => {
+    const animate = async () => {
+      const distance =
+        contentWidth.current - containerWidth.current / 2 || 1000;
+      await controls.start({
+        x: -distance,
+        transition: {
+          duration: 30,
+          ease: "linear",
+        },
+      });
+      x.set(0);
+      animate(); // loop
+    };
+    animate();
+  }, [controls, x]);
 
   return (
     <section className="reviews-section">
-      {[...Array(8)].map((_, i) => (
-        <span key={i} className={`review-leaf leaf${(i % 3) + 1}`}>
-          {["🍃", "🌿", "🍂"][i % 3]}
-        </span>
-      ))}
-
       <h2 className="reviews-title" data-aos="fade-up">
         Hear from Our Happy Guests
       </h2>
 
-      <div className="reviews-slider" ref={sliderRef}>
-        {reviews.concat(reviews).map((review, index) => (
-          <div className="review" key={index} data-aos="fade-up">
-            <p className="review-text">“{review.text}”</p>
-            <div className="review-rating">
-              {[...Array(review.rating)].map((_, i) => (
-                <FaStar key={i} />
-              ))}
+      <div
+        className="reviews-slider"
+        ref={(el) => {
+          if (el) containerWidth.current = el.offsetWidth;
+        }}
+      >
+        <motion.div
+          className="reviews-inner"
+          style={{ display: "flex", gap: "30px", x }}
+          animate={controls}
+          ref={(el) => {
+            if (el) contentWidth.current = el.scrollWidth;
+          }}
+        >
+          {duplicatedReviews.map((review, index) => (
+            <div className="review" key={index} data-aos="fade-up">
+              <p className="review-text">“{review.text}”</p>
+              <div className="review-rating">
+                {[...Array(review.rating)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+              </div>
+              <p className="review-name">— {review.name}</p>
             </div>
-            <p className="review-name">— {review.name}</p>
-          </div>
-        ))}
+          ))}
+        </motion.div>
       </div>
     </section>
   );

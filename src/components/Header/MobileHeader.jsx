@@ -10,10 +10,12 @@ export default function MobileHeader() {
   return (
     <header className="mobile-header">
       <div className="mobile-header-top">
-        <Link to="/" className="mobile-logo">
-          <img src={logo} alt="Teakwood Logo" />
-        </Link>
-
+        <div className="mobile-logo-name">
+            <Link to="/" className="mobile-logo">
+              <img src={logo} alt="Teakwood Logo" />
+            </Link>
+            <h4>Teakwood Forest Resort and Camp</h4>
+        </div>
         <button
           className="menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -27,10 +29,14 @@ export default function MobileHeader() {
         <nav className="mobile-menu">
           <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
           <NavLink to="/packages" onClick={() => setMenuOpen(false)}>Packages</NavLink>
-          <NavLink to="/experiences" onClick={() => setMenuOpen(false)}>Experiences</NavLink>
           <NavLink to="/stay" onClick={() => setMenuOpen(false)}>Stay</NavLink>
+          <NavLink to="/activities" onClick={() => setMenuOpen(false)}>Activites</NavLink>
+          <NavLink to="/events" onClick={() => setMenuOpen(false)}>Events</NavLink>
           <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</NavLink>
-          <Link to="/contact" onClick={() => setMenuOpen(false)} className="book-btn">
+          <a href="/brochure.pdf" download className="mobile-book-btn">
+            Download Brochure
+          </a>
+          <Link to="/contact" onClick={() => setMenuOpen(false)} className="mobile-book-btn">
             Book Now
           </Link>
         </nav>

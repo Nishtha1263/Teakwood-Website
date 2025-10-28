@@ -1,4 +1,4 @@
-/* src/components/Header/MobileHeader.css */
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Raleway:wght@400;500;600&display=swap');
 
 .mobile-header {
   position: fixed;
@@ -15,6 +15,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 14px 20px;
+}
+
+.mobile-logo-name {
+  display: flex;
+  align-items: center; 
+  gap: 10px;           
+  text-decoration: none;
+}
+
+.mobile-logo-name h4 {
+  margin: 0;
+  font-family: "Charm", cursive;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4b6043; 
+  white-space: nowrap; 
 }
 
 .mobile-logo {
@@ -64,16 +80,22 @@
   color: var(--color-primary);
 }
 
-.book-btn {
-  background-color: darkgreen;
-  color: white;
+.mobile-book-btn {
+  background-color: #4b6043 !important; 
+  color: #ffffff !important;
   padding: 10px 24px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
-.book-btn:hover {
-  background-color: var(--color-accent);
+.mobile-book-btn:hover {
+  background-color: #7b8d64 !important; 
+  color: #ffffff !important;
 }

@@ -10,24 +10,9 @@
   box-sizing: border-box;
 }
 
-/* === ROOT VARIABLES === */
-:root {
-  --color-primary: #234F32;
-  --color-accent: #2F6B3C;
-  --color-bg: #FAF7F2;
-  --color-white: #FFFFFF;
-  --color-text-dark: #1A1A1A;
-  --color-text-muted: #5A5A5A;
-
-  --radius: 8px;
-  --transition: all 0.3s ease;
-}
-
 /* === GLOBAL STYLES === */
 html, body {
   font-family: 'Inter', sans-serif;
-  color: var(--color-text-dark);
-  background-color: var(--color-bg);
   scroll-behavior: smooth;
 }
 
@@ -37,17 +22,11 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-accent);
   border-radius: 8px;
 }
 
 /* === LINKS === */
 a {
-  color: var(--color-primary);
   text-decoration: none;
   transition: var(--transition);
-}
-
-a:hover {
-  color: var(--color-accent);
 }

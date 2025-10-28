@@ -1,8 +1,16 @@
 .amenities-section {
-  background-color: #f6f4ef;
+  background-color: white;
   text-align: center;
   padding: 80px 20px;
   font-family: "Poppins", sans-serif;
+}
+
+.amenities-section h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2rem;
+  color: #4b6043;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 .amenities-subtitle {
@@ -23,7 +31,8 @@
 }
 
 .amenity-card {
-  background-color: #fff;
+  background-color: #4b6043;
+  color: white;
   border-radius: 12px;
   padding: 30px 20px;
   width: 180px;
@@ -40,27 +49,27 @@
 }
 
 .amenity-card:hover {
-  background-color: #355e3b;
+  background-color: white;
   transform: translateY(-10px) scale(1.05);
-  color: white;
+  color: #4b6043;
   box-shadow: 0 6px 15px rgba(53, 94, 59, 0.3);
 }
 
 .amenity-icon {
   font-size: 2.5rem;
-  color: #355e3b;
+  color: white;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .amenity-card:hover .amenity-icon {
-  color: white;
+  color: #4b6043;
   transform: scale(1.2);
 }
 
 .amenity-card h4 {
   margin-top: 10px;
   font-size: 0.95rem;
-  color: #355e3b;
+  color: white;
   transition: opacity 0.3s ease, color 0.3s ease;
 }
 
@@ -70,7 +79,7 @@
 
 .amenity-desc {
   font-size: 0.85rem;
-  color: #666;
+  color: #4b6043;
   opacity: 0;
   position: absolute;
   bottom: 20px;
@@ -83,7 +92,7 @@
 .amenity-card:hover .amenity-desc {
   opacity: 1;
   transform: translateY(0);
-  color: #fff;
+  color: #4b6043;
 }
 
 @media (max-width: 768px) {
@@ -97,7 +106,7 @@
     width: 100%;
     min-height: 140px; 
     padding: 15px;
-    background-color: #355e3b; 
+    background-color: #4b6043; 
     color: #fff;
     transform: none;
     box-shadow: 0 4px 10px rgba(53, 94, 59, 0.2);

@@ -1,4 +1,6 @@
-.contact-section {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.contact-home-section {
   position: relative;
   height: 100vh;
   background: url("../../assets/activity-trek.jpg") center/cover no-repeat;
@@ -8,14 +10,14 @@
   overflow: hidden;
 }
 
-.contact-overlay {
+.contact-home-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
   z-index: 1;
 }
 
-.contact-container {
+.contact-home-container {
   position: relative;
   z-index: 2;
   display: flex;
@@ -29,32 +31,33 @@
   padding: 0 40px;
 }
 
-.contact-text {
+.contact-home-text {
   flex: 1;
   text-align: left;
 }
 
-.contact-text h2 {
-  font-size: 2.4rem;
-  font-weight: 700;
+.contact-home-text h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2rem;
   margin-bottom: 20px;
   color: #fff;
 }
 
-.contact-text p {
+.contact-home-text p {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
   line-height: 1.7;
   color: #f0f0f0;
   margin-bottom: 20px;
 }
 
-.contact-note {
+.contact-home-note {
   font-style: italic;
   opacity: 0.85;
 }
 
 /* FORM CONTAINER */
-.contact-form {
+.contact-home-form {
   flex: 1.2;
   height: 100%;
   background: rgba(255, 255, 255, 0.08);
@@ -67,7 +70,7 @@
   overflow: hidden;
 }
 
-.contact-form iframe {
+.contact-home-form iframe {
   width: 100%;
   height: 100%;
   border: none;
@@ -76,36 +79,42 @@
 
 /* ===== Responsive layout ===== */
 @media (max-width: 900px) {
-  .contact-section {
+  .contact-home-section {
     height: auto;
-    min-height: 270vh; /* slightly reduced from 200vh for better fit */
-    padding: 40px 0; /* reduced vertical padding */
+    min-height: 150dvh; /* increased section height */
+    padding: 40px 0;
   }
 
-  .contact-container {
+  .contact-home-container {
     flex-direction: column;
     text-align: center;
     height: auto;
-    gap: 10px; /* much smaller gap between text and form */
+    gap: 20px;
     padding: 0 20px;
   }
 
-  .contact-text {
+  .contact-home-text {
     display: none;
   }
 
-  .contact-text h2 {
+  .contact-home-text h2 {
     font-size: 2rem;
     margin-bottom: 10px;
   }
 
-  .contact-form {
+  .contact-home-form {
     width: 100%;
-    height: 250vh; /* balanced with section height */
-    margin-top: 0;
+    min-height: 200dvh; /* ✅ ensures form itself stretches */
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
   }
 
-  .contact-form iframe {
-    height: 100%;
+  .contact-home-form iframe {
+    width: 100%;
+    height: 100%; /* ✅ fills the full height of the form */
+    min-height: 200dvh; /* ✅ explicitly forces iframe to grow */
+    border: none;
   }
 }
+

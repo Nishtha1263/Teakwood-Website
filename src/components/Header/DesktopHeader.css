@@ -1,4 +1,14 @@
-/* src/components/Header/DesktopHeader.css */
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Raleway:wght@400;500;600&display=swap');
+
+:root {
+  --color-white: #ffffff;
+  --color-text-dark: #2e2b23;     
+  --color-primary: #4b6043;        
+  --color-accent: #7b8d64;       
+  --color-border: #c6b89e;         
+  --transition: all 0.3s ease;
+}
+
 .desktop-header {
   position: fixed;
   top: 0;
@@ -12,22 +22,32 @@
 .header-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 12px 40px;
+  padding: 12px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.logo {
+.logo-name {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: center; 
+  gap: 10px;           
   text-decoration: none;
 }
 
 .logo img {
   width: 60px;
   height: 60px;
+  object-fit: contain;
+}
+
+.logo-name h4 {
+  margin: 0;
+  font-family: "Charm", cursive;
+  font-size: 22px;
+  font-weight: 700;
+  color: #4b6043; 
+  white-space: nowrap; 
 }
 
 .nav-links {
@@ -46,17 +66,26 @@
   color: var(--color-primary);
 }
 
-.book-btn {
-  background-color: var(--color-text-dark);
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.desktop-book-btn {
+  display: inline-block;
+  background-color: var(--color-primary);
   color: var(--color-white);
   padding: 10px 24px;
   border-radius: 8px;
   font-weight: 500;
   text-decoration: none;
   transition: var(--transition);
+  border: 2px solid transparent;
+  letter-spacing: 0.5px;
 }
 
-.book-btn:hover {
+.desktop-book-btn:hover {
   background-color: var(--color-accent);
   color: var(--color-white);
 }

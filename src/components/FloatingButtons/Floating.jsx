@@ -28,16 +28,6 @@ const FloatingButtons = () => {
         <FaPhoneAlt size={26} /> 
       </a>
 
-      {/* Download Brochure */}
-      <a
-        href={brochureFile}
-        className="floating-btn download"
-        download
-        title="Download Brochure"
-      >
-        <FaDownload size={24} /> 
-      </a>
-
       {/* Instagram */}
       <a
         href="https://instagram.com/teakwoodforestresort/"

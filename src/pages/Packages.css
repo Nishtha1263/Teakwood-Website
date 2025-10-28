@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Raleway:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 .packages-section {
-  background: #f6faf7;
+  background: #FAF7F2;
   padding: 100px 20px;
   text-align: center;
   overflow: hidden;
 }
 
 .packages-title {
+  font-family: 'Inter', sans-serif;
   font-size: 2.8rem;
-  font-weight: 700;
-  color: #184e26;
+  color: #4b6043;
   margin-bottom: 60px;
 }
 
@@ -48,7 +51,7 @@
 .package-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.255);
   color: white;
   display: flex;
   flex-direction: column;
@@ -66,19 +69,22 @@
 }
 
 .package-overlay h2 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: 'Charm', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 300;
   margin-bottom: 8px;
 }
 
 .subtitle {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
   opacity: 0.9;
   margin-bottom: 10px;
 }
 
 .price {
-  background: #1a642e;
+  font-family: 'Poppins', sans-serif;
+  background: #4b6043;
   display: inline-block;
   padding: 6px 12px;
   border-radius: 6px;
@@ -89,6 +95,7 @@
 }
 
 .package-overlay p {
+  font-family: 'Poppins', sans-serif;
   opacity: 0.95;
   margin-bottom: 6px;
   font-size: 0.95rem;
@@ -190,13 +197,15 @@
 }
 
 .custom-packages h2 {
-  color: #184e26;
+  font-family: 'Inter', sans-serif;
+  color: #4b6043;
   font-size: 2rem;
   margin-bottom: 15px;
 }
 
 .custom-packages p {
-  color: #2f5232;
+  font-family: 'Poppins', sans-serif;
+  color: #4b6043;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 30px;
@@ -204,11 +213,12 @@
 
 /* --- CUSTOM BUTTON --- */
 .custom-btn {
+  font-family: 'Inter', sans-serif;
   display: inline-block;
   width: 100%;
   max-width: 280px;
   text-align: center;
-  background-color: #3b5323;
+  background-color: #4b6043;
   color: #fff;
   padding: 14px 0;
   border-radius: 10px;
@@ -218,5 +228,5 @@
 }
 
 .custom-btn:hover {
-  background-color: #283a17;
+  background-color: #7b8d64;
 }

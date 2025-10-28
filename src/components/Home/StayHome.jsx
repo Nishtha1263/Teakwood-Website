@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./StayHome.css";
-import tentImg from "../../assets/tent.png";
-import cottageImg from "../../assets/cottage.png";
+import tentImg from "../../assets/activity-games.jpg";
+import cottageImg from "../../assets/activity-bonfire.jpg";
 
 const Stay = () => {
   return (
@@ -17,10 +17,10 @@ const Stay = () => {
             <h3>Tent Stay</h3>
             <p>
               Wake up to birdsong in our cozy luxury tents — perfect for adventure
-              seekers and couples.
+              seekers, families, and corporate outings.
             </p>
             <Link to="/stay" className="stay-home-btn">
-              Explore →
+              Explore
             </Link>
           </div>
         </div>
@@ -35,7 +35,7 @@ const Stay = () => {
               and tranquility.
             </p>
             <Link to="/stay" className="stay-home-btn">
-              Explore →
+              Explore
             </Link>
           </div>
         </div>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Raleway:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 .carousel {
   position: relative;
   width: 100%;
@@ -40,28 +43,33 @@
 
 
 .carousel-overlay h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
+  font-weight: 300;
   margin-bottom: 1rem;
+  font-family: 'Charm', sans-serif;
 }
 
 .carousel-overlay p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .carousel-overlay button {
-  background: #264e36;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  background: #4b6043;
   color: #fff;
   border: none;
   padding: 0.8rem 2rem;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .carousel-overlay button:hover {
-  background: #1b3626;
+  background: #7b8d64;
 }
 
 .carousel-dots {
@@ -90,7 +98,7 @@
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .carousel-overlay h1 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
   .carousel-overlay p {
     font-size: 1rem;
