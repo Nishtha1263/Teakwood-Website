@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import {Link} from "react-router-dom";
 import "./AmenitiesHome.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -30,7 +31,7 @@ const amenities = [
 
 const Amenities = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 500, once: true });
   }, []);
 
   return (
@@ -53,6 +54,7 @@ const Amenities = () => {
           </div>
         ))}
       </div>
+      <Link to="/activities"><button className="btn">Explore More</button></Link>
     </section>
   );
 };

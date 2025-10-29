@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import "./EventsHome.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {Link} from "react-router-dom";
 
+import bgCollage from "../../assets/activity-trek.jpg";
 import event1 from "../../assets/activity-trek.jpg";
-import event2 from "../../assets/activity-trek.jpg";
-import event3 from "../../assets/activity-trek.jpg";
-import event4 from "../../assets/activity-trek.jpg";
 
 const EventsHome = () => {
   useEffect(() => {
@@ -14,25 +13,35 @@ const EventsHome = () => {
   }, []);
 
   return (
-    <section className="events-home">
+    <section
+      className="events-home"
+      style={{ backgroundImage: `url(${bgCollage})` }}
+    >
       <div className="events-home-overlay"></div>
 
-      <div className="events-home-content" data-aos="fade-up">
-        <h2>Events at Teakwood</h2>
-        <p>
-          From cozy bonfire nights to thrilling outdoor adventures, every event at Teakwood
-          is designed to bring people together in nature’s embrace.
-        </p>
-        <a href="/events" className="events-home-btn" data-aos="zoom-in">
-          View All Events
-        </a>
-      </div>
+      <div className="events-home-container" data-aos="fade-up">
+        <div className="events-home-image" data-aos="fade-right">
+          <img src={event1} alt="Teakwood Event" />
+          <div className="events-home-date">
+            <span className="day">31</span>
+            <span className="month">DEC</span>
+          </div>
+          <div className="events-home-title">
+            <h3>New Year's Party</h3>
+          </div>
+        </div>
 
-      <div className="events-home-gallery" data-aos="fade-up">
-        <div className="event-img"><img src={event1} alt="Event 1" /></div>
-        <div className="event-img"><img src={event2} alt="Event 2" /></div>
-        <div className="event-img"><img src={event3} alt="Event 3" /></div>
-        <div className="event-img"><img src={event4} alt="Event 4" /></div>
+        <div className="events-home-info" data-aos="fade-left">
+          <h2>Upcoming Events</h2>
+          <p>
+            From cozy bonfire nights to thrilling outdoor adventures and celebrating festivals, every event at
+            Teakwood is designed to bring people together in nature’s embrace. Join
+            us for an unforgettable evening of music, BBQ, and starlit skies.
+          </p>
+          <Link to="/events" className="events-home-btn">
+            View All Events
+          </Link>
+        </div>
       </div>
     </section>
   );

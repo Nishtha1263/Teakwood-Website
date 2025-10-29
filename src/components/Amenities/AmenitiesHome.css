@@ -28,6 +28,7 @@
   align-items: start;
   max-width: 1000px;
   margin: 0 auto;
+  padding-bottom: 50px;
 }
 
 .amenity-card {
@@ -93,6 +94,23 @@
   opacity: 1;
   transform: translateY(0);
   color: #4b6043;
+}
+
+.amenities-section .btn {
+  font-family: 'Inter', sans-serif;
+  background-color: #4b6043;
+  color: var(--color-white);
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 10px;
+}
+
+.amenities-section .btn:hover {
+  background-color: #7b8d64;
+  transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {

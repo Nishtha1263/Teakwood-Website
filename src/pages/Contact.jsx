@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import "./ContactInfo.css";
 import bg from "../assets/activity-trek.jpg"; // your background image
 
@@ -41,9 +42,9 @@ const ContactInfo = () => {
             ></iframe>
           </div>
 
-          <a href="/terms" className="terms-btn">
+          <Link to="/terms" className="terms-btn">
             Terms & Conditions
-          </a>
+          </Link>
         </div>
 
         {/* RIGHT SIDE FORM */}
