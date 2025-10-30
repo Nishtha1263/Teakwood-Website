@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import "./AmenitiesHome.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { IoIosMusicalNotes } from "react-icons/io";
 import {
   GiWaterfall,
   GiMountainCave,
@@ -10,8 +11,7 @@ import {
   GiRopeBridge,
   GiWinchesterRifle,
   GiMicrophone,
-  GiSoccerBall,
-  GiBarbecue
+  GiSoccerBall
 } from "react-icons/gi";
 import { FaTableTennis } from "react-icons/fa";
 import { PiBridge } from "react-icons/pi";
@@ -26,7 +26,7 @@ const amenities = [
   { icon: <FaTableTennis />, title: "Indoor Games", desc: "Board games and entertainment for everyone." },
   { icon: <GiMicrophone />, title: "Karaoke", desc: "Sing your heart out with friends and family." },
   { icon: <GiCampfire />, title: "Bonfire", desc: "Relax by the bonfire under the starry night sky." },
-  { icon: <GiBarbecue />, title: "Barbecue", desc: "Enjoy delicious barbecues under the open sky." },
+  { icon: <IoIosMusicalNotes />, title: "Dance and Music", desc: "Enjoy a fun night of dance and music." },
 ];
 
 const Amenities = () => {

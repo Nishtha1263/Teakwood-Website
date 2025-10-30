@@ -30,3 +30,5 @@ a {
   text-decoration: none;
   transition: var(--transition);
 }
+
+a:hover, button:hover, [role="button"]:hover, .footer-link:hover { cursor: pointer; }

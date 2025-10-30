@@ -33,7 +33,7 @@ export default function MobileHeader() {
           <NavLink to="/activities" onClick={() => setMenuOpen(false)}>Activities</NavLink>
           <NavLink to="/events" onClick={() => setMenuOpen(false)}>Events</NavLink>
           <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</NavLink>
-          <a href="/brochure.pdf" download className="mobile-book-btn">
+          <a href="/brochure.pdf" download className="mobile-book-btn-brochure">
             Download Brochure
           </a>
           <Link to="/contact" onClick={() => setMenuOpen(false)} className="mobile-book-btn">

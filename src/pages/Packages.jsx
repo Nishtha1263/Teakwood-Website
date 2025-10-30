@@ -1,32 +1,32 @@
 import { useState } from "react";
 import {Link} from "react-router-dom";
 import "./Packages.css";
-import dayImg from "../assets/day.png";
-import nightImg from "../assets/night.png";
+import dayImg from "../assets/daypackage.png";
+import nightImg from "../assets/nightpackage.png";
 
 export default function Packages() {
   const packages = [
     {
       id: 1,
       title: "Day Outing",
-      subtitle: "Day Outing Package (8:00 AM – 5:00 PM)",
+      // subtitle: "Day Outing Package (8:00 AM – 5:00 PM)",
       img: dayImg,
-      price: "Adults ₹1200 | Children (5–10 yrs) ₹800",
-      details:
-        "Forest Trek, Burma Bridge, Zipline, Indoor & Outdoor Games, Karaoke, Waterfall",
-      meals: "Breakfast Buffet, Lunch, High Tea",
-      direction: "left",
+      // price: "Adults ₹1200 | Children (5–10 yrs) ₹800",
+      // details:
+      //   "Forest Trek, Burma Bridge, Zipline, Indoor & Outdoor Games, Karaoke, Waterfall",
+      // meals: "Breakfast Buffet, Lunch, High Tea",
+      // direction: "left",
     },
     {
       id: 2,
       title: "Overnight Stay",
-      subtitle: "Overnight Package (11:00 AM – 10:00 AM)",
+      // subtitle: "Overnight Package (11:00 AM – 10:00 AM)",
       img: nightImg,
-      price: "Adults ₹1900 | Children (5–10 yrs) ₹1300",
-      details:
-        "Forest Trek, Burma Bridge, Zipline, Indoor & Outdoor Games, Karaoke, Bonfire/Campfire. Chargeable: Petroglyph Trek, Pool Table (18+), Air Gun Shooting",
-      meals: "High Tea, Lunch, Dinner, Breakfast Buffet",
-      direction: "right",
+      // price: "Adults ₹1900 | Children (5–10 yrs) ₹1300",
+      // details:
+      //   "Forest Trek, Burma Bridge, Zipline, Indoor & Outdoor Games, Karaoke, Bonfire/Campfire. Chargeable: Petroglyph Trek, Pool Table (18+), Air Gun Shooting",
+      // meals: "High Tea, Lunch, Dinner, Breakfast Buffet",
+      // direction: "right",
     },
   ];
 
@@ -43,10 +43,10 @@ export default function Packages() {
             <img src={pkg.img} alt={pkg.title} className="package-img" />
             <div className="package-overlay">
               <h2>{pkg.title}</h2>
-              <p className="subtitle">{pkg.subtitle}</p>
+              {/* <p className="subtitle">{pkg.subtitle}</p>
               <p className="price">{pkg.price}</p>
               <p><strong>Included Activities:</strong> {pkg.details}</p>
-              <p><strong>Meals:</strong> {pkg.meals}</p>
+              <p><strong>Meals:</strong> {pkg.meals}</p> */}
             </div>
           </div>
         ))}

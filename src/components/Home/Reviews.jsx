@@ -7,31 +7,57 @@ import { motion, useAnimation, useMotionValue, useTransform } from "framer-motio
 
 const reviews = [
   {
-    name: "Rohit Sharma",
-    text: "Such a peaceful place! The cottages are cozy, food is delicious, and the view is breathtaking. Perfect weekend escape.",
+    name: "Bhakti Gangakhedkar",
+    text: "We had a great time here! The place is neat, tidy, and very well maintained. The air is fresh and pollution-free — perfect for a peaceful getaway.",
     rating: 5,
   },
   {
-    name: "Aditi Mehta",
-    text: "Loved the nature vibes. The bonfire night and barbecue dinner were the highlights of our stay!",
+    name: "Ravi Pande",
+    text: "Teakwood Forest Resort is an amazing place for family and friends. Scenic, green, and spacious — a refreshing escape from city life.",
     rating: 5,
   },
   {
-    name: "Karan Patel",
-    text: "Ideal for family getaways — plenty of open space, great hospitality, and the kids had a blast with the outdoor games.",
-    rating: 4,
-  },
-  {
-    name: "Sneha Kulkarni",
-    text: "The staff is warm and welcoming. Everything feels personal and homely — definitely coming back again!",
+    name: "Sharda Diwe",
+    text: "Amazing food prepared and served with love by polite staff. Simple yet wonderful resort surrounded by nature. A truly memorable experience.",
     rating: 5,
   },
   {
-    name: "Nisha Gupta",
-    text: "A wonderful retreat from the city. The food, the people, and the greenery make it magical.",
+    name: "Sachin Kolharkar",
+    text: "Teakwood has transformed beautifully over my three visits. Excellent service, delicious food, clean rooms, and stunning surroundings.",
+    rating: 5,
+  },
+  {
+    name: "Lata Awasthi",
+    text: "Awesome place near Pune to bond with friends and family. The natural setting, adventure activities, and views are beyond expectations!",
+    rating: 5,
+  },
+  {
+    name: "Jigna Thacker",
+    text: "An unforgettable experience! The hospitality, food, and atmosphere were perfect. Best chai ever — truly picture perfect!",
+    rating: 5,
+  },
+  {
+    name: "Khushboo Shivnani",
+    text: "Just returned from an awesome picnic at Teakwood! Beautiful scenery, great trails, and delicious meals. Can’t wait to visit again!",
+    rating: 5,
+  },
+  {
+    name: "Maitreyi Mishra",
+    text: "So much fun! The resort is very clean and well maintained. The food is great, and the campfire made the night even more special.",
+    rating: 5,
+  },
+  {
+    name: "Prajakta Kulkarni",
+    text: "Being here brought us closer to nature. Well-maintained resort, polite staff, delicious food, and exciting activities. A great experience!",
+    rating: 5,
+  },
+  {
+    name: "Anish Kale",
+    text: "A peaceful retreat in the lap of nature. Clean rooms, hospitable staff, and serene surroundings — perfect for a weekend escape from Pune.",
     rating: 5,
   },
 ];
+
 
 const Reviews = () => {
   const controls = useAnimation();

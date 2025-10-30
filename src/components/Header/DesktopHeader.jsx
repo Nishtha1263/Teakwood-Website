@@ -22,7 +22,7 @@ export default function DesktopHeader() {
           <NavLink to="/contact" className="nav-item">Contact Us</NavLink>
         </nav>
         <div className="header-buttons">
-          <a href="/brochure.pdf" download className="desktop-book-btn">
+          <a href="/brochure.pdf" download className="desktop-book-btn-brochure">
             Download Brochure
           </a>
           <Link to="/book" className="desktop-book-btn">

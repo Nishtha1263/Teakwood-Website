@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-.experiences-section {
+.attractions-section {
   background: #FAF7F2;
   padding: 120px 100px;
   text-align: center;
@@ -91,7 +91,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .experiences-section {
+  .attractions-section {
     padding: 80px 20px;
   }
 

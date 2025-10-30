@@ -80,6 +80,26 @@
   color: var(--color-primary);
 }
 
+.mobile-book-btn-brochure {
+  background-color: red !important; 
+  color: #ffffff !important;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  display: inline-block;
+  transition: all 0.3s ease;
+  border: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.mobile-book-btn-brochure:hover {
+  background-color: rgb(251, 97, 97) !important; 
+  color: #ffffff !important;
+}
+
 .mobile-book-btn {
   background-color: #4b6043 !important; 
   color: #ffffff !important;

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./PackagesHome.css";
-import dayImg from "../../assets/activity-trek.jpg"; 
-import nightImg from "../../assets/activity-trek.jpg"; 
+import dayImg from "../../assets/dayhome.jpg"; 
+import nightImg from "../../assets/night.png"; 
 import AOS from "aos";
 import "aos/dist/aos.css";
 

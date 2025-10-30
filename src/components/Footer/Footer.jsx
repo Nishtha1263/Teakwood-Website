@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import { FaFacebookF, FaInstagram, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import logo from "../../assets/logo.png";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -12,7 +11,6 @@ const Footer = () => {
       <div className="footer-container">
         {/* Logo and About */}
         <div className="footer-section about">
-          <img src={logo} alt="Teakwood Logo" className="footer-logo" />
           <p>
             Nestled in the lush wilderness, Teakwood Forest Resort & Camp offers
             a serene escape where comfort meets nature. Perfect for families,
@@ -67,24 +65,6 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 Guest Details
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/teakwoodresort/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaInstagram /> Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/teakwoodresort/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaFacebookF /> Facebook
               </a>
             </li>
           </ul>

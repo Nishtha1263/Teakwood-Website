@@ -4,8 +4,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import {Link} from "react-router-dom";
 
-import bgCollage from "../../assets/activity-trek.jpg";
-import event1 from "../../assets/activity-trek.jpg";
+import bgCollage from "../../assets/contact-bg.jpg";
+import event1 from "../../assets/contact-bg.jpg";
 
 const EventsHome = () => {
   useEffect(() => {

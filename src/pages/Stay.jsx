@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import cottageMain from "../assets/hero1.jpeg";
-import tentMain from "../assets/hero1.jpeg";
-import bathroomImg from "../assets/hero1.jpeg";
-import diningImg from "../assets/hero1.jpeg";
-import commonImg from "../assets/hero1.jpeg";
-import patioImg from "../assets/hero1.jpeg";
+import cottageMain from "../assets/cottage.jpg";
+import tentMain from "../assets/tent.png";
+import bathroomImg from "../assets/bathroom.JPG";
+import diningImg from "../assets/dining.JPG";
+import commonImg from "../assets/common.JPG";
+import patioImg from "../assets/patio.JPG";
+import room from "../assets/room.JPG";
 import "./Stay.css";
 
 const Stay = () => {
@@ -80,6 +81,10 @@ const Stay = () => {
           every space brings warmth and community.
         </p>
         <div className="commons-grid">
+          <div className="common-card" data-aos="zoom-in">
+            <img src={room} alt="Room" />
+            <h3>Spacious Rooms</h3>
+          </div>
           <div className="common-card" data-aos="zoom-in">
             <img src={bathroomImg} alt="Bathroom" />
             <h3>Clean & Modern Bathrooms</h3>
