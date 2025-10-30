@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./Hero.css";
-import hero1 from "../../assets/hero1.jpg";
-import hero2 from "../../assets/hero2.jpg";
-import hero3 from "../../assets/hero3.jpg";
+import hero1 from "../../assets/hero1.JPG";
+import hero2 from "../../assets/hero2.JPG";
+import hero3 from "../../assets/hero3.JPG";
 
 const images = [
   {
