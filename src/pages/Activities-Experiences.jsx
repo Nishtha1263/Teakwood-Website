@@ -1,29 +1,45 @@
 import React, { useState } from "react";
 import "./Activities-Experiences.css";
 import trek from "../assets/contact-bg.JPG";
-import waterfall from "../assets/contact-bg.JPG";
-import temple from "../assets/contact-bg.JPG";
-import fort from "../assets/contact-bg.JPG";
-import zoo from "../assets/contact-bg.JPG";
+import balancebeam from "../assets/balancebeam.JPG";
+import burma from "../assets/burma.JPG";
+import karaoke from "../assets/karaoke.JPG";
+import obstacle from "../assets/obstacle.JPG";
+import outdoor from "../assets/outdoor.JPG";
+import rifle from "../assets/rifle.JPG";
+import zipline from "../assets/zipline.JPG";
+import farm from "../assets/farm.JPG"
+import bhatghardam from "../assets/bhatghardam.jpg";
+import boardgames from "../assets/boardgames.jpg";
+import carrom from "../assets/carrom.jpg";
+import chess from "../assets/chess.jpg";
+import ghat from "../assets/ghat.jpg";
+import katraj from "../assets/katraj.jpg";
+import necklacepoint from "../assets/necklacepoint.jpg";
+import petroglyphs from "../assets/petroglyphs.jpg";
+import pool from "../assets/pool.jpg";
+import rajgad from "../assets/rajgad.jpg";
+import sinhagad from "../assets/sinhagad.jpg";
+import tabletennis from "../assets/tabletennis.jpg";
+import torna from "../assets/torna.jpg";
 
 const activities = [
   { title: "Trek", desc: "Explore scenic trails and hills around Teakwood for a refreshing adventure.", img: trek },
   { title: "Dance and Music", desc: "Enjoy lively music and dance sessions under the stars.", img: trek },
   { title: "Bonfire", desc: "Gather around the warm bonfire for stories, laughter, and good company.", img: trek },
-  { title: "Rifle Shooting", desc: "Test your aim with a fun and safe rifle shooting experience.", img: trek },
-  { title: "Burma Bridge", desc: "Challenge your balance and coordination on the thrilling Burma Bridge.", img: trek },
-  { title: "Balance Beam", desc: "A fun balance challenge perfect for both kids and adults.", img: trek },
-  { title: "Zipline", desc: "Soar through the air on our exciting zipline adventure.", img: trek },
-  { title: "Obstacle Course", desc: "Take on a mix of physical challenges designed for fun and teamwork.", img: trek },
-  { title: "Farm Walk", desc: "Stroll through the green farmland and experience rural tranquility.", img: trek },
-  { title: "Outdoor Games", desc: "Enjoy open-air games like volleyball, cricket, and football.", img: trek },
-  { title: "Table Tennis", desc: "Challenge friends to a fast-paced indoor table tennis match.", img: trek },
-  { title: "8 Ball Pool", desc: "Relax and play a few friendly rounds of pool.", img: trek },
-  { title: "Karaoke", desc: "Sing your heart out with karaoke nights full of fun and laughter.", img: trek },
-  { title: "Carrom", desc: "Enjoy this classic indoor board game with friends and family.", img: trek },
-  { title: "Chess", desc: "Exercise your mind with a quiet and strategic game of chess.", img: trek },
-  { title: "Library", desc: "Unwind with a good book in our cozy reading space.", img: trek },
-  { title: "Board Games", desc: "Spend time indoors playing your favorite board games.", img: trek },
+  { title: "Rifle Shooting", desc: "Test your aim with a fun and safe rifle shooting experience.", img: rifle },
+  { title: "Burma Bridge", desc: "Challenge your balance and coordination on the thrilling Burma Bridge.", img: burma },
+  { title: "Balance Beam", desc: "A fun balance challenge perfect for both kids and adults.", img: balancebeam },
+  { title: "Zipline", desc: "Soar through the air on our exciting zipline adventure.", img: zipline },
+  { title: "Obstacle Course", desc: "Take on a mix of physical challenges designed for fun and teamwork.", img: obstacle },
+  { title: "Farm Walk", desc: "Stroll through the green farmland and experience rural tranquility.", img: farm },
+  { title: "Outdoor Games", desc: "Enjoy open-air games like volleyball, cricket, and football.", img: outdoor },
+  { title: "Table Tennis", desc: "Challenge friends to a fast-paced indoor table tennis match.", img: tabletennis },
+  { title: "8 Ball Pool", desc: "Relax and play a few friendly rounds of pool.", img: pool },
+  { title: "Karaoke", desc: "Sing your heart out with karaoke nights full of fun and laughter.", img: karaoke },
+  { title: "Carrom", desc: "Enjoy this classic indoor board game with friends and family.", img: carrom },
+  { title: "Chess", desc: "Exercise your mind with a quiet and strategic game of chess.", img: chess },
+  { title: "Board Games", desc: "Spend time indoors playing your favorite board games.", img: boardgames },
   { title: "BBQ", desc: "End your day with delicious barbecue under the open sky.", img: trek },
 ];
 
@@ -31,7 +47,7 @@ const attractions = [
   {
     title: "Bhatghar Dam",
     desc: "A scenic dam surrounded by rolling hills — ideal for a peaceful drive and stunning sunset views.",
-    img: trek,
+    img: bhatghardam,
   },
   {
     title: "Baneshwar Waterfall",
@@ -41,22 +57,22 @@ const attractions = [
   {
     title: "Sinhagad Fort",
     desc: "A historic hill fort near Pune offering panoramic views, trekking trails, and a glimpse into Maratha valor.",
-    img: trek,
+    img: sinhagad,
   },
   {
     title: "Rajgad Fort",
     desc: "One of the grand Maratha forts offering breathtaking views and a glimpse into Shivaji Maharaj’s history.",
-    img: trek,
+    img: rajgad,
   },
   {
     title: "Torna Fort",
     desc: "The first fort captured by Chhatrapati Shivaji Maharaj — a popular trekking destination with panoramic views.",
-    img: trek,
+    img: torna,
   },
   {
     title: "Necklace Point",
     desc: "A picturesque viewpoint where the river forms a necklace-like curve, perfect for photos and sunsets.",
-    img: trek,
+    img: necklacepoint,
   },
   {
     title: "Baneshwar Temple",
@@ -71,7 +87,7 @@ const attractions = [
   {
     title: "Varandh Ghat",
     desc: "A scenic mountain pass with winding roads and breathtaking views, ideal for long drives and monsoon getaways.",
-    img: trek,
+    img: ghat,
   },
   {
     title: "Ambawane Hanging Bridge",
@@ -81,12 +97,12 @@ const attractions = [
   {
     title: "Katraj Zoo",
     desc: "A fun day out for families with a variety of animals, reptiles, and birds to explore and learn about.",
-    img: trek,
+    img: katraj,
   },
   {
     title: "Petroglyphs",
     desc: "Ancient rock carvings that tell stories from prehistoric times — a fascinating stop for history enthusiasts.",
-    img: trek,
+    img: petroglyphs,
   },
 ];
 

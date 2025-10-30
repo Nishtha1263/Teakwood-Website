@@ -23,7 +23,7 @@
   position: relative;
   overflow: hidden;
   /* border-radius: 16px; */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.463);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
