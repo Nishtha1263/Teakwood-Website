@@ -17,6 +17,18 @@
   z-index: 0;
 }
 
+/* Center heading */
+.events-heading {
+  position: relative;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 60px;
+  z-index: 2;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
+}
+
 .events-home-container {
   position: relative;
   z-index: 1;
@@ -27,7 +39,7 @@
   flex-wrap: wrap;
 }
 
-/* Image side */
+/* Left Image */
 .events-home-image {
   position: relative;
   flex: 1 1 45%;
@@ -73,31 +85,35 @@
   letter-spacing: 1px;
 }
 
-/* Text side */
+/* Right Text */
 .events-home-info {
   flex: 1 1 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
-  z-index: 2;
   color: #fff;
+  z-index: 2;
 }
 
-.events-home-info h2 {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+.events-home-info h3 {
   color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.event-detail {
+  font-size: 1rem;
+  color: #ddd;
+  margin-bottom: 6px;
 }
 
 .events-home-info p {
   font-family: 'Poppins', sans-serif;
   font-size: 1.1rem;
-  color: #ddd;
+  color: #ccc;
   line-height: 1.7;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .events-home-btn {
@@ -117,40 +133,6 @@
   transform: translateY(-3px);
 }
 
-/* 🏷️ Event Title ON TOP of image */
-.events-home-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  padding: 20px 10px;
-  box-sizing: border-box;
-}
-
-.events-home-title h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.2rem;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.484);
-  display: inline-block;
-  margin: 0;
-  transition: all 0.3s ease;
-}
-
-.events-home-image:hover .events-home-title h3 {
-  transform: translateY(-3px);
-  opacity: 0.9;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .events-home-title h3 {
-    font-size: 1.1rem;
-  }
-}
-
 /* Responsive */
 @media (max-width: 900px) {
   .events-home-container {
@@ -163,5 +145,10 @@
 
   .events-home-btn {
     align-self: center;
+  }
+
+  .events-heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
   }
 }

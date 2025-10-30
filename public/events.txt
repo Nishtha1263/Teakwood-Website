@@ -1,0 +1,27 @@
+Title: Winter Camping Adventure
+Category: upcoming
+Date: December 20, 2025
+Time: 4:00 PM - 10:00 AM
+Price: ₹1999 per person
+Image: /hero1.jpeg
+Description: Experience the magic of winter nights with cozy bonfires, BBQ, music, and starry skies at Teakwood. Perfect for families and adventure lovers.
+
+---
+
+Title: Holi Bash 2025
+Category: past
+Date: March 24, 2025
+Time: 10:00 AM - 5:00 PM
+Price: ₹999 per person
+Image: /hero1.jpeg
+Description: Celebrate Holi at Teakwood with colors, music, rain dance, and festive food. A joyful day of laughter and color for families and friends.
+
+---
+
+Title: Summer Camp 2025
+Category: past
+Date: May 15, 2025
+Time: 8:00 AM - 6:00 PM
+Price: ₹1299 per person
+Image: /hero1.jpeg
+Description: A day full of adventure for kids and families. Activities include trekking, games, nature walks, and team challenges.

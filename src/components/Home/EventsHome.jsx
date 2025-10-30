@@ -1,16 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./EventsHome.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import bgCollage from "../../assets/contact-bg.jpg";
-import event1 from "../../assets/contact-bg.jpg";
 
 const EventsHome = () => {
+  const [eventData, setEventData] = useState(null);
+
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
+
+    fetch("/events.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const entries = text.trim().split(/\n\s*\n/); // split multiple events if any
+        const firstEntry = entries[0].split("\n");
+        const data = {};
+
+        firstEntry.forEach((line) => {
+          const [key, ...value] = line.split(":");
+          data[key.trim().toLowerCase()] = value.join(":").trim();
+        });
+
+        setEventData(data);
+      })
+      .catch((err) => console.error("Error loading event data:", err));
   }, []);
+
+  if (!eventData) return null;
 
   return (
     <section
@@ -19,25 +38,33 @@ const EventsHome = () => {
     >
       <div className="events-home-overlay"></div>
 
+      <h2 className="events-heading" data-aos="fade-down">
+        Upcoming Events
+      </h2>
+
       <div className="events-home-container" data-aos="fade-up">
         <div className="events-home-image" data-aos="fade-right">
-          <img src={event1} alt="Teakwood Event" />
+          <img src={eventData.image || "/images/default.jpg"} alt={eventData.title} />
           <div className="events-home-date">
-            <span className="day">31</span>
-            <span className="month">DEC</span>
-          </div>
-          <div className="events-home-title">
-            <h3>New Year's Party</h3>
+            <span className="day">{eventData.date?.split(" ")[1] || ""}</span>
+            <span className="month">
+              {eventData.date?.split(" ")[0]?.slice(0, 3).toUpperCase() || ""}
+            </span>
           </div>
         </div>
 
         <div className="events-home-info" data-aos="fade-left">
-          <h2>Upcoming Events</h2>
-          <p>
-            From cozy bonfire nights to thrilling outdoor adventures and celebrating festivals, every event at
-            Teakwood is designed to bring people together in nature’s embrace. Join
-            us for an unforgettable evening of music, BBQ, and starlit skies.
+          <h3>{eventData.title}</h3>
+          <p className="event-detail">
+            <strong>Date:</strong> {eventData.date}
           </p>
+          <p className="event-detail">
+            <strong>Time:</strong> {eventData.time}
+          </p>
+          <p className="event-detail">
+            <strong>Price:</strong> {eventData.price}
+          </p>
+          <p>{eventData.description}</p>
           <Link to="/events" className="events-home-btn">
             View All Events
           </Link>
