@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./PackagesHome.css";
-import dayImg from "../../assets/dayhome.jpg"; 
+import dayImg from "../../assets/dayhome.JPG"; 
 import nightImg from "../../assets/night.png"; 
 import AOS from "aos";
 import "aos/dist/aos.css";

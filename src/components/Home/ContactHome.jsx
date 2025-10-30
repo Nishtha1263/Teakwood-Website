@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactHome.css";
-import trekBg from "../../assets/contact-bg.jpg"; // ✅ Import image directly
+import trekBg from "../../assets/contact-bg.JPG"; // ✅ Import image directly
 
 const Contact = () => {
   return (

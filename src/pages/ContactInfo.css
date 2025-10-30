@@ -3,7 +3,7 @@
 .contact-section {
   position: relative;
   min-height: 100vh;
-  background: url("../../assets/contact-bg.jpg") center/cover no-repeat;
+  background: url("../../assets/contact-bg.JPG") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: flex-start;

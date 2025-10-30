@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Activities-Experiences.css";
-import trek from "../assets/contact-bg.jpg";
-import waterfall from "../assets/contact-bg.jpg";
-import temple from "../assets/contact-bg.jpg";
-import fort from "../assets/contact-bg.jpg";
-import zoo from "../assets/contact-bg.jpg";
+import trek from "../assets/contact-bg.JPG";
+import waterfall from "../assets/contact-bg.JPG";
+import temple from "../assets/contact-bg.JPG";
+import fort from "../assets/contact-bg.JPG";
+import zoo from "../assets/contact-bg.JPG";
 
 const activities = [
   { title: "Trek", desc: "Explore scenic trails and hills around Teakwood for a refreshing adventure.", img: trek },
