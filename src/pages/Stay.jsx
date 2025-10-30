@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import cottageMain from "../assets/cottage.jpg";
+import cottageMain from "../assets/cottage.JPG";
 import tentMain from "../assets/tent.png";
 import bathroomImg from "../assets/bathroom.JPG";
 import diningImg from "../assets/dining.JPG";
