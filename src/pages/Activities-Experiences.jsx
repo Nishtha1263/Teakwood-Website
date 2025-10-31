@@ -26,10 +26,11 @@ import waterfall from "../assets/baneshwarwaterfall.jpg";
 import balaji from "../assets/balaji.jpg";
 import baneshwar from "../assets/baneshwar.png";
 import bridge from "../assets/bridge.jpg";
+import dance from "../assets/dance.jpg";
 
 const activities = [
   { title: "Trek", desc: "Explore scenic trails and hills around Teakwood for a refreshing adventure.", img: trek },
-  { title: "Dance and Music", desc: "Enjoy lively music and dance sessions under the stars.", img: trek },
+  { title: "Dance and Music", desc: "Enjoy lively music and dance sessions under the stars.", img: dance },
   { title: "Rifle Shooting", desc: "Test your aim with a fun and safe rifle shooting experience.", img: rifle },
   { title: "Burma Bridge", desc: "Challenge your balance and coordination on the thrilling Burma Bridge.", img: burma },
 
