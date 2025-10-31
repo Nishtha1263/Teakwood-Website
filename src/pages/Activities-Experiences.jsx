@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Activities-Experiences.css";
 import trek from "../assets/hero1.png";
-import balancebeam from "../assets/balancebeam.jpg";
+import balancebeam from "../assets/balancebeam.JPG";
 import burma from "../assets/burma.jpg";
 import karaoke from "../assets/karaoke.jpg";
 import obstacle from "../assets/obstacle.jpg";

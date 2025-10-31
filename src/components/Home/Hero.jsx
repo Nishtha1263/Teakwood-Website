@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./Hero.css";
 import hero1 from "../../assets/hero1.png";
-import hero2 from "../../assets/balancebeam.jpg";
+import hero2 from "../../assets/balancebeam.JPG";
 import hero3 from "../../assets/hero3.JPG";
 
 const images = [
