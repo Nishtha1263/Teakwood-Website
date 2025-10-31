@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./StayHome.css";
 import tentImg from "../../assets/tent.png";
-import cottageImg from "../../assets/cottage.JPG";
+import cottageImg from "../../assets/cottage.png";
 
 const Stay = () => {
   return (

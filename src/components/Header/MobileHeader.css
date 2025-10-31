@@ -80,27 +80,31 @@
   color: var(--color-primary);
 }
 
-.mobile-book-btn-brochure {
-  background-color: red !important; 
+.mobile-book-btn {
+  background: linear-gradient(to bottom, #ff1a1a, #b30000) !important; /* gradient red */
   color: #ffffff !important;
   padding: 10px 24px;
-  border-radius: 8px;
+  border-radius: 25px;
   text-decoration: none;
   font-weight: 600;
   font-family: "Raleway", sans-serif;
   display: inline-block;
   transition: all 0.3s ease;
-  border: none;
+  border: 2px solid #800000; /* dark maroon border */
   text-align: center;
   letter-spacing: 0.5px;
+  box-shadow: 0 3px 6px rgba(128, 0, 0, 0.4); /* subtle shadow */
 }
 
-.mobile-book-btn-brochure:hover {
-  background-color: rgb(251, 97, 97) !important; 
+.mobile-book-btn:hover {
+  background: linear-gradient(to bottom, #ff3333, #cc0000) !important;
   color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(128, 0, 0, 0.6);
 }
 
-.mobile-book-btn {
+
+.mobile-book-btn-brochure {
   background-color: #4b6043 !important; 
   color: #ffffff !important;
   padding: 10px 24px;
@@ -115,7 +119,7 @@
   letter-spacing: 0.5px;
 }
 
-.mobile-book-btn:hover {
+.mobile-book-btn-brochure:hover {
   background-color: #7b8d64 !important; 
   color: #ffffff !important;
 }

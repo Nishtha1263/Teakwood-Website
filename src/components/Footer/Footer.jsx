@@ -9,9 +9,9 @@ const Footer = () => {
       <div className="footer-overlay"></div>
 
       <div className="footer-container">
-        {/* Logo and About */}
         <div className="footer-section about">
           <p>
+            <strong>About Us</strong><br />
             Nestled in the lush wilderness, Teakwood Forest Resort & Camp offers
             a serene escape where comfort meets nature. Perfect for families,
             corporate retreats, and group getaways.

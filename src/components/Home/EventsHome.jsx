@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 
-import bgCollage from "../../assets/contact-bg.JPG";
+import bgCollage from "../../assets/hero1.png";
 
 const EventsHome = () => {
   const [eventData, setEventData] = useState(null);

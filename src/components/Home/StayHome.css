@@ -37,7 +37,7 @@
   height: 500px;
   object-fit: cover;
   transition: transform 0.5s ease, filter 0.5s ease;
-  filter: brightness(70%);
+  filter: brightness(90%);
 }
 
 .stay-home-option:hover img {

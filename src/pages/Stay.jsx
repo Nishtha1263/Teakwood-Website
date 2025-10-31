@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import cottageMain from "../assets/cottage.JPG";
+import cottageMain from "../assets/cottagepage.png";
 import tentMain from "../assets/tent.png";
-import bathroomImg from "../assets/bathroom.JPG";
+import bathroomImg from "../assets/bathroom.jpg";
 import diningImg from "../assets/dining.JPG";
-import commonImg from "../assets/common.JPG";
-import patioImg from "../assets/patio.JPG";
-import room from "../assets/room.JPG";
+import commonImg from "../assets/common.png";
+import patioImg from "../assets/patio.png";
+import room from "../assets/cottagepage.png";
 import "./Stay.css";
 
 const Stay = () => {

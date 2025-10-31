@@ -3,7 +3,7 @@
 .contact-section {
   position: relative;
   min-height: 100vh;
-  background: url("../../assets/contact-bg.JPG") center/cover no-repeat;
+  background: url("../../assets/hero1.png") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -14,7 +14,7 @@
 .contact-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.551);
   z-index: 1;
 }
 

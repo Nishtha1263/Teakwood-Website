@@ -92,18 +92,21 @@
 
 .desktop-book-btn {
   display: inline-block;
-  background-color: red;
-  color: var(--color-white);
+  background: linear-gradient(to bottom, #ff1a1a, #b30000); /* bright to dark red */
+  color: #fff;
   padding: 10px 24px;
-  border-radius: 8px;
+  border-radius: 25px; /* more rounded, like the image */
   font-weight: 500;
   text-decoration: none;
-  transition: var(--transition);
-  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  border: 2px solid #800000; /* dark maroon border */
   letter-spacing: 0.5px;
+  box-shadow: 0 3px 6px rgba(128, 0, 0, 0.4); /* subtle depth */
 }
 
 .desktop-book-btn:hover {
-  background-color: rgb(250, 97, 97);
-  color: var(--color-white);
+  background: linear-gradient(to bottom, #ff3333, #cc0000);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(128, 0, 0, 0.6);
+  color: #fff;
 }
