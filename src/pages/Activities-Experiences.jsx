@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Activities-Experiences.css";
-import trek from "../assets/hero1.png";
 import balancebeam from "../assets/balancebeam.JPG";
 import burma from "../assets/burma.jpg";
 import karaoke from "../assets/karaoke.jpg";
@@ -27,26 +26,30 @@ import balaji from "../assets/balaji.jpg";
 import baneshwar from "../assets/baneshwar.png";
 import bridge from "../assets/bridge.jpg";
 import dance from "../assets/dance.jpg";
+import bonfire from "../assets/bonfire.jpg";
+import bbq from "../assets/bbq.jpg";
+import trek from "../assets/trek.jpeg";
 
 const activities = [
-  { title: "Trek", desc: "Explore scenic trails and hills around Teakwood for a refreshing adventure.", img: trek },
-  { title: "Dance and Music", desc: "Enjoy lively music and dance sessions under the stars.", img: dance },
   { title: "Rifle Shooting", desc: "Test your aim with a fun and safe rifle shooting experience.", img: rifle },
   { title: "Burma Bridge", desc: "Challenge your balance and coordination on the thrilling Burma Bridge.", img: burma },
-
   { title: "Balance Beam", desc: "A fun balance challenge perfect for both kids and adults.", img: balancebeam },
   { title: "Zipline", desc: "Soar through the air on our exciting zipline adventure.", img: zipline },
-  { title: "Table Tennis", desc: "Challenge friends to a fast-paced indoor table tennis match.", img: tabletennis },
-  { title: "Bonfire", desc: "Gather around the warm bonfire for stories, laughter, and good company.", img: trek },
 
-  { title: "Farm Walk", desc: "Stroll through the green farmland and experience rural tranquility.", img: farm },
-  { title: "8 Ball Pool", desc: "Relax and play a few friendly rounds of pool.", img: pool },
-  { title: "Outdoor Games", desc: "Enjoy open-air games like volleyball, cricket, and football.", img: outdoor },
-  { title: "Karaoke", desc: "Sing your heart out with karaoke nights full of fun and laughter.", img: karaoke },
-
+  
+  { title: "Outdoor Games", desc: "Enjoy open-air games like volleyball, cricket, and football.", img: outdoor },  
   { title: "Obstacle Course", desc: "Take on a mix of physical challenges designed for fun and teamwork.", img: obstacle },
+  { title: "Karaoke", desc: "Sing your heart out with karaoke nights full of fun and laughter.", img: karaoke },
+  { title: "Trek", desc: "Explore scenic trails and hills around Teakwood for a refreshing adventure.", img: trek },
+
+  { title: "Dance and Music", desc: "Enjoy lively music and dance sessions under the stars.", img: dance },
+  { title: "Bonfire", desc: "Gather around the warm bonfire for stories, laughter, and good company.", img: bonfire},
+  { title: "Farm Walk", desc: "Stroll through the green farmland and experience rural tranquility.", img: farm },
+  { title: "BBQ", desc: "End your day with delicious barbecue under the open sky.", img: bbq },
+  
+  { title: "Table Tennis", desc: "Challenge friends to a fast-paced indoor table tennis match.", img: tabletennis },
+  { title: "8 Ball Pool", desc: "Relax and play a few friendly rounds of pool.", img: pool },
   { title: "Carrom", desc: "Enjoy this classic indoor board game with friends and family.", img: carrom },
-  { title: "BBQ", desc: "End your day with delicious barbecue under the open sky.", img: trek },
   { title: "Chess", desc: "Exercise your mind with a quiet and strategic game of chess.", img: chess },
 
   { title: "Board Games", desc: "Spend time indoors playing your favorite board games.", img: boardgames },
