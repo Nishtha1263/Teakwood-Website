@@ -1,4 +1,16 @@
 /* app.css */
+html, body {
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.stay-wrapper {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: visible;
+  position: relative;
+}
 
 /* === CONTAINERS === */
 .section {

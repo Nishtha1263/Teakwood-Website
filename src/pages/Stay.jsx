@@ -13,8 +13,12 @@ import "./Stay.css";
 
 const Stay = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
+  AOS.init({
+    duration: 1000,
+    once: true,
+    disableMutationObserver: true, 
+  });
+}, []);
 
   return (
     <section className="stay-wrapper">
