@@ -55,10 +55,6 @@
   transition: transform 0.5s ease;
 }
 
-.events-home-image:hover img {
-  transform: scale(1.05);
-}
-
 .events-home-date {
   font-family: 'Inter', sans-serif;
   position: absolute;

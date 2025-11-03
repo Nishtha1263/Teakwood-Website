@@ -3,7 +3,8 @@ Category: upcoming
 Date: December 31, 2025
 Time: 4:00 PM - 10:00 AM
 Price: Rs 3000/- per person
-Image: /hero1.jpeg
+Image: /newyears.png
+ImagePage: /2.png
 Description: Bring in the New Year surrounded by nature, good vibes, and great company! Join us for an unforgettable celebration in a rustic hideaway, nestled amid lush greenery and serene forest trails. Welcome Drink | Forest Trails | Waterfall | Bonfire | Barbecue | Music & Dance | Dinner | Karaoke | Stay | Breakfast
 ---
 
@@ -12,7 +13,8 @@ Category: past
 Date: March 24, 2025
 Time: 10:00 AM - 5:00 PM
 Price: -
-Image: /holi.jpeg
+Image: /holi.jpg
+ImagePage: /holi.jpg
 Description: Celebrate Holi at Teakwood with colors, music, rain dance, and festive food. A joyful day of laughter and color for families and friends.
 
 ---
@@ -23,4 +25,5 @@ Date: May 15, 2025
 Time: 8:00 AM - 6:00 PM
 Price: -
 Image: /summercamp.jpeg
+ImagePage: /summercamp.jpeg
 Description: A day full of adventure for kids and families. Activities include trekking, games, nature walks, and team challenges.

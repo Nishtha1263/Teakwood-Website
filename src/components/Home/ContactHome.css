@@ -81,7 +81,7 @@
 @media (max-width: 768px) {
   .contact-home-section {
     height: auto;
-    min-height: 150dvh; /* increased section height */
+    min-height: 100dvh; /* increased section height */
     padding: 40px 0;
   }
 
@@ -104,7 +104,7 @@
 
   .contact-home-form {
     width: 100%;
-    min-height: 200dvh; /* ✅ ensures form itself stretches */
+    min-height: 100dvh; /* ✅ ensures form itself stretches */
     display: flex;
     align-items: stretch;
     justify-content: center;

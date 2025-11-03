@@ -1,18 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 .attractions-section {
-  background: #FAF7F2;
+  background: #faf7f2;
   padding: 120px 100px;
   text-align: center;
 }
 
 .exp-title {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 2.8rem;
-  color:  #4b6043;
+  color: #4b6043;
   margin-bottom: 50px;
 }
 
+/* Toggle Buttons */
+.exp-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e3e8de;
+  border-radius: 50px;
+  width: fit-content;
+  margin: 0 auto 50px auto;
+  padding: 5px;
+  box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn {
+  background: transparent;
+  color: #4b6043;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: rgba(75, 96, 67, 0.1);
+}
+
+.toggle-btn.active {
+  background: #4b6043;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid */
 .exp-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -22,10 +59,11 @@
 .exp-card {
   position: relative;
   overflow: hidden;
-  /* border-radius: 16px; */
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.463);
   transition: transform 0.3s ease;
   cursor: pointer;
+  display: flex;
+  align-items: flex-end;
 }
 
 .exp-card:hover {
@@ -61,21 +99,20 @@
 }
 
 .exp-overlay h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1.3rem;
   margin-bottom: 5px;
   color: white;
 }
 
 .exp-overlay p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: all 0.4s ease;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: white;
 }
 
 .exp-card:hover .exp-overlay {
@@ -111,52 +148,16 @@
   .exp-overlay p {
     font-size: 0.9rem;
   }
-}
 
-/* Toggle Buttons */
-.exp-toggle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.toggle-btn {
-  background: #e3e8de;
-  color: #4b6043;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.toggle-btn:hover {
-  background: #d4e2cf;
-}
-
-.toggle-btn.active {
-  background: #4b6043;
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
   .exp-toggle {
     flex-wrap: wrap;
-    gap: 10px;
+    width: 100%;
+    justify-content: center;
   }
 
   .toggle-btn {
-    width: 140px;
-    padding: 10px 20px;
+    flex: 1 1 45%;
+    padding: 12px 0;
     font-size: 0.9rem;
   }
 }
-

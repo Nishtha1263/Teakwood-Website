@@ -33,7 +33,7 @@ const Footer = () => {
               teakwoodcamping@gmail.com
             </a>
           </p>
-          <p>Pune, Maharashtra, India</p>
+          <p>S. No. 38, Malegaon-Salawade Road, Bhor, Pune, Maharashtra 412213</p>
         </div>
 
         {/* Quick Links */}

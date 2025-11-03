@@ -45,7 +45,7 @@ const EventsPage = () => {
   const EventCard = ({ event }) => (
     <div style={styles.card}>
       {event.Image && (
-        <img src={event.Image} alt={event.Title} style={styles.image} />
+        <img src={event.ImagePage} alt={event.Title} style={styles.image} />
       )}
       <div style={styles.info}>
         <h3 style={styles.eventTitle}>{event.Title}</h3>
@@ -127,8 +127,9 @@ const styles = {
   },
   image: {
     width: "100%",
-    height: "220px",
+    height: "400px",
     objectFit: "cover",
+    objectPosition: "center bottom", // 👈 keeps bottom part visible
   },
   info: {
     padding: "20px",

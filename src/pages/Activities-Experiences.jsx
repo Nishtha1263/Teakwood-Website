@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Activities-Experiences.css";
+
+// Import all images
 import balancebeam from "../assets/balancebeam.JPG";
 import burma from "../assets/burma.jpg";
 import karaoke from "../assets/karaoke.jpg";
@@ -30,28 +33,24 @@ import bonfire from "../assets/bonfire.jpg";
 import bbq from "../assets/bbq.jpg";
 import trek from "../assets/trek.jpeg";
 
+// Data arrays
 const activities = [
   { title: "Rifle Shooting", desc: "Test your aim with a fun and safe rifle shooting experience.", img: rifle },
   { title: "Burma Bridge", desc: "Challenge your balance and coordination on the thrilling Burma Bridge.", img: burma },
   { title: "Balance Beam", desc: "A fun balance challenge perfect for both kids and adults.", img: balancebeam },
   { title: "Zipline", desc: "Soar through the air on our exciting zipline adventure.", img: zipline },
-
-  
-  { title: "Outdoor Games", desc: "Enjoy open-air games like volleyball, cricket, and football.", img: outdoor },  
+  { title: "Outdoor Games", desc: "Enjoy open-air games like volleyball, cricket, and football.", img: outdoor },
   { title: "Obstacle Course", desc: "Take on a mix of physical challenges designed for fun and teamwork.", img: obstacle },
   { title: "Karaoke", desc: "Sing your heart out with karaoke nights full of fun and laughter.", img: karaoke },
   { title: "Trek", desc: "Explore scenic trails and hills around Teakwood for a refreshing adventure.", img: trek },
-
   { title: "Dance and Music", desc: "Enjoy lively music and dance sessions under the stars.", img: dance },
-  { title: "Bonfire", desc: "Gather around the warm bonfire for stories, laughter, and good company.", img: bonfire},
+  { title: "Bonfire", desc: "Gather around the warm bonfire for stories, laughter, and good company.", img: bonfire },
   { title: "Farm Walk", desc: "Stroll through the green farmland and experience rural tranquility.", img: farm },
   { title: "BBQ", desc: "End your day with delicious barbecue under the open sky.", img: bbq },
-  
   { title: "Table Tennis", desc: "Challenge friends to a fast-paced indoor table tennis match.", img: tabletennis },
   { title: "8 Ball Pool", desc: "Relax and play a few friendly rounds of pool.", img: pool },
   { title: "Carrom", desc: "Enjoy this classic indoor board game with friends and family.", img: carrom },
   { title: "Chess", desc: "Exercise your mind with a quiet and strategic game of chess.", img: chess },
-
   { title: "Board Games", desc: "Spend time indoors playing your favorite board games.", img: boardgames },
 ];
 
@@ -73,62 +72,71 @@ const attractions = [
 const ActivitiesExperiences = () => {
   const [view, setView] = useState("activities");
   const [flash, setFlash] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setFlash((prev) => !prev);
-    }, 700); // flashing every 0.7s
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => setFlash((prev) => !prev), 700);
     return () => clearInterval(interval);
   }, []);
 
-  const data = view === "activities" ? activities : attractions;
-
   const flashStyle = flash
-    ? {
-        boxShadow: "0 0 15px 5px rgba(23, 150, 23, 0.7)", // green glow
-        transform: "scale(1.05)",
-        transition: "all 0.3s ease",
-      }
-    : {
-        boxShadow: "none",
-        transform: "scale(1)",
-        transition: "all 0.3s ease",
-      };
+    ? { boxShadow: "0 0 15px 5px rgba(23,150,23,0.7)", scale: 1.05 }
+    : { boxShadow: "none", scale: 1 };
+
+  const data = view === "activities" ? activities : attractions;
 
   return (
     <section className="attractions-section">
+      <h2 className="exp-title">Activities & Nearby Attractions</h2>
+
+      {/* Toggle Buttons */}
       <div className="exp-toggle">
-        <button
+        <motion.button
           className={`toggle-btn ${view === "activities" ? "active" : ""}`}
           onClick={() => setView("activities")}
-          style={view !== "activities" ? flashStyle : {}}
+          animate={view !== "activities" ? flashStyle : {}}
+          transition={{ duration: 0.5 }}
         >
           Activities
-        </button>
-        <button
+        </motion.button>
+        <motion.button
           className={`toggle-btn ${view === "attractions" ? "active" : ""}`}
           onClick={() => setView("attractions")}
-          style={view !== "attractions" ? flashStyle : {}}
+          animate={view !== "attractions" ? flashStyle : {}}
+          transition={{ duration: 0.5 }}
         >
           Nearby Attractions
-        </button>
+        </motion.button>
       </div>
 
-      <h2 className="exp-title">
-        {view === "activities" ? "Activities at Teakwood" : "Nearby Attractions"}
-      </h2>
-
-      <div className="exp-grid">
-        {data.map((exp, index) => (
-          <div className="exp-card" key={index}>
-            <img src={exp.img} alt={exp.title} className="exp-img" />
-            <div className="exp-overlay">
-              <h3>{exp.title}</h3>
-              <p>{exp.desc}</p>
+      {/* Cards Section */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={view}
+          className="exp-grid"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        >
+          {data.map((exp, index) => (
+            <div className="exp-card" key={index}>
+              <img src={exp.img} alt={exp.title} className="exp-img" loading="lazy" />
+              <div className="exp-overlay">
+                <h3>{exp.title}</h3>
+                <p>{exp.desc}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
     </section>
   );
 };
