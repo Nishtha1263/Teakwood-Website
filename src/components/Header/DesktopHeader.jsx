@@ -25,7 +25,7 @@ export default function DesktopHeader() {
           <a href="/brochure.pdf" download className="desktop-book-btn-brochure">
             Download Brochure
           </a>
-          <Link to="/book" className="desktop-book-btn">
+          <Link to="/contact" className="desktop-book-btn">
             Book Now
           </Link>
         </div>
