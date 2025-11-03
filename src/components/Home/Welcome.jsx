@@ -13,15 +13,11 @@ const Welcome = () => {
     <section className="welcome-section">
       <div className="welcome-content" data-aos="fade-up">
         <h2>Welcome to Teakwood Forest Resort & Camp</h2>
-        <p>
-          Born from a dream in 2012, Teakwood Forest Resort & Camp was created to offer an authentic experience of living in harmony with nature. Nestled in a lush green forest near Pune, Teakwood grew organically over the years into a boutique nature retreat — preserving the flora and fauna while offering the comfort of minimal, eco-friendly living.
-        </p>
-        <p>
-          From yoga retreats and kids’ camps to family getaways and corporate outings, Teakwood has become a favorite destination for those seeking peace, joy, and digital detox. Our home-style food, organic farming, and forest-inspired activities make every visit a refreshing experience.
-        </p>
-        <p>
-          At Teakwood, life slows down — stories are shared around bonfires, laughter fills the air, and nature reminds us what abundance truly feels like.
-        </p>
+<p><strong>Where nature slows time — and life feels whole again.</strong></p>
+<p>Born from a dream in 2012, Teakwood Forest Resort & Camp was created to offer an authentic experience of living in harmony with nature. Nestled in a lush green forest near Pune, Teakwood has grown organically into a boutique nature retreat — preserving the rich flora and fauna while offering the comfort of simple, eco-friendly living.</p>
+<p>Whether you’re here for a <strong>yoga retreat, a kids’ adventure camp, a family getaway, or a corporate offsite,</strong> Teakwood invites you to unwind, reconnect, and rediscover the joy of being present.</p>
+<p>Enjoy <strong>home-style food, organic farm experiences, and forest-inspired activities</strong> that refresh your body and soul. As the day fades, gather around a bonfire, share stories under a starlit sky, and let nature remind you of what abundance truly feels like.</p>
+<p><strong>At Teakwood, life moves gently — just as it should.</strong></p>
         <Link to="/activities"><button className="btn">Explore More</button></Link>
       </div>
     </section>

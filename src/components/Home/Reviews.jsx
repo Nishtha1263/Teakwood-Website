@@ -3,7 +3,7 @@ import "./Reviews.css";
 import { FaStar } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 
 const reviews = [
   {
@@ -58,35 +58,37 @@ const reviews = [
   },
 ];
 
-
 const Reviews = () => {
-  const controls = useAnimation();
   const x = useMotionValue(0);
   const contentWidth = useRef(0);
   const containerWidth = useRef(0);
-
   const duplicatedReviews = [...reviews, ...reviews];
+  const paused = useRef(false);
 
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 8000, once: true });
   }, []);
 
   useEffect(() => {
-    const animate = async () => {
-      const distance =
-        contentWidth.current - containerWidth.current / 2 || 1000;
-      await controls.start({
-        x: -distance,
-        transition: {
-          duration: 30,
-          ease: "linear",
-        },
-      });
-      x.set(0);
-      animate(); // loop
+    let startTime;
+    let frameId;
+
+    const loop = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+
+      if (!paused.current) {
+        const distance = contentWidth.current - containerWidth.current / 2;
+        const progress = ((timestamp - startTime) / 80000) * distance; // 10 s full loop
+        const newX = -(progress % distance);
+        x.set(newX);
+      }
+
+      frameId = requestAnimationFrame(loop);
     };
-    animate();
-  }, [controls, x]);
+
+    frameId = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(frameId);
+  }, [x]);
 
   return (
     <section className="reviews-section">
@@ -99,11 +101,12 @@ const Reviews = () => {
         ref={(el) => {
           if (el) containerWidth.current = el.offsetWidth;
         }}
+        onMouseEnter={() => (paused.current = true)}   // ⏸ pause
+        onMouseLeave={() => (paused.current = false)}  // ▶ resume
       >
         <motion.div
           className="reviews-inner"
           style={{ display: "flex", gap: "30px", x }}
-          animate={controls}
           ref={(el) => {
             if (el) contentWidth.current = el.scrollWidth;
           }}

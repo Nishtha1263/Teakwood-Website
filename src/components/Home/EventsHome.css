@@ -144,7 +144,15 @@
   }
 
   .events-heading {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 40px;
+  }
+
+  .events-home-info h3{
+    font-size: 1.4rem;
+  }
+
+  .event-detail, .events-home-info p{
+    font-size: 0.8rem;
   }
 }
