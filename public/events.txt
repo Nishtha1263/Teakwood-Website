@@ -5,7 +5,7 @@ Time: 4:00 PM - 10:00 AM
 Price: Rs 3000/- per person
 Image: /newyears.png
 ImagePage: /2.png
-Description: Bring in the New Year surrounded by nature, good vibes, and great company! Join us for an unforgettable celebration in a rustic hideaway, nestled amid lush greenery and serene forest trails. Welcome Drink | Forest Trails | Waterfall | Bonfire | Barbecue | Music & Dance | Dinner | Karaoke | Stay | Breakfast
+Description: Bring in the New Year surrounded by nature, good vibes, and great company! &nbsp; Join us for an unforgettable celebration in a rustic hideaway, nestled amid lush greenery and serene forest trails. Welcome Drink | Forest Trails | Waterfall | Bonfire | Barbecue | Music & Dance | Dinner | Karaoke | Stay | Breakfast
 ---
 
 Title: Holi Bash 2025
@@ -26,4 +26,4 @@ Time: 8:00 AM - 6:00 PM
 Price: -
 Image: /summercamp.jpeg
 ImagePage: /summercamp.jpeg
-Description: A day full of adventure for kids and families. Activities include trekking, games, nature walks, and team challenges.
+Description: Two days full of adventure for kids. Activities include trekking, games, nature walks, and team challenges.
