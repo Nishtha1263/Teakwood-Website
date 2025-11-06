@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "./ContactInfo.css";
 import bg from "../assets/hero1.png"; // your background image
+import SEO from "./SEO";
 
 const ContactInfo = () => {
   return (
@@ -9,6 +10,13 @@ const ContactInfo = () => {
       className="contact-section"
       style={{ backgroundImage: `url(${bg})` }}
     >
+      <SEO
+        title="Contact Teakwood Forest Resort – Get in Touch for Bookings & Queries"
+        description="Contact Teakwood Forest Resort and Camp for stay bookings, event inquiries, or group reservations. Reach us easily from Pune – just 1.5 hours away near Bhor."
+        keywords="Contact Teakwood Resort, Resort near Bhor Pune, Book resort Pune, Resort contact number Pune, Teakwood camping contact, Resort enquiry Pune, Directions to Teakwood Resort"
+        url="https://teakwoodcamping.com/contact"
+      />
+
       <div className="contact-overlay"></div>
 
       <div className="contact-container">

@@ -1,52 +1,48 @@
-import { useState } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Packages.css";
 import dayImg from "../assets/daypackage.png";
 import nightImg from "../assets/nightpackage.png";
+import SEO from "./SEO";
 
 export default function Packages() {
+  // ✅ Only two unique packages
   const packages = [
     {
       id: 1,
       title: "Day Outing",
-      // subtitle: "Day Outing Package (8:00 AM – 5:00 PM)",
       img: dayImg,
-      // price: "Adults ₹1200 | Children (5–10 yrs) ₹800",
-      // details:
-      //   "Forest Trek, Burma Bridge, Zipline, Indoor & Outdoor Games, Karaoke, Waterfall",
-      // meals: "Breakfast Buffet, Lunch, High Tea",
-      // direction: "left",
     },
     {
       id: 2,
       title: "Overnight Stay",
-      // subtitle: "Overnight Package (11:00 AM – 10:00 AM)",
       img: nightImg,
-      // price: "Adults ₹1900 | Children (5–10 yrs) ₹1300",
-      // details:
-      //   "Forest Trek, Burma Bridge, Zipline, Indoor & Outdoor Games, Karaoke, Bonfire/Campfire. Chargeable: Petroglyph Trek, Pool Table (18+), Air Gun Shooting",
-      // meals: "High Tea, Lunch, Dinner, Breakfast Buffet",
-      // direction: "right",
     },
   ];
 
   return (
     <section className="packages-section">
+      <SEO
+        title="Resort Packages – Adventure, Stay & Family Getaway Near Pune"
+        description="Explore Teakwood’s curated resort packages including adventure activities, family stays, weekend retreats, and corporate team outings – perfect for groups and couples near Pune."
+        keywords="Resort packages near Pune, Weekend packages Pune, Family resort packages Pune, Corporate outing Pune, Adventure packages Pune, Camping deals Pune, Staycation packages Pune, Nature retreat Pune, Group trip Pune"
+        url="https://teakwoodcamping.com/packages"
+      />
+
       <h1 className="packages-title">Our Packages</h1>
 
       <div className="packages-grid">
         {packages.map((pkg) => (
-          <div
-            key={pkg.id}
-            className={`package-card ${pkg.direction === "right" ? "slide-right" : "slide-left"}`}
-          >
-            <img src={pkg.img} alt={pkg.title} className="package-img" />
-            <div className="package-overlay">
-              <h2>{pkg.title}</h2>
-              {/* <p className="subtitle">{pkg.subtitle}</p>
-              <p className="price">{pkg.price}</p>
-              <p><strong>Included Activities:</strong> {pkg.details}</p>
-              <p><strong>Meals:</strong> {pkg.meals}</p> */}
+          <div key={pkg.id} className="package-card">
+            <img
+              src={pkg.img}
+              alt={pkg.title}
+              className="package-img"
+              draggable="false"
+            />
+            <div className="package-info">
+              <Link to="/contact" className="custom-btn">
+                Book Now
+              </Link>
             </div>
           </div>
         ))}
@@ -55,8 +51,9 @@ export default function Packages() {
       <div className="custom-packages">
         <h2>Customizable Packages</h2>
         <p>
-          We also offer tailor-made experiences for <strong>schools, corporates, and private groups</strong>. 
-          Contact us to design your own adventure!
+          We also offer tailor-made experiences for{" "}
+          <strong>schools, corporates, and private groups</strong>. Contact us
+          to design your own adventure!
         </p>
         <Link to="/contact" className="custom-btn">
           Customize Your Package

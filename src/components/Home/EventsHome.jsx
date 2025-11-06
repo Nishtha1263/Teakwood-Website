@@ -29,6 +29,12 @@ const EventsHome = () => {
       .catch((err) => console.error("Error loading event data:", err));
   }, []);
 
+  // Helper function to replace &nbsp; with <br />
+  const formatDescription = (desc) => {
+    if (!desc) return "";
+    return desc.replace(/&nbsp;/g, "<br />");
+  };
+
   if (!eventData) return null;
 
   return (
@@ -64,7 +70,14 @@ const EventsHome = () => {
           <p className="event-detail">
             <strong>Price:</strong> {eventData.price}
           </p>
-          <p>{eventData.description}</p>
+
+          {/* Render formatted description safely with line breaks */}
+          <p
+            dangerouslySetInnerHTML={{
+              __html: formatDescription(eventData.description),
+            }}
+          ></p>
+
           <Link to="/events" className="events-home-btn">
             View All Events
           </Link>

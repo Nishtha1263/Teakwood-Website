@@ -15,7 +15,7 @@ Time: 10:00 AM - 5:00 PM
 Price: -
 Image: /holi.jpg
 ImagePage: /holi.jpg
-Description: Celebrate Holi at Teakwood with colors, music, rain dance, and festive food. A joyful day of laughter and color for families and friends.
+Description: Celebrate Holi at Teakwood with colors, music, rain dance, and festive food. &nbsp; A joyful day of laughter and color for families and friends.
 
 ---
 

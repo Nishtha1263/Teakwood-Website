@@ -10,6 +10,7 @@ import commonImg from "../assets/common.png";
 import patioImg from "../assets/patio.png";
 import room from "../assets/cottagepage.png";
 import "./Stay.css";
+import SEO from "./SEO";
 
 const Stay = () => {
   useEffect(() => {
@@ -22,6 +23,13 @@ const Stay = () => {
 
   return (
     <section className="stay-wrapper">
+      <SEO
+        title="Stay at Teakwood Forest Resort – Private Cottages & Farm Stay Near Pune"
+        description="Relax in nature at Teakwood Forest Resort – enjoy cozy private cottages, luxury tents, bonfire nights, and scenic views. Perfect weekend stay near Pune for families, couples, and corporate groups."
+        keywords="Stay near Pune, Farm stay Pune, Private cottages near Pune, Luxury tents Pune, Family stay Pune, Nature resort Pune, Boutique stay Pune, Weekend getaway Pune, Romantic stay near Pune, Eco resort Pune"
+        url="https://teakwoodcamping.com/stay"
+      />
+
       {/* --- HERO --- */}
       <div className="stay-hero">
         <h1 data-aos="fade-up">Stay at Teakwood</h1>

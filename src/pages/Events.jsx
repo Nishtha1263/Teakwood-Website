@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "./SEO";
 
 const EventsPage = () => {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
@@ -29,7 +30,10 @@ const EventsPage = () => {
   }, []);
 
   const parseEvents = (text) => {
-    const blocks = text.split("---").map((block) => block.trim()).filter(Boolean);
+    const blocks = text
+      .split("---")
+      .map((block) => block.trim())
+      .filter(Boolean);
 
     return blocks.map((block) => {
       const lines = block.split("\n").filter(Boolean);
@@ -42,9 +46,15 @@ const EventsPage = () => {
     });
   };
 
+  const formatDescription = (desc) => {
+    if (!desc) return "";
+    // Replace &nbsp; with <br> to show line breaks in UI
+    return desc.replace(/&nbsp;/g, "<br />");
+  };
+
   const EventCard = ({ event }) => (
     <div style={styles.card}>
-      {event.Image && (
+      {event.ImagePage && (
         <img src={event.ImagePage} alt={event.Title} style={styles.image} />
       )}
       <div style={styles.info}>
@@ -52,7 +62,11 @@ const EventsPage = () => {
         <p><strong>Date:</strong> {event.Date}</p>
         <p><strong>Time:</strong> {event.Time}</p>
         <p><strong>Price:</strong> {event.Price}</p>
-        <p style={styles.desc}>{event.Description}</p>
+        {/* Description with line breaks */}
+        <p
+          style={styles.desc}
+          dangerouslySetInnerHTML={{ __html: formatDescription(event.Description) }}
+        ></p>
 
         {event.Category?.toLowerCase() === "upcoming" && (
           <Link to="/contact" style={styles.bookBtn}>
@@ -65,6 +79,13 @@ const EventsPage = () => {
 
   return (
     <div style={styles.page}>
+      <SEO
+        title="Events & Celebrations – Corporate, Family & Group Events Near Pune"
+        description="Host your event at Teakwood Forest Resort – ideal for corporate offsites, birthdays, family get-togethers, weddings, yoga retreats, and weekend celebrations surrounded by lush nature near Pune."
+        keywords="Corporate events near Pune, Family celebrations Pune, Wedding venue Pune, Resort events Pune, Group outings Pune, Yoga retreat Pune, Birthday party resort Pune, Corporate retreat Pune, Team building Pune"
+        url="https://teakwoodcamping.com/events"
+      />
+
       <section style={styles.section}>
         <h1 style={styles.heading}>Upcoming Events</h1>
         {upcomingEvents.length > 0 ? (
@@ -129,7 +150,7 @@ const styles = {
     width: "100%",
     height: "400px",
     objectFit: "cover",
-    objectPosition: "center bottom", // 👈 keeps bottom part visible
+    objectPosition: "center bottom",
   },
   info: {
     padding: "20px",

@@ -1,187 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Raleway:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
 .packages-section {
-  background: #FAF7F2;
+  background: #faf7f2;
   padding: 100px 20px;
   text-align: center;
   overflow: hidden;
 }
 
 .packages-title {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 2.8rem;
   color: #4b6043;
   margin-bottom: 10px;
 }
 
-/* --- GRID LAYOUT --- */
+/* --- GRID --- */
 .packages-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* --- CARD STYLING --- */
+/* --- CARD --- */
 .package-card {
   position: relative;
-  flex: 1;
-  min-width: 350px;
+  width: 100%;
   max-width: 500px;
-  height: 730px;
   border-radius: 20px;
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  z-index: 1;
+  background: #e8f4ec;
+  transition: all 0.4s ease;
 }
 
 .package-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease, filter 0.6s ease;
-}
-/* 
-.package-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.255);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 30px;
-  text-align: left;
-  transition: background 0.6s ease, transform 0.6s ease, color 0.6s ease;
+  height: 700px;
+  object-fit: contain;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.package-overlay h2,
-.package-overlay p,
-.package-overlay strong {
-  color: white;
-  transition: color 0.4s ease;
+/* --- INFO CONTAINER BELOW IMAGE --- */
+.package-info {
+  background: #e8f4ec;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 20px;
+  margin-top: -5px; /* no gap between image and container */
 }
 
-.package-overlay h2 {
-  font-family: 'Charm', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 300;
-  margin-bottom: 8px;
+.package-info h2 {
+  font-family: "Inter", sans-serif;
+  color: #4b6043;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
-.subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 10px;
-}
-
-.price {
-  font-family: 'Poppins', sans-serif;
-  background: #4b6043;
+/* --- BUTTON --- */
+.custom-btn {
+  font-family: "Inter", sans-serif;
   display: inline-block;
-  padding: 6px 12px;
-  border-radius: 6px;
-  margin-bottom: 10px;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  background-color: #4b6043;
+  color: #fff;
+  padding: 12px 0;
+  border-radius: 10px;
+  text-decoration: none;
   font-weight: 600;
-  color: white;
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: background 0.3s ease;
 }
 
-.package-overlay p {
-  font-family: 'Poppins', sans-serif;
-  opacity: 0.95;
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .packages-grid:hover .package-card {
-    filter: brightness(0.7);
-    transform: scale(0.98);
-  }
-
-  .package-card:hover {
-    filter: brightness(1);
-    transform: scale(1);
-    z-index: 10;
-  }
-
-  .package-card.left:hover {
-    transform: translateX(20%) scale(1.05);
-  }
-
-  .package-card.right:hover {
-    transform: translateX(-20%) scale(1.05);
-  }
-
-  .package-card:hover .package-img {
-    filter: brightness(0.35);
-    transform: scale(1.08);
-  }
-
-  .package-card:hover .package-overlay {
-    background: rgba(0, 0, 0, 0.65);
-    justify-content: center;
-    text-align: center;
-    padding: 60px;
-  }
-
-  .package-card:hover .package-overlay h2,
-  .package-card:hover .package-overlay p,
-  .package-card:hover .package-overlay strong,
-  .package-card:hover .package-overlay .price {
-    color: white;
-  }
-
-  .package-card:hover .price {
-    background: rgba(255, 255, 255, 0.2);
-  }
-
-  .package-card:hover .package-overlay h2 {
-    font-size: 2.4rem;
-  }
-
-  .package-card:hover .package-overlay p {
-    font-size: 1.05rem;
-    line-height: 1.5;
-  }
-} */
-
-/* --- MOBILE --- */
-@media (max-width: 768px) {
-  .packages-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .package-card {
-    width: 90%;
-    height: auto;
-    transform: none !important;
-  }
-
-  .package-overlay {
-    /* position: relative;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 25px; */
-    display: none;
-  }
-
-  .package-overlay h2 {
-    display: none;
-  }
-
-  .package-overlay p {
-    font-size: 1rem;
-  }
+.custom-btn:hover {
+  background-color: #7b8d64;
 }
 
 /* --- CUSTOM PACKAGES --- */
@@ -197,36 +92,33 @@
 }
 
 .custom-packages h2 {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #4b6043;
   font-size: 2rem;
   margin-bottom: 15px;
 }
 
 .custom-packages p {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #4b6043;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 30px;
 }
 
-/* --- CUSTOM BUTTON --- */
-.custom-btn {
-  font-family: 'Inter', sans-serif;
-  display: inline-block;
-  width: 100%;
-  max-width: 280px;
-  text-align: center;
-  background-color: #4b6043;
-  color: #fff;
-  padding: 14px 0;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
-.custom-btn:hover {
-  background-color: #7b8d64;
+  .package-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .package-img {
+    height: 350px;
+  }
 }

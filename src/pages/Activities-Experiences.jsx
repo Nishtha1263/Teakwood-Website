@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Activities-Experiences.css";
+import SEO from "./SEO.jsx";
 
 // Import all images
 import balancebeam from "../assets/balancebeam.JPG";
@@ -94,6 +95,13 @@ const ActivitiesExperiences = () => {
 
   return (
     <section className="attractions-section">
+      <SEO
+        title="Activities & Nearby Experiences – Adventure, Nature & Sightseeing Near Pune | Teakwood Forest Resort"
+        description="From ziplining, trekking, bonfires, karaoke, and farm walks to nearby attractions like Bhatghar Dam, Baneshwar Temple, and Sinhagad Fort — Teakwood Forest Resort near Pune offers the perfect blend of adventure, relaxation, and nature experiences."
+        keywords="Activities near Pune, Adventure resort Pune, Zipline near Pune, Trekking near Pune, Bonfire resort Pune, Karaoke night Pune, Nature resort Pune, Farm stay Pune, Things to do near Pune, Bhatghar Dam, Baneshwar Temple, Sinhagad Fort, Rajgad Fort, Torna Fort, Weekend getaway Pune, Family resort Pune, Nature experiences Pune, Farm walks Pune, Outdoor games Pune, Picnic spots near Pune"
+        url="https://teakwoodcamping.com/activities"
+      />
+
       <h2 className="exp-title">Activities & Nearby Attractions</h2>
 
       {/* Toggle Buttons */}
