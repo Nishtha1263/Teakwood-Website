@@ -6,7 +6,6 @@ import corporate from "../assets/corporate.webp";
 import SEO from "./SEO";
 
 export default function Packages() {
-  // ✅ Only two unique packages
   const packages = [
     {
       id: 1,

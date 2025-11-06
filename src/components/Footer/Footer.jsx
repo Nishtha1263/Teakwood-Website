@@ -18,7 +18,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Contact Info */}
         <div className="footer-section contact">
           <h4>Contact Us</h4>
           <p>
@@ -36,7 +35,6 @@ const Footer = () => {
           <p>S. No. 38, Malegaon-Salawade Road, Bhor, Pune, Maharashtra 412213</p>
         </div>
 
-        {/* Quick Links */}
         <div className="footer-section links">
           <h4>Quick Links</h4>
           <ul>

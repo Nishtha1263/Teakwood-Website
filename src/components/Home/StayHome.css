@@ -1,5 +1,3 @@
-
-
 .stay-home-section {
   background-color: #FAF7F2;
   text-align: center;
@@ -106,7 +104,6 @@
   flex: 1.2;
 }
 
-/*Responsive */
 @media (max-width: 768px) {
   .stay-home-container {
     flex-direction: column;

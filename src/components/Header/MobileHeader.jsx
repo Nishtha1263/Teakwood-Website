@@ -1,4 +1,3 @@
-// src/components/Header/MobileHeader.jsx
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets/logo.webp";

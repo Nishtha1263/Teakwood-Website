@@ -78,7 +78,7 @@ const Reviews = () => {
 
       if (!paused.current) {
         const distance = contentWidth.current - containerWidth.current / 2;
-        const progress = ((timestamp - startTime) / 80000) * distance; // 10 s full loop
+        const progress = ((timestamp - startTime) / 80000) * distance;
         const newX = -(progress % distance);
         x.set(newX);
       }
@@ -101,8 +101,8 @@ const Reviews = () => {
         ref={(el) => {
           if (el) containerWidth.current = el.offsetWidth;
         }}
-        onMouseEnter={() => (paused.current = true)}   // ⏸ pause
-        onMouseLeave={() => (paused.current = false)}  // ▶ resume
+        onMouseEnter={() => (paused.current = true)}   
+        onMouseLeave={() => (paused.current = false)}  
       >
         <motion.div
           className="reviews-inner"

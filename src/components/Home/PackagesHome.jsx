@@ -16,7 +16,6 @@ const Packages = () => {
 
       <h2 className="packages-home-title">Our Packages</h2>
 
-      {/* Day Outing */}
       <div className="packages-home-block" data-aos="fade-up">
         <div className="packages-home-image">
           <img src={dayImg} alt="Day Outing" />
@@ -32,7 +31,6 @@ const Packages = () => {
         </div>
       </div>
 
-      {/* Overnight Stay */}
       <div className="packages-home-block reverse" data-aos="fade-up">
         <div className="packages-home-image">
           <img src={nightImg} alt="Overnight Stay" />

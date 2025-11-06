@@ -30,7 +30,6 @@ const Stay = () => {
         url="https://teakwoodcamping.com/stay"
       />
 
-      {/* --- HERO --- */}
       <div className="stay-hero">
         <h1 data-aos="fade-up">Stay at Teakwood</h1>
         <p data-aos="fade-up" data-aos-delay="200">
@@ -40,7 +39,6 @@ const Stay = () => {
         </p>
       </div>
 
-      {/* --- COTTAGE SECTION --- */}
       <div className="stay-section" data-aos="fade-right">
         <div className="stay-image">
           <img src={cottageMain} alt="Teakwood Cottage" />
@@ -63,7 +61,6 @@ const Stay = () => {
         </div>
       </div>
 
-      {/* --- TENT SECTION --- */}
       <div className="stay-section reverse" data-aos="fade-left">
         <div className="stay-image">
           <img src={tentMain} alt="Forest Tents" />
@@ -85,7 +82,6 @@ const Stay = () => {
         </div>
       </div>
 
-      {/* --- commons --- */}
       <div className="stay-commons" data-aos="fade-up">
         <h2>Common Ammenities</h2>
         <p>

@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "./ContactInfo.css";
-import bg from "../assets/hero1.webp"; // your background image
+import bg from "../assets/hero1.webp"; 
 import SEO from "./SEO";
 
 const ContactInfo = () => {
@@ -20,7 +20,6 @@ const ContactInfo = () => {
       <div className="contact-overlay"></div>
 
       <div className="contact-container">
-        {/* LEFT SIDE TEXT */}
         <div className="contact-text">
           <h2>Contact Us</h2>
           <p>
@@ -54,8 +53,6 @@ const ContactInfo = () => {
             Terms & Conditions
           </Link>
         </div>
-
-        {/* RIGHT SIDE FORM */}
         <div className="contact-form">
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSdrWrzuKbHzpGBTaeV7awXGBlRDoLfZr3cs9X8uBBlZOBdblQ/viewform?embedded=true"

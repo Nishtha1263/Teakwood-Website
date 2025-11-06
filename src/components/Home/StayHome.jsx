@@ -10,7 +10,6 @@ const Stay = () => {
       <h2 className="stay-home-title">Stay With Us</h2>
 
       <div className="stay-home-container">
-        {/* Tent Stay */}
         <div className="stay-home-option tent">
           <img src={tentImg} alt="Tent Stay" className="stay-home-image" />
           <div className="stay-home-overlay">
@@ -25,7 +24,6 @@ const Stay = () => {
           </div>
         </div>
 
-        {/* Cottage stay-home */}
         <div className="stay-home-option cottage">
           <img src={cottageImg} alt="Cottage Stay" className="stay-home-image" />
           <div className="stay-home-overlay">

@@ -12,7 +12,6 @@
   margin-bottom: 10px;
 }
 
-/* --- GRID --- */
 .packages-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -23,7 +22,6 @@
   margin: 0 auto;
 }
 
-/* --- CARD --- */
 .package-card {
   position: relative;
   width: 100%;
@@ -43,13 +41,12 @@
   border-top-right-radius: 20px;
 }
 
-/* --- INFO CONTAINER BELOW IMAGE --- */
 .package-info {
   background: #e8f4ec;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   padding: 20px;
-  margin-top: -5px; /* no gap between image and container */
+  margin-top: -5px; 
 }
 
 .package-info h2 {
@@ -59,7 +56,6 @@
   margin-bottom: 15px;
 }
 
-/* --- BUTTON --- */
 .custom-btn {
   font-family: "Inter", sans-serif;
   display: inline-block;
@@ -79,7 +75,6 @@
   background-color: #7b8d64;
 }
 
-/* --- CUSTOM PACKAGES --- */
 .custom-packages {
   margin-top: 100px;
   background: #e8f4ec;
@@ -106,7 +101,6 @@
   margin-bottom: 30px;
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .packages-grid {
     grid-template-columns: 1fr;

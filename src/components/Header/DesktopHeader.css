@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Raleway:wght@400;500;600&display=swap');
-
 :root {
   --color-white: #ffffff;
   --color-text-dark: #2e2b23;     
@@ -92,16 +90,16 @@
 
 .desktop-book-btn {
   display: inline-block;
-  background: linear-gradient(to bottom, #ff1a1a, #b30000); /* bright to dark red */
+  background: linear-gradient(to bottom, #ff1a1a, #b30000); 
   color: #fff;
   padding: 10px 24px;
-  border-radius: 25px; /* more rounded, like the image */
+  border-radius: 25px; 
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid #800000; /* dark maroon border */
+  border: 2px solid #800000; 
   letter-spacing: 0.5px;
-  box-shadow: 0 3px 6px rgba(128, 0, 0, 0.4); /* subtle depth */
+  box-shadow: 0 3px 6px rgba(128, 0, 0, 0.4); 
 }
 
 .desktop-book-btn:hover {

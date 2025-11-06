@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Activities-Experiences.css";
 import SEO from "./SEO.jsx";
 
-// Import all images
 import balancebeam from "../assets/balancebeam.webp";
 import burma from "../assets/burma.webp";
 import karaoke from "../assets/karaoke.webp";
@@ -34,7 +33,6 @@ import bonfire from "../assets/bonfire.webp";
 import bbq from "../assets/bbq.webp";
 import trek from "../assets/trek.webp";
 
-// Data arrays
 const activities = [
   { title: "Rifle Shooting", desc: "Test your aim with a fun and safe rifle shooting experience.", img: rifle },
   { title: "Burma Bridge", desc: "Challenge your balance and coordination on the thrilling Burma Bridge.", img: burma },
@@ -104,7 +102,6 @@ const ActivitiesExperiences = () => {
 
       <h2 className="exp-title">Activities & Nearby Attractions</h2>
 
-      {/* Toggle Buttons */}
       <div className="exp-toggle">
         <motion.button
           className={`toggle-btn ${view === "activities" ? "active" : ""}`}
@@ -124,7 +121,6 @@ const ActivitiesExperiences = () => {
         </motion.button>
       </div>
 
-      {/* Cards Section */}
       <AnimatePresence mode="wait">
         <motion.div
           key={view}

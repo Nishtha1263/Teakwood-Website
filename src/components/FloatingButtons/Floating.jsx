@@ -8,7 +8,6 @@ const FloatingButtons = () => {
   const brochureFile = "/Brochure.pdf"; 
   return (
     <div className="floating-buttons">
-      {/* WhatsApp */}
       <a
         href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
         className="floating-btn whatsapp"
@@ -18,8 +17,6 @@ const FloatingButtons = () => {
       >
         <FaWhatsapp size={40} /> 
       </a>
-
-      {/* Call */}
       <a
         href={`tel:+${whatsappNumber}`}
         className="floating-btn call"
@@ -27,8 +24,6 @@ const FloatingButtons = () => {
       >
         <FaPhoneAlt size={26} /> 
       </a>
-
-      {/* Instagram */}
       <a
         href="https://instagram.com/teakwoodforestresort/"
         target="_blank"
@@ -38,8 +33,6 @@ const FloatingButtons = () => {
       >
         <FaInstagram size={35} /> 
       </a>
-
-      {/* Facebook */}
       <a
         href="https://facebook.com/teakwoodforestresort/" 
         target="_blank"

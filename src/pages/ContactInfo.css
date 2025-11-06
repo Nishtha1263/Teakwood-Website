@@ -1,5 +1,3 @@
-
-
 .contact-section {
   position: relative;
   min-height: 100vh;
@@ -8,7 +6,7 @@
   justify-content: center;
   align-items: flex-start;
   overflow: hidden;
-  padding-top: 80px; /* ✅ top padding added */
+  padding-top: 80px; 
 }
 
 .contact-overlay {
@@ -51,7 +49,6 @@
   margin-bottom: 20px;
 }
 
-/* ✅ Phone & Email stacked */
 .contact-details {
   display: flex;
   flex-direction: column;
@@ -70,7 +67,6 @@
   color: #ffd700;
 }
 
-/* ✅ Rounded map container */
 .map-container {
   margin-top: 15px;
   border-radius: 12px;
@@ -78,7 +74,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* ✅ Styled Terms button */
 .terms-btn {
   display: inline-block;
   margin-top: 25px;
@@ -96,10 +91,9 @@
   transform: translateY(-2px);
 }
 
-/* FORM CONTAINER */
 .contact-form {
   flex: 1.2;
-  height: 90vh; /* ✅ increased height */
+  height: 90vh; 
   background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 10px;
@@ -117,7 +111,6 @@
   border-radius: 8px;
 }
 
-/* ===== Responsive layout ===== */
 @media (max-width: 768px) {
   .contact-section {
     padding-top: 60px;
@@ -139,7 +132,7 @@
   .contact-form {
     order: 2;
     width: 100%;
-    min-height: 100dvh; /* ✅ more height on mobile */
+    min-height: 100dvh; 
     display: flex;
     align-items: stretch;
     justify-content: center;

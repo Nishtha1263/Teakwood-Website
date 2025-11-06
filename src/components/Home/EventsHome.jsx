@@ -15,7 +15,7 @@ const EventsHome = () => {
     fetch("/events.txt")
       .then((res) => res.text())
       .then((text) => {
-        const entries = text.trim().split(/\n\s*\n/); // split multiple events if any
+        const entries = text.trim().split(/\n\s*\n/); 
         const firstEntry = entries[0].split("\n");
         const data = {};
 
@@ -29,7 +29,6 @@ const EventsHome = () => {
       .catch((err) => console.error("Error loading event data:", err));
   }, []);
 
-  // Helper function to replace &nbsp; with <br />
   const formatDescription = (desc) => {
     if (!desc) return "";
     return desc.replace(/&nbsp;/g, "<br />");
@@ -71,7 +70,6 @@ const EventsHome = () => {
             <strong>Price:</strong> {eventData.price}
           </p>
 
-          {/* Render formatted description safely with line breaks */}
           <p
             dangerouslySetInnerHTML={{
               __html: formatDescription(eventData.description),

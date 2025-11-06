@@ -14,13 +14,11 @@ export default function SEO({
 
   return (
     <Helmet>
-      {/* Basic meta */}
       <title>{fullTitle}</title>
       {description && <meta name="description" content={description} />}
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={url} />
 
-      {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
       <meta property="og:locale" content="en_IN" />
       <meta property="og:title" content={fullTitle} />
@@ -28,11 +26,9 @@ export default function SEO({
       <meta property="og:image" content={image} />
       <meta property="og:url" content={url} />
 
-      {/* Theme + favicon */}
       <meta name="theme-color" content="#0f3d2e" />
       <link rel="icon" href="/icon_text.webp" />
 
-      {/* JSON-LD Schema */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",

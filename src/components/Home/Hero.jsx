@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 import hero1 from "../../assets/hero.webp";
 import hero2 from "../../assets/balancebeam.webp";
@@ -11,36 +11,44 @@ const images = [
     title: "Teakwood Forest Resort & Camp",
     subtitle: "Weekend getaway surrounded by nature and rustic charm",
     button: "Book Now",
-    link: "/contact"
+    link: "/contact",
   },
   {
     src: hero2,
     title: "Adventure Awaits",
     subtitle: "Trek, zipline, and explore the outdoors like never before",
     button: "Explore Activities",
-    link: "/activities"
+    link: "/activities",
   },
   {
     src: hero3,
     title: "Relax & Reconnect",
     subtitle: "Experience peace and comfort in nature’s lap",
     button: "View Packages",
-    link: "/packages"
-  }
+    link: "/packages",
+  },
 ];
 
 const HomeCarousel = () => {
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
+    if (isPaused) return; 
+
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 5000);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [isPaused]);
 
   return (
-    <div className="carousel">
+    <div
+      className="carousel"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {images.map((img, index) => (
         <div
           key={index}

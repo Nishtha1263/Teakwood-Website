@@ -5,6 +5,15 @@ import SEO from "./SEO";
 const EventsPage = () => {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect screen size
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize(); // run once on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     fetch("/events.txt")
@@ -48,24 +57,36 @@ const EventsPage = () => {
 
   const formatDescription = (desc) => {
     if (!desc) return "";
-    // Replace &nbsp; with <br> to show line breaks in UI
     return desc.replace(/&nbsp;/g, "<br />");
   };
 
   const EventCard = ({ event }) => (
     <div style={styles.card}>
       {event.ImagePage && (
-        <img src={event.ImagePage} alt={event.Title} style={styles.image} />
+        <img
+          src={event.ImagePage}
+          alt={event.Title}
+          style={{
+            ...styles.image,
+            height:
+              event.Category?.toLowerCase() === "upcoming"
+                ? isMobile
+                  ? "160px"
+                  : "400px"
+                : "400px",
+          }}
+        />
       )}
       <div style={styles.info}>
         <h3 style={styles.eventTitle}>{event.Title}</h3>
         <p><strong>Date:</strong> {event.Date}</p>
         <p><strong>Time:</strong> {event.Time}</p>
         <p><strong>Price:</strong> {event.Price}</p>
-        {/* Description with line breaks */}
         <p
           style={styles.desc}
-          dangerouslySetInnerHTML={{ __html: formatDescription(event.Description) }}
+          dangerouslySetInnerHTML={{
+            __html: formatDescription(event.Description),
+          }}
         ></p>
 
         {event.Category?.toLowerCase() === "upcoming" && (
@@ -133,6 +154,7 @@ const styles = {
     marginBottom: "40px",
     textAlign: "center",
     textTransform: "uppercase",
+    color: "#4b6043",
   },
   grid: {
     display: "grid",
@@ -148,7 +170,6 @@ const styles = {
   },
   image: {
     width: "100%",
-    height: "400px",
     objectFit: "cover",
     objectPosition: "center bottom",
   },
@@ -182,6 +203,7 @@ const styles = {
     textAlign: "center",
     fontSize: "1.2rem",
     opacity: "0.7",
+    color: "#4b6043",
   },
 };
 

@@ -1,22 +1,18 @@
-/* === FONT IMPORTS === */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* === CSS RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* === GLOBAL STYLES === */
 html, body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
-  scrollbar-color: #4b6043 #f0f0f0; /* For Firefox */
+  scrollbar-color: #4b6043 #f0f0f0; 
   scrollbar-width: thick;
 }
 
-/* === SCROLLBAR (Webkit Browsers) === */
 ::-webkit-scrollbar {
   width: 20px;
 }
@@ -26,16 +22,15 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #2ecc71; /* green */
+  background-color: #2ecc71; 
   border-radius: 8px;
   border: 2px solid #f0f0f0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #4b6043; /* darker green on hover */
+  background-color: #4b6043; 
 }
 
-/* === LINKS === */
 a {
   text-decoration: none;
   transition: var(--transition);

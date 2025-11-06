@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Raleway:wght@400;500;600&display=swap');
-
 .mobile-header {
   position: fixed;
   width: 100%;
@@ -81,7 +79,7 @@
 }
 
 .mobile-book-btn {
-  background: linear-gradient(to bottom, #ff1a1a, #b30000) !important; /* gradient red */
+  background: linear-gradient(to bottom, #ff1a1a, #b30000) !important; 
   color: #ffffff !important;
   padding: 10px 24px;
   border-radius: 25px;
@@ -90,10 +88,10 @@
   font-family: "Raleway", sans-serif;
   display: inline-block;
   transition: all 0.3s ease;
-  border: 2px solid #800000; /* dark maroon border */
+  border: 2px solid #800000; 
   text-align: center;
   letter-spacing: 0.5px;
-  box-shadow: 0 3px 6px rgba(128, 0, 0, 0.4); /* subtle shadow */
+  box-shadow: 0 3px 6px rgba(128, 0, 0, 0.4); 
 }
 
 .mobile-book-btn:hover {
