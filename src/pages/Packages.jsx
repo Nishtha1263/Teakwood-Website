@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Packages.css";
-import dayImg from "../assets/daypackage.png";
-import nightImg from "../assets/nightpackage.png";
+import dayImg from "../assets/daypackage.webp";
+import nightImg from "../assets/nightpackage.webp";
+import corporate from "../assets/corporate.webp";
 import SEO from "./SEO";
 
 export default function Packages() {
@@ -16,6 +17,11 @@ export default function Packages() {
       id: 2,
       title: "Overnight Stay",
       img: nightImg,
+    },
+    {
+      id: 3,
+      title: "Corporate Outing",
+      img: corporate,
     },
   ];
 

@@ -5,7 +5,7 @@ export default function SEO({
   description,
   keywords,
   url,
-  image = "https://teakwoodcamping.com/hero1.jpeg",
+  image = "https://teakwoodcamping.com/hero1.webp",
   type = "website"
 }) {
   const fullTitle = title
@@ -30,7 +30,7 @@ export default function SEO({
 
       {/* Theme + favicon */}
       <meta name="theme-color" content="#0f3d2e" />
-      <link rel="icon" href="/icon_text.png" />
+      <link rel="icon" href="/icon_text.webp" />
 
       {/* JSON-LD Schema */}
       <script type="application/ld+json">

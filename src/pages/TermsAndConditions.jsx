@@ -1,6 +1,6 @@
 import React from "react";
 import "./Terms.css";
-import bg from "../assets/logo.png"; 
+import bg from "../assets/logo.webp"; 
 
 const Terms = () => {
   return (

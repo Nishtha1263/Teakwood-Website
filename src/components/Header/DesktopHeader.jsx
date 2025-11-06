@@ -1,6 +1,6 @@
 // src/components/Header/DesktopHeader.jsx
 import { NavLink, Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
 import "./DesktopHeader.css";
 
 export default function DesktopHeader() {

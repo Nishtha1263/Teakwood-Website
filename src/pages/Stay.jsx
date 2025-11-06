@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import cottageMain from "../assets/cottagepage.png";
-import tentMain from "../assets/tent.png";
-import bathroomImg from "../assets/bathroom.jpg";
-import diningImg from "../assets/dining.JPG";
-import commonImg from "../assets/common.png";
-import patioImg from "../assets/patio.png";
-import room from "../assets/cottagepage.png";
+import cottageMain from "../assets/cottagepage.webp";
+import tentMain from "../assets/tent.webp";
+import bathroomImg from "../assets/bathroom.webp";
+import diningImg from "../assets/dining.webp";
+import commonImg from "../assets/common.webp";
+import patioImg from "../assets/patio.webp";
+import room from "../assets/cottagepage.webp";
 import "./Stay.css";
 import SEO from "./SEO";
 

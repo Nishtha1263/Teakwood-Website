@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "./ContactInfo.css";
-import bg from "../assets/hero1.png"; // your background image
+import bg from "../assets/hero1.webp"; // your background image
 import SEO from "./SEO";
 
 const ContactInfo = () => {

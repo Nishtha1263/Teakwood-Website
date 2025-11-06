@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 
-import bgCollage from "../../assets/hero1.png";
+import bgCollage from "../../assets/hero1.webp";
 
 const EventsHome = () => {
   const [eventData, setEventData] = useState(null);
@@ -50,7 +50,7 @@ const EventsHome = () => {
 
       <div className="events-home-container" data-aos="fade-up">
         <div className="events-home-image" data-aos="fade-right">
-          <img src={eventData.image || "/images/default.jpg"} alt={eventData.title} />
+          <img src={eventData.image || "/images/default.webp"} alt={eventData.title} />
           <div className="events-home-date">
             <span className="day">{eventData.date?.split(" ")[1] || ""}</span>
             <span className="month">
