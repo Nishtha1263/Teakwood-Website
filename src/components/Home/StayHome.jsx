@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./StayHome.css";
-import tentImg from "../../assets/tent.webp";
-import cottageImg from "../../assets/cottage.webp";
+import tentImg from "/tent.webp";
+import cottageImg from "/cottage.webp";
 
 const Stay = () => {
   return (

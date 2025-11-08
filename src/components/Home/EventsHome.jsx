@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 
-import bgCollage from "../../assets/hero1.webp";
+import bgCollage from "/hero1.webp";
 
 const EventsHome = () => {
   const [eventData, setEventData] = useState(null);

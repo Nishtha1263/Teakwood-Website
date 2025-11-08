@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
-import hero1 from "../../assets/hero.webp";
-import hero2 from "../../assets/balancebeam.webp";
-import hero3 from "../../assets/bonfirehero.webp";
+import hero1 from "/hero.webp";
+import hero2 from "/balancebeam.webp";
+import hero3 from "/bonfirehero.webp";
 
 const images = [
   {

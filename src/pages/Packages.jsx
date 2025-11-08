@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Packages.css";
-import dayImg from "../assets/daypackage.webp";
-import nightImg from "../assets/nightpackage.webp";
-import corporate from "../assets/corporate.webp";
+import dayImg from "/daypackage.webp";
+import nightImg from "/nightpackage.webp";
+import corporate from "/corporate.webp";
 import SEO from "./SEO";
 
 export default function Packages() {

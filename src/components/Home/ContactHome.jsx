@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactHome.css";
-import trekBg from "../../assets/hero1.webp";
+import trekBg from "/hero1.webp";
 
 const Contact = () => {
   return (
