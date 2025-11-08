@@ -10,6 +10,7 @@ import Events from "./pages/Events";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ScrollToTop from "./components/ScrollToTop";
 import ActivitiesExperiences from "./pages/Activities-Experiences";
+import FAQ from "./pages/FAQ";
 import "./App.css";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/events" element={<Events />} />
           <Route path="/activities" element={<ActivitiesExperiences />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </main>
       <Footer />

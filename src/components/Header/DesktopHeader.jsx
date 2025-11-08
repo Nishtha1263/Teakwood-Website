@@ -18,6 +18,7 @@ export default function DesktopHeader() {
           <NavLink to="/stay" className="nav-item">Stay</NavLink>
           <NavLink to="/activities" className="nav-item">Activities</NavLink>
           <NavLink to="/events" className="nav-item">Events</NavLink>
+          <NavLink to="/faq" className="nav-item">FAQs</NavLink>
           <NavLink to="/contact" className="nav-item">Contact Us</NavLink>
         </nav>
         <div className="header-buttons">

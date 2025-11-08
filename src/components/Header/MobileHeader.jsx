@@ -31,6 +31,7 @@ export default function MobileHeader() {
           <NavLink to="/stay" onClick={() => setMenuOpen(false)}>Stay</NavLink>
           <NavLink to="/activities" onClick={() => setMenuOpen(false)}>Activities</NavLink>
           <NavLink to="/events" onClick={() => setMenuOpen(false)}>Events</NavLink>
+          <NavLink to="/faq" onClick={() => setMenuOpen(false)}>FAQs</NavLink>
           <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</NavLink>
           <a href="/Brochure.pdf" download className="mobile-book-btn-brochure">
             Download Brochure
