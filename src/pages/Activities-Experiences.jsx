@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Activities-Experiences.css";
 import SEO from "./SEO.jsx";
 
+// ✅ Local image imports
 import balancebeam from "../assets/balancebeam.webp";
 import burma from "../assets/burma.webp";
 import karaoke from "../assets/karaoke.webp";
@@ -68,20 +69,45 @@ const attractions = [
   { title: "Petroglyphs", desc: "Ancient rock carvings that tell stories from prehistoric times — a fascinating stop for history enthusiasts.", img: petroglyphs },
 ];
 
+const LazyImage = ({ src, alt, className }) => {
+  const [visible, setVisible] = useState(false);
+  const imgRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: "100px" }
+    );
+
+    if (imgRef.current) observer.observe(imgRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <img
+      ref={imgRef}
+      src={visible ? src : ""}
+      data-src={src}
+      alt={alt}
+      className={`${className} ${visible ? "loaded" : "loading"}`}
+      loading="lazy"
+    />
+  );
+};
+
 const ActivitiesExperiences = () => {
   const [view, setView] = useState("activities");
   const [flash, setFlash] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => setFlash((prev) => !prev), 700);
+    const interval = setInterval(() => setFlash(prev => !prev), 700);
     return () => clearInterval(interval);
   }, []);
 
@@ -130,9 +156,9 @@ const ActivitiesExperiences = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          {data.map((exp, index) => (
-            <div className="exp-card" key={index}>
-              <img src={exp.img} alt={exp.title} className="exp-img" loading="lazy" />
+          {data.map((exp, i) => (
+            <div className="exp-card" key={i}>
+              <LazyImage src={exp.img} alt={exp.title} className="exp-img" />
               <div className="exp-overlay">
                 <h3>{exp.title}</h3>
                 <p>{exp.desc}</p>
