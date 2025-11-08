@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../../assets/logo.webp";
+import logo from "/logo.webp";
 import "./MobileHeader.css";
 
 export default function MobileHeader() {
