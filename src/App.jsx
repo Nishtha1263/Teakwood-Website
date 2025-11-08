@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
