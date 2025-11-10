@@ -5,13 +5,15 @@
   font-family: 'Poppins', sans-serif;
   padding: 50px 0 20px;
   overflow: hidden;
-  font-size: 0.85rem; 
+  font-size: 0.85rem;
+  -webkit-font-smoothing: antialiased; /* Smooth text on Safari */
+  -webkit-transform: translateZ(0); /* Force hardware acceleration on Safari */
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-evenly; 
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start; /* FIX: Safari sometimes misaligns center with flex-wrap */
   flex-wrap: wrap;
   gap: 80px;
   max-width: 1100px;
@@ -19,6 +21,7 @@
   padding: 0 30px;
   position: relative;
   z-index: 1;
+  -webkit-transform: translateZ(0); /* Prevents z-index collapse on Safari */
 }
 
 .footer-section {
@@ -26,9 +29,12 @@
   min-width: 220px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  position: relative;
+  z-index: 2;
+  -webkit-transform: translateZ(0);
 }
 
 .footer-section h4 {
@@ -39,7 +45,7 @@
   font-size: 1rem;
 }
 
-.footer-container strong{
+.footer-container strong {
   color: #fff;
   font-weight: 600;
   margin-bottom: 14px;
@@ -51,6 +57,7 @@
   line-height: 1.6;
   font-size: 0.85rem;
   margin-bottom: 10px;
+  word-break: break-word; /* Fix long email/phone wrapping on Safari */
 }
 
 .footer-section ul {
@@ -69,12 +76,14 @@
   color: #fff;
   font-weight: 400;
   font-size: 0.85rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  -webkit-tap-highlight-color: transparent; /* Fix iOS touch highlight */
 }
 
 .footer-link:hover,
 .footer-section a:hover {
   color: yellow;
+  opacity: 0.9;
 }
 
 .footer-bottom {
@@ -84,17 +93,29 @@
   font-size: 0.8rem;
   color: #fff;
   margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  -webkit-transform: translateZ(0);
 }
 
 .footer-section.contact p {
   margin-bottom: 12px;
   display: flex;
   align-items: center;
+  justify-content: center; /* Safari fix for flex alignment */
   gap: 6px;
+  flex-wrap: wrap; /* Prevents overflow clipping on iOS */
 }
 
 .footer-section.contact a {
   color: #fff;
+}
+
+/* Prevent font scaling issues on iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .footer {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 768px) {
