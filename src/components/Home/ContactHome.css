@@ -1,6 +1,6 @@
 .contact-home-section {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   background: url("/hero1.webp") center/cover no-repeat;
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@
 .contact-home-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.566);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 
@@ -19,34 +19,44 @@
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 60px;
   max-width: 1200px;
   width: 100%;
-  height: 85vh;
   color: white;
   padding: 0 40px;
 }
 
-.contact-home-text {
+/* LEFT COLUMN */
+.contact-home-left {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: left;
+  gap: 25px;
+}
+
+/* TEXT ABOVE THUMBNAIL */
+.contact-home-text {
+  text-align: left;
+  max-width: 420px;
 }
 
 .contact-home-text h2 {
   font-family: 'Inter', sans-serif;
-  font-size: 2.2rem;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 16px;
   color: #fff;
 }
 
 .contact-home-text p {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: #f0f0f0;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .contact-home-note {
@@ -54,9 +64,79 @@
   opacity: 0.85;
 }
 
+/* THUMBNAIL */
+.contact-home-thumbnail {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.contact-home-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.contact-home-thumbnail:hover img {
+  transform: scale(1.05);
+}
+
+/* Play icon */
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.contact-home-thumbnail:hover .play-icon {
+  opacity: 1;
+}
+
+/* Caption text for thumbnail */
+.thumbnail-caption {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 6px 0;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.contact-home-thumbnail:hover .thumbnail-caption {
+  background: rgba(255, 255, 0, 0.7);
+  color: #000;
+  font-weight: 600;
+}
+
+/* FORM */
 .contact-home-form {
   flex: 1.2;
-  height: 100%;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 10px;
@@ -64,52 +144,83 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .contact-home-form iframe {
   width: 100%;
-  height: 100%;
+  height: 85vh;
   border: none;
   border-radius: 8px;
 }
 
-@media (max-width: 768px) {
-  .contact-home-section {
-    height: auto;
-    min-height: 100dvh; 
-    padding: 40px 0;
-  }
-
+/* -------- RESPONSIVE -------- */
+@media (max-width: 1024px) {
   .contact-home-container {
     flex-direction: column;
     text-align: center;
-    height: auto;
-    gap: 20px;
-    padding: 0 20px;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .contact-home-left {
+    align-items: center;
+    text-align: center;
   }
 
   .contact-home-text {
-    display: none;
+    max-width: 100%;
+  }
+
+  .contact-home-form iframe {
+    height: 90vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-home-section {
+    background-attachment: scroll;
+    padding: 30px 0;
   }
 
   .contact-home-text h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+  }
+
+  .contact-home-thumbnail {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .thumbnail-caption {
+    font-size: 0.8rem;
   }
 
   .contact-home-form {
     width: 100%;
-    min-height: 100dvh; 
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
+    padding: 0;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.5);
   }
 
   .contact-home-form iframe {
     width: 100%;
-    height: 100%; 
-    min-height: 100dvh;
-    border: none;
+    min-height: 100vh; /* show full form without internal scroll */
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-home-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .contact-home-text p {
+    font-size: 0.95rem;
+  }
+
+  .play-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
   }
 }
