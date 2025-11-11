@@ -6,37 +6,52 @@ const ViewPropertySection = () => {
       <h2 className="section-title">View Property in Detail</h2>
 
       <div className="video-grid">
-        <a
-          href="https://www.instagram.com/p/DPi-cTXiFZ-/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="video-card"
-        >
-          <img
-            src="/teakwood-thumb.jpeg"
-            alt="Instagram Property Video"
-            className="video-thumbnail"
-          />
-          <div className="overlay">
-            <span className="play-icon">▶</span>
-          </div>
-        </a>
+        {/* Instagram Video */}
+        <div className="video-wrapper">
+          <a
+            href="https://www.instagram.com/p/DQ6qUK_iAZX/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="video-card"
+          >
+            <img
+              src="/teakwood-thumb.webp"
+              alt="Instagram Property Video"
+              className="video-thumbnail"
+            />
+            <div className="overlay">
+              <span className="play-icon">▶</span>
+            </div>
+          </a>
+          <p className="video-desc">
+            Watch a <strong>quick property walkthrough</strong> on Instagram —
+            get a glimpse of the Teakwood experience in under a minute.
+          </p>
+        </div>
 
-        <a
-          href="https://www.instagram.com/p/DPi-cTXiFZ-/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="video-card"
-        >
-          <img
-            src="/teakwood-thumb.jpeg"
-            alt="YouTube Property Video"
-            className="video-thumbnail"
-          />
-          <div className="overlay">
-            <span className="play-icon">▶</span>
-          </div>
-        </a>
+        {/* YouTube Video */}
+        <div className="video-wrapper">
+          <a
+            href="https://www.youtube.com/watch?v=dummy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="video-card"
+          >
+            <img
+              src="/teakwood-thumb.webp"
+              alt="YouTube Property Video"
+              className="video-thumbnail"
+            />
+            <div className="overlay">
+              <span className="play-icon">▶</span>
+            </div>
+          </a>
+          <p className="video-desc">
+            Dive into a <strong>detailed walkthrough</strong> of Teakwood on
+            YouTube — explore interiors, amenities, and the full property
+            layout.
+          </p>
+        </div>
       </div>
 
       <style>{`
@@ -58,9 +73,15 @@ const ViewPropertySection = () => {
         .video-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 20px;
+          gap: 40px;
           max-width: 1000px;
           margin: 0 auto;
+        }
+
+        .video-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .video-card {
@@ -69,6 +90,7 @@ const ViewPropertySection = () => {
           overflow: hidden;
           cursor: pointer;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
+          width: 100%;
         }
 
         .video-card:hover {
@@ -113,10 +135,23 @@ const ViewPropertySection = () => {
           background: rgba(255, 221, 0, 0.7);
         }
 
+        .video-desc {
+          font-family: 'Inter', sans-serif;
+          font-size: 1rem;
+          color: #555;
+          max-width: 90%;
+          margin-top: 15px;
+          line-height: 1.6;
+        }
+
         @media (min-width: 768px) {
           .video-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            gap: 40px;
+          }
+
+          .video-desc {
+            max-width: 80%;
           }
         }
       `}</style>
