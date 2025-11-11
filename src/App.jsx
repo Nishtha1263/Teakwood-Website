@@ -36,7 +36,7 @@ function App() {
       setProgress(newProgress);
 
       if (loadedCount === totalImages) {
-        setTimeout(() => setLoading(false), 500); // smooth fade delay
+        setTimeout(() => setLoading(false), 500); 
       }
     };
 

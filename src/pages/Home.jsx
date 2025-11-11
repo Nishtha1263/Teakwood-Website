@@ -7,6 +7,7 @@ import Packages from "../components/Home/PackagesHome";
 import Reviews from "../components/Home/Reviews";
 import Contact from "../components/Home/ContactHome";
 import Events from "../components/Home/EventsHome";
+import Property from "../components/Home/Property";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Amenities />
       <Stay />
       <Packages />
+      <Property />
       <Reviews />
       <Contact />
     </div>

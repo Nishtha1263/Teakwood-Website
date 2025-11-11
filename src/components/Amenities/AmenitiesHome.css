@@ -75,7 +75,7 @@
 }
 
 .amenity-card:hover h4 {
-  opacity: 0; /* Hide title on hover */
+  opacity: 0; 
 }
 
 .amenity-desc {

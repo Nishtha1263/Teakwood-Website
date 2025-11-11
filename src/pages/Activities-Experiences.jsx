@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./Activities-Experiences.css";
 import SEO from "./SEO.jsx";
 
-// ✅ Local image imports
 import balancebeam from "/balancebeam.webp";
 import burma from "/burma.webp";
 import karaoke from "/karaoke.webp";

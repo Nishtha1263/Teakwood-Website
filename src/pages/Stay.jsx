@@ -51,6 +51,7 @@ const Stay = () => {
             mountains and greenery — perfect for a peaceful retreat.
           </p>
           <ul>
+            <li>Total capacity: 40</li>
             <li>Private attached bathroom</li>
             <li>Patio with garden view</li>
             <li>Fan</li>
@@ -73,6 +74,7 @@ const Stay = () => {
             and that magical connection with nature.
           </p>
           <ul>
+            <li>Total capacity: 30</li>
             <li>Clean shared washrooms</li>
             <li>Comfortable bedding & lighting</li>
             <li>Evening bonfires & games</li>

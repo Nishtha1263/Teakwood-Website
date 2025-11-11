@@ -27,7 +27,7 @@ export default function SEO({
       <meta property="og:url" content={url} />
 
       <meta name="theme-color" content="#0f3d2e" />
-      <link rel="icon" href="/icon_text.webp" />
+      <link rel="icon" href="/favicon.ico" />
 
       <script type="application/ld+json">
         {JSON.stringify({

@@ -6,6 +6,10 @@ const FAQ = () => {
 
   const faqs = [
     { q: "How far is Teakwood Resort from Pune?", a: "20kms from Katraj on Satara Road." },
+    {
+      q: "What is the accommodation capacity for Tents and Cottages?",
+      a: "The tent accommodation can host up to 30 guests, while the cottages can accommodate up to 40 guests comfortably. Both options provide cozy bedding, clean washrooms, and access to all camp facilities for a comfortable stay.",
+    },
     { q: "Is it Wheel Chair accessible?", a: "Yes." },
     {
       q: "Do you cater to veg & non veg food, both?",

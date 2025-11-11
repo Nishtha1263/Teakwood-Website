@@ -1,7 +1,6 @@
 import React from "react";
 import "./ContactHome.css";
 import trekBg from "/hero1.webp";
-import thumbnail from "/teakwood-thumb.jpeg"; // Replace with your image
 
 const Contact = () => {
   return (
@@ -12,7 +11,6 @@ const Contact = () => {
       <div className="contact-home-overlay"></div>
 
       <div className="contact-home-container">
-        {/* LEFT: Text + Thumbnail */}
         <div className="contact-home-left">
           <div className="contact-home-text">
             <h2>Plan Your Stay at Teakwood</h2>
@@ -25,22 +23,8 @@ const Contact = () => {
               Fill out the form and we’ll get back to you soon.
             </p>
           </div>
-
-          {/* Thumbnail */}
-          <div className="contact-home-thumbnail">
-            <a
-              href="https://www.instagram.com/p/DPi-cTXiFZ-/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={thumbnail} alt="Teakwood Resort Property" />
-              <div className="play-icon">▶</div>
-              <div className="thumbnail-caption">View Full Property Video</div>
-            </a>
-          </div>
         </div>
 
-        {/* RIGHT: Form */}
         <div className="contact-home-form">
           <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSdrWrzuKbHzpGBTaeV7awXGBlRDoLfZr3cs9X8uBBlZOBdblQ/viewform?embedded=true"
