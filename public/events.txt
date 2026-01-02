@@ -1,5 +1,15 @@
+Title: Sunday Breakfast Ride
+Category: upcoming
+Date: January 4, 2026
+Time: 6:30 AM - 2:00 PM
+Price: Rs 350/- per person
+Image: /biking.webp
+ImagePage: /bikingpage.webp
+Description: Scenic ride from Pune to Teakwood Resort with a photo stop at Baneshwar Waterfall, breakfast at the resort, off-roading adventure on Malegao biking track, and a return ride.
+---
+
 Title: New Year’s Eve Bash
-Category: upcoming 
+Category: past
 Date: December 31, 2025
 Time: 4:00 PM - 10:00 AM
 Price: Rs 3000/- per person
