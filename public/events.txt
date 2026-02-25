@@ -1,5 +1,15 @@
-Title: Sunday Breakfast Ride
+Title: Holi Party
 Category: upcoming
+Date: March 4, 2026
+Time: 8:00 AM - 4:00 PM
+Price: Rs 1000/- per person
+Image: /holi26.webp
+ImagePage: /holi26p.webp
+Description: Enjoy an electrifying DJ, splash into an exciting rain dance, and play with unlimited colours in a lively outdoor setting. Indulge in delicious food & snacks, and bring your own beverages (BYOB) to keep the party going your way. All this for just Rs. 1000 per person — a perfect day of music, masti, colours, and unforgettable memories with friends and family!
+---
+
+Title: Sunday Breakfast Ride
+Category: past
 Date: January 4, 2026
 Time: 6:30 AM - 2:00 PM
 Price: Rs 350/- per person
