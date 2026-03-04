@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const EventPopup = () => {
   const location = useLocation();
@@ -68,9 +69,9 @@ const EventPopup = () => {
           {renderBox(timeLeft.seconds, "Sec", animate)}
         </div>
 
-        <a href="/mawla-ghaati-run" style={ctaStyle}>
+        <Link to="/mawla-ghaati-run" style={ctaStyle}>
           KNOW MORE
-        </a>
+        </Link>
       </div>
     </div>
   );

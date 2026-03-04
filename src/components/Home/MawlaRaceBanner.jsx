@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { Calendar, MapPin, Mountain, Ruler, Flag, Trees } from "lucide-react";
 
 export default function FeaturedRaceSection() {
@@ -34,9 +35,9 @@ export default function FeaturedRaceSection() {
             >
               Book Your Stay for the Race
             </a>
-            <a href="/mawla-ghaati-run" className="secondary-btn">
+            <Link to="/mawla-ghaati-run" className="secondary-btn">
               Know More
-            </a>
+            </Link>
           </div>
         </div>
 
