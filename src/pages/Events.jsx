@@ -88,7 +88,8 @@ const EventsPage = () => {
         ></p>
 
         {event.Category?.toLowerCase() === "upcoming" && (
-          <Link to="/contact" style={styles.bookBtn}>
+          // <Link to="/contact" style={styles.bookBtn}>
+          <Link to="https://docs.google.com/forms/d/e/1FAIpQLScUySdc26xVmJ6GalIOQFv03B1j5nLoRyyV0L4TFRugk6mY0Q/viewform?usp=publish-editor" style={styles.bookBtn}>
             Book Now
           </Link>
         )}

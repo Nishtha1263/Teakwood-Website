@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 
-import bgCollage from "/hero1.webp";
+// import bgCollage from "/hero1.webp";
 
 const EventsHome = () => {
   const [eventData, setEventData] = useState(null);
@@ -39,9 +39,9 @@ const EventsHome = () => {
   return (
     <section
       className="events-home"
-      style={{ backgroundImage: `url(${bgCollage})` }}
+      // style={{ backgroundImage: `url(${bgCollage})` }}
     >
-      <div className="events-home-overlay"></div>
+      {/* <div className="events-home-overlay"></div> */}
 
       <h2 className="events-heading" data-aos="fade-down">
         Upcoming Events

@@ -1,5 +1,15 @@
-Title: Holi Party
+Title: Mawla Ghaati Ultra Run
 Category: upcoming
+Date: June 5–7, 2026
+Time: Check Event Details
+Price: Check Event Details
+Image: /mawlabg.png
+ImagePage: /mawlabgpage.png
+Description: Challenge yourself in the thrilling Mawla Ghaati Ultra Run across the breathtaking Sahyadri trails. Experience rugged terrain, lush greenery, and misty mountain paths while pushing your limits. Participants will enjoy aid stations, refreshment points, and safety support throughout the race. A perfect event for trail running enthusiasts seeking adventure, endurance, and scenic beauty!
+---
+
+Title: Holi Party
+Category: past
 Date: March 4, 2026
 Time: 8:00 AM - 4:00 PM
 Price: Rs 1000/- per person

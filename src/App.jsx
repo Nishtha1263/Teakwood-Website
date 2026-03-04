@@ -14,6 +14,8 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import ScrollToTop from "./components/ScrollToTop";
 import ActivitiesExperiences from "./pages/Activities-Experiences";
 import FAQ from "./pages/FAQ";
+import EventPopup from "./components/EventPopup";
+import Mawla from "./pages/Mawla";
 import "./App.css";
 
 function App() {
@@ -82,6 +84,7 @@ function App() {
       {!loading && (
         <>
           <Header />
+          <EventPopup />
           <FloatingButtons />
           <main>
             <Routes>
@@ -93,6 +96,7 @@ function App() {
               <Route path="/events" element={<Events />} />
               <Route path="/activities" element={<ActivitiesExperiences />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/events/mawla-ghaati-run" element={<Mawla />} />
             </Routes>
           </main>
           <Footer />

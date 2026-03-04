@@ -8,12 +8,14 @@ import Reviews from "../components/Home/Reviews";
 import Contact from "../components/Home/ContactHome";
 import Events from "../components/Home/EventsHome";
 import Property from "../components/Home/Property";
+import MawlaRaceBanner from "../components/Home/MawlaRaceBanner";
 
 const HomePage = () => {
   return (
     <div className="homepage">
       <HomeCarousel />
       <Welcome />
+      <MawlaRaceBanner />
       <Events />
       <Amenities />
       <Stay />
