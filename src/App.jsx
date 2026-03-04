@@ -96,7 +96,7 @@ function App() {
               <Route path="/events" element={<Events />} />
               <Route path="/activities" element={<ActivitiesExperiences />} />
               <Route path="/faq" element={<FAQ />} />
-              <Route path="/events/mawla-ghaati-run" element={<Mawla />} />
+              <Route path="/mawla-ghaati-run" element={<Mawla />} />
             </Routes>
           </main>
           <Footer />

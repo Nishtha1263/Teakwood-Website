@@ -68,8 +68,8 @@ const EventPopup = () => {
           {renderBox(timeLeft.seconds, "Sec", animate)}
         </div>
 
-        <a href="/events/mawla-ghaati-run" style={ctaStyle}>
-          REGISTER NOW
+        <a href="/mawla-ghaati-run" style={ctaStyle}>
+          KNOW MORE
         </a>
       </div>
     </div>

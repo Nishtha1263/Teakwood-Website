@@ -34,7 +34,7 @@ export default function FeaturedRaceSection() {
             >
               Book Your Stay for the Race
             </a>
-            <a href="/events/mawla-ghaati-run" className="secondary-btn">
+            <a href="/mawla-ghaati-run" className="secondary-btn">
               Know More
             </a>
           </div>
