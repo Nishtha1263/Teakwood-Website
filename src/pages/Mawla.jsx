@@ -33,11 +33,11 @@ export default function MawlaUltraPremium() {
       <div className="container">
 
         {/* MARQUEE ABOVE HERO */}
-        <section className="marqueeSection">
+        {/* <section className="marqueeSection">
           <div className="marqueeTrack">
             LIVE AVAILABILITY — Cottage: 8 | Dorm: 20 | Bamboo: 10 | Large Tent: 3 | Family: 2 | Mid Tent: 1
           </div>
-        </section>
+        </section> */}
 
         {/* HERO */}
         <section
@@ -47,7 +47,7 @@ export default function MawlaUltraPremium() {
           <div className="overlay"></div>
 
           <div className="heroContent">
-            <span className="tag">VENUE PARTNER – TEAKWOOD</span>
+            <span className="tag">VENUE PARTNER – TEAKWOOD FOREST RESORT & CAMP</span>
 
             <h1>THE GREAT MAWLA GHAATI ULTRA 2026</h1>
 
