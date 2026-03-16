@@ -24,8 +24,8 @@ const FAQ = () => {
       a: "Yes. Burma bridge, zip line, private trek, waterfall visit, farm tour and various group games can be played at the grounds inside the private forest.",
     },
     {
-      q: "Can we bring our own food?",
-      a: "No. Outside food is not allowed. We have a fully serviced restaurant and can cater to your preferences.",
+      q: "Can I carry my own food and alcohol?",
+      a: "Outside food and beverages are strictly prohibited.You can carry your own liquor, but it must be consumed in designated areas. Mixers, cold water, and ice are available for a charge.",
     },
     { q: "Is there a power backup just in case?", a: "Yes. A 45KVA generator supports the complete Resort." },
     { q: "Is it pet friendly?", a: "No. We do not allow pets in the resort." },

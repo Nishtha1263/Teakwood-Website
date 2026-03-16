@@ -32,7 +32,7 @@ const ViewPropertySection = () => {
         {/* YouTube Video */}
         <div className="video-wrapper">
           <a
-            href="https://www.instagram.com/p/DQ6qUK_iAZX/"
+            href="https://youtu.be/jE5-T6VxHL4?si=XE1x0c9VeHud5_TP"
             target="_blank"
             rel="noopener noreferrer"
             className="video-card"
