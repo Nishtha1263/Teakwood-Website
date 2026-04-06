@@ -1,36 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import {Link} from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const EventPopup = () => {
   const location = useLocation();
   const [visible, setVisible] = useState(false);
+  const [step, setStep] = useState(0);
+
   const [timeLeft, setTimeLeft] = useState({});
   const [animate, setAnimate] = useState(false);
 
   const raceDate = new Date("June 5, 2026 04:00:00 GMT+0530").getTime();
 
+  /* ---------- SHOW POPUP ---------- */
   useEffect(() => {
     if (location.pathname === "/") {
-      const timer = setTimeout(() => {
-        setVisible(true);
-        setAnimate(true);
-      }, 800);
+      const timer = setTimeout(() => setVisible(true), 800);
       return () => clearTimeout(timer);
     }
   }, [location.pathname]);
 
+  /* ---------- AUTO STEP ---------- */
   useEffect(() => {
+    if (!visible) return;
+
+    const interval = setInterval(() => {
+      setStep((prev) => (prev >= 2 ? prev : prev + 1));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [visible]);
+
+  /* ---------- COUNTDOWN ---------- */
+  useEffect(() => {
+    if (step !== 2) return;
+
     const interval = setInterval(() => {
       const now = new Date().getTime();
-      const difference = raceDate - now;
+      const diff = raceDate - now;
 
-      if (difference > 0) {
+      if (diff > 0) {
         setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
+          days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((diff / 1000 / 60) % 60),
+          seconds: Math.floor((diff / 1000) % 60),
         });
 
         setAnimate(false);
@@ -39,43 +52,136 @@ const EventPopup = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [step]);
 
   if (!visible || location.pathname !== "/") return null;
 
+  /* ---------- CTA LINKS ---------- */
+  const getCtaLink = () => {
+    if (step === 0) return "/events";
+    if (step === 1) return "/events";
+    return "/mawla-ghaati-run";
+  };
+
   return (
     <div style={overlayStyle}>
-      <div style={popupStyle}>
+      <div style={{ ...popupStyle, ...getTheme(step) }}>
+        
+        {/* SKIP */}
         <button style={closeBtn} onClick={() => setVisible(false)}>
-          ×
+          Skip ✕
         </button>
 
-        <h2 style={headlineStyle}>
-          THE GREAT MAWLA GHAATI ULTRA 2026
-        </h2>
+        {/* ---------- POPUP 1 ---------- */}
+        {step === 0 && (
+          <>
+            <h2 style={headlineStyle}>OFF-ROAD EXPERIENCE</h2>
 
-        <p style={subTextStyle}>
-          <span style={highlightBadge}>OFFICIAL BASECAMP</span>
-          <br />
-          <span style={resortHighlight}>TEAKWOOD FOREST RESORT CAMP</span>
-          <br />
-          June 5–7 | Bhor, Pune
-        </p>
+            <p style={subTextStyle}>
+              Playtime ends. Trail time begins.
+            </p>
 
-        <div style={countdownWrapper}>
-          {renderBox(timeLeft.days, "Days", animate)}
-          {renderBox(timeLeft.hours, "Hrs", animate)}
-          {renderBox(timeLeft.minutes, "Min", animate)}
-          {renderBox(timeLeft.seconds, "Sec", animate)}
-        </div>
+            <p style={detailsStyle}>
+              📅 18 April 2026 <br />
+              ⏰ 6:00 AM – 10:00 AM
+            </p>
 
-        <Link to="/mawla-ghaati-run" style={ctaStyle}>
+            <p style={detailsStyle}>
+              Breakfast Included • Private Track Access
+            </p>
+
+            <p style={noteStyle}>Limited slots. Riders only.</p>
+          </>
+        )}
+
+        {/* ---------- POPUP 2 ---------- */}
+        {step === 1 && (
+          <>
+            <h2 style={headlineStyle}>SUMMER CAMP 2026</h2>
+
+            <p style={subTextStyle}>
+              3 days of adventure, learning & nature
+            </p>
+
+            <p style={detailsStyle}>
+              📅 8–10 May <br />
+              ₹8000 per person <br />
+              ₹7500 (Group of 3+)
+            </p>
+
+            <p style={detailsStyle}>
+              Trekking • Waterfall • Rifle Shooting <br />
+              Carpentry • Camping • Star Gazing
+            </p>
+          </>
+        )}
+
+        {/* ---------- POPUP 3 ---------- */}
+        {step === 2 && (
+          <>
+            <h2 style={headlineStyle}>
+              MAWLA GHAATI ULTRA 2026
+            </h2>
+
+            <p style={subTextStyle}>
+              Official Basecamp <br />
+              <strong>Teakwood Forest Resort</strong>
+            </p>
+
+            <div style={countdownWrapper}>
+              {renderBox(timeLeft.days, "D", animate)}
+              {renderBox(timeLeft.hours, "H", animate)}
+              {renderBox(timeLeft.minutes, "M", animate)}
+              {renderBox(timeLeft.seconds, "S", animate)}
+            </div>
+          </>
+        )}
+
+        {/* CTA */}
+        <Link to={getCtaLink()} style={ctaStyle}>
           KNOW MORE
         </Link>
+
+        {/* DOTS */}
+        <div style={dotsWrapper}>
+          {[0, 1, 2].map((i) => (
+            <span
+              key={i}
+              style={{
+                ...dot,
+                opacity: step === i ? 1 : 0.3,
+              }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 };
+
+/* ---------- THEMES ---------- */
+
+const getTheme = (step) => {
+  if (step === 0) {
+    return {
+      background: "linear-gradient(135deg, #1a1a1a, #3a1f0f)",
+      border: "1px solid rgba(255,140,66,0.4)",
+    };
+  }
+
+  if (step === 1) {
+    return {
+      background: "linear-gradient(135deg, #1c3b26, #3e7d4f)",
+      border: "1px solid rgba(144,238,144,0.4)",
+    };
+  }
+
+  return {
+    background: "linear-gradient(135deg, #1c3b26, #2f6f42)",
+  };
+};
+
+/* ---------- COUNTDOWN BOX ---------- */
 
 const renderBox = (value, label, animate) => (
   <div style={timeBox}>
@@ -97,113 +203,102 @@ export default EventPopup;
 
 const overlayStyle = {
   position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  background: "rgba(0,0,0,0.6)",
+  inset: 0,
+  background: "rgba(0,0,0,0.7)",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   zIndex: 9999,
+  padding: "16px",
 };
 
 const popupStyle = {
-  width: "520px",
-  maxWidth: "92%",
-  padding: "40px 30px",
-  borderRadius: "18px",
+  width: "100%",
+  maxWidth: "420px",
+  padding: "28px 20px",
+  borderRadius: "16px",
   textAlign: "center",
-  background: "linear-gradient(135deg, #1c3b26, #2f6f42)",
-  color: "#ffffff",
-  boxShadow: "0 25px 60px rgba(0,0,0,0.6)",
+  color: "#fff",
   position: "relative",
-  animation: "popupEnter 0.6s ease-out",
 };
 
 const closeBtn = {
   position: "absolute",
-  top: "14px",
-  right: "18px",
+  top: "12px",
+  right: "14px",
   background: "transparent",
   border: "none",
-  color: "#ffffff",
-  fontSize: "22px",
+  color: "#fff",
+  fontSize: "13px",
   cursor: "pointer",
 };
 
 const headlineStyle = {
-  fontSize: "30px",
+  fontSize: "22px",
   fontWeight: "900",
-  marginBottom: "14px",
-  letterSpacing: "1px",
-  color: "#ffffff", // PURE WHITE
+  marginBottom: "10px",
+  color: "white",
 };
 
 const subTextStyle = {
   fontSize: "14px",
-  marginBottom: "28px",
-  fontWeight: "500",
-  lineHeight: "1.6",
+  marginBottom: "14px",
+  lineHeight: "1.5",
 };
 
-const highlightBadge = {
-  display: "inline-block",
-  padding: "6px 18px",
-  marginBottom: "12px",
-  background: "#ff8c42",
-  color: "#ffffff",
-  fontWeight: "900",
+const detailsStyle = {
+  fontSize: "13px",
+  marginBottom: "10px",
+  lineHeight: "1.5",
+};
+
+const noteStyle = {
   fontSize: "12px",
-  borderRadius: "20px",
-  letterSpacing: "1px",
-};
-
-const resortHighlight = {
-  fontWeight: "900",
-  color: "#ff8c42",
-  letterSpacing: "1px",
+  color: "#ffb366",
 };
 
 const countdownWrapper = {
   display: "flex",
   justifyContent: "space-between",
-  marginBottom: "32px",
-  perspective: "800px",
+  margin: "20px 0",
 };
 
 const timeBox = {
   width: "22%",
   background: "rgba(255,255,255,0.12)",
-  borderRadius: "14px",
-  padding: "18px 5px",
-  backdropFilter: "blur(10px)",
-  border: "1px solid rgba(255,255,255,0.3)",
-  boxShadow: "0 12px 28px rgba(0,0,0,0.5)",
+  borderRadius: "10px",
+  padding: "10px 4px",
 };
 
 const timeNumber = {
-  fontSize: "28px",
+  fontSize: "18px",
   fontWeight: "900",
-  transition: "transform 0.4s ease",
 };
 
 const timeLabel = {
-  fontSize: "12px",
-  marginTop: "6px",
-  letterSpacing: "1px",
-  fontWeight: "700",
+  fontSize: "10px",
 };
 
 const ctaStyle = {
-  display: "inline-block",
-  padding: "16px 38px",
-  backgroundColor: "#ff8c42",
-  color: "#ffffff",
+  display: "block",
+  marginTop: "12px",
+  padding: "14px",
+  background: "#ff8c42",
+  color: "#fff",
   textDecoration: "none",
-  borderRadius: "10px",
+  borderRadius: "8px",
   fontWeight: "900",
-  letterSpacing: "1px",
-  boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
-  transition: "transform 0.2s ease",
+};
+
+const dotsWrapper = {
+  marginTop: "14px",
+};
+
+const dot = {
+  display: "inline-block",
+  width: "6px",
+  height: "6px",
+  borderRadius: "50%",
+  background: "#fff",
+  margin: "0 4px",
 };
