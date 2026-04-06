@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import heroBg from "/mawlabg.png";
+import heroBg from "/mawlabg.webp";
 import stayImg from "/hero.webp";
 
 export default function MawlaUltraPremium() {

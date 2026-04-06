@@ -1,10 +1,30 @@
+Title: Off-Road Experience Day
+Category: upcoming
+Date: April 18, 2026
+Time: 6:00 AM – 10:00 AM
+Price: Free Registration
+Image: /offroading.webp
+ImagePage: /offroading.webp
+Description: Kickstart your morning with an adrenaline-filled off-road riding experience at Teakwood Forest Resort. Designed for riders who enjoy rugged terrain and thrill, the session includes exclusive access to a private track along with a hearty breakfast. It’s a perfect short escape for biking enthusiasts looking to challenge themselves and ride with a like-minded community.
+---
+
+Title: Summer Camp 2026
+Category: upcoming
+Date: May 8–10, 2026
+Time: Check Event Details
+Price: ₹8000 per person (₹7500 for groups of 3+)
+Image: /summer_camp.webp
+ImagePage: /summer_camp.webp
+Description: Spend three unforgettable days immersed in nature at Teakwood Forest Resort with a summer camp designed for adventure, creativity, and learning. Participants will explore trekking trails and waterfalls, enjoy star gazing under clear skies, and take part in engaging activities like art and craft, rifle shooting, carpentry, treasure hunts, and camping, making it a well-rounded outdoor experience.
+---
+
 Title: Mawla Ghaati Ultra Run
 Category: upcoming
 Date: June 5–7, 2026
 Time: Check Event Details
 Price: Check Event Details
-Image: /mawlabg.png
-ImagePage: /mawlabgpage.png
+Image: /mawlabg.webp
+ImagePage: /mawlabgpage.webp
 Description: Challenge yourself in the thrilling Mawla Ghaati Ultra Run across the breathtaking Sahyadri trails. Experience rugged terrain, lush greenery, and misty mountain paths while pushing your limits. Participants will enjoy aid stations, refreshment points, and safety support throughout the race. A perfect event for trail running enthusiasts seeking adventure, endurance, and scenic beauty!
 ---
 

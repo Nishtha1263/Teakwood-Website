@@ -87,12 +87,50 @@ const EventsPage = () => {
           }}
         ></p>
 
-        {event.Category?.toLowerCase() === "upcoming" && (
-          // <Link to="/contact" style={styles.bookBtn}>
-          <Link to="https://docs.google.com/forms/d/e/1FAIpQLScUySdc26xVmJ6GalIOQFv03B1j5nLoRyyV0L4TFRugk6mY0Q/viewform?usp=publish-editor" style={styles.bookBtn}>
-            Book Now
-          </Link>
-        )}
+        {event.Category?.toLowerCase() === "upcoming" && (() => {
+          const title = event.Title?.toLowerCase() || "";
+
+          let link = "";
+          let isInternal = false;
+
+          // OFF-ROAD → WhatsApp
+          if (title.includes("off-road")) {
+            link =
+              "https://forms.gle/DWC3DsnMxa7HGGZHA";
+          }
+
+          // SUMMER CAMP → Form
+          else if (title.includes("summer camp")) {
+            link =
+              "https://docs.google.com/forms/d/e/1FAIpQLSeuiXRJfZLyP0syk49mUQjdFmCgg1wovQJpCujd0hW5bxtX8A/viewform?usp=send_form";
+          }
+
+          // MAWLA → Internal page
+          else if (title.includes("mawla")) {
+            link = "/mawla-ghaati-run";
+            isInternal = true;
+          }
+
+          // RENDER
+          if (isInternal) {
+            return (
+              <Link to={link} style={styles.bookBtn}>
+                Book Now
+              </Link>
+            );
+          }
+
+          return (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={styles.bookBtn}
+            >
+              Book Now
+            </a>
+          );
+        })()}
       </div>
     </div>
   );
