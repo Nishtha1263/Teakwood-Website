@@ -6,7 +6,7 @@ export default function FeaturedRaceSection() {
   return (
     <section className="featured-section">
       {/* BACKGROUND IMAGE */}
-      <img src="/mawlabg.png" alt="Forest Background" className="bg-image" />
+      <img src="/mawlabg.webp" alt="Forest Background" className="bg-image" />
       <div className="overlay" />
 
       {/* CONTENT */}
