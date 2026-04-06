@@ -2,8 +2,8 @@ import {Link } from "react-router-dom";
 import "./Packages.css";
 import dayImg from "/cottage.webp";
 import nightImg from "/night.webp";
-import corporate from "/corporate.jpeg";
-import ladiesImg from "/ladies.jpeg";
+import corporate from "/corporate.webp";
+import ladiesImg from "/ladies.webp";
 import SEO from "./SEO";
 import Reviews from "../components/Home/Reviews";
 
