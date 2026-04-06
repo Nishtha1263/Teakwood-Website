@@ -16,6 +16,10 @@ import ActivitiesExperiences from "./pages/Activities-Experiences";
 import FAQ from "./pages/FAQ";
 import EventPopup from "./components/EventPopup";
 import Mawla from "./pages/Mawla";
+import DayOuting from "./pages/Day-outing";
+import OvernightStay from "./pages/Overnight-stay";
+import LadiesOuting from "./pages/Ladies-outing";
+import CorporateRetreat from "./pages/Corporate-retreat";
 import "./App.css";
 
 function App() {
@@ -97,6 +101,10 @@ function App() {
               <Route path="/activities" element={<ActivitiesExperiences />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/mawla-ghaati-run" element={<Mawla />} />
+              <Route path="/day-outing" element={<DayOuting />} />
+              <Route path="/overnight-stay" element={<OvernightStay />} />
+              <Route path="/ladies-outing" element={<LadiesOuting />} />
+              <Route path="/corporate-retreat" element={<CorporateRetreat />} />
             </Routes>
           </main>
           <Footer />
