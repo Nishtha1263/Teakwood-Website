@@ -12,6 +12,7 @@ import MawlaRaceBanner from "../components/Home/MawlaRaceBanner";
 
 const HomePage = () => {
   return (
+    
     <div className="homepage">
       <HomeCarousel />
       <Welcome />

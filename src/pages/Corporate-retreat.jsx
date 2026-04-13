@@ -26,7 +26,7 @@ export default function CorporateRetreat() {
             <h2 style={{ textAlign: "center" }}>What Your Team Will Do</h2>
 
             <div className="grid">
-              {["Team Games", "Obstacle Course", "Campfire", "Stargazing", "Tree Plantation"].map((i,index)=>(
+              {["Team Building Games", "Nature Trail Walk", "Survival Skills", "Campfire Bonding", "Outdoor Sports", "Obstacle Course Challenge", "Tree Plantation", "Barbecue", "Stargazing"].map((i,index)=>(
                 <div key={index} className="card">{i}</div>
               ))}
             </div>
