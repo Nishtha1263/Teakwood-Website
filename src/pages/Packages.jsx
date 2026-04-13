@@ -28,7 +28,7 @@ export default function Packages() {
     {
       id: 3,
       title: "Ladies Special",
-      slug: "ladies-package",
+      slug: "ladies-outing",
       img: ladiesImg,
       tag: "Safe & Fun",
       highlights: ["Secure Space", "Group Friendly", "Special Pricing"],
@@ -36,7 +36,7 @@ export default function Packages() {
     {
       id: 4,
       title: "Corporate Retreat",
-      slug: "corporate-package",
+      slug: "corporate-retreat",
       img: corporate,
       tag: "Best for Teams",
       highlights: ["Team Activities", "Large Groups", "Custom Plans"],
