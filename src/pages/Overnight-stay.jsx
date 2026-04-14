@@ -43,7 +43,7 @@ export default function OvernightStay() {
 
           .hero {
             height:100vh;
-            background:url('/public/bonfire.webp') center/cover;
+            background:url('/bonfire.webp') center/cover;
           }
 
           .overlay {

@@ -43,7 +43,7 @@ export default function DayOuting() {
 
           .hero {
             height:100vh;
-            background:url('/public/balancebeam.webp') center/cover;
+            background:url('/balancebeam.webp') center/cover;
           }
 
           .overlay {

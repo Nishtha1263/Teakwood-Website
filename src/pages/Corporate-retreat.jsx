@@ -45,7 +45,7 @@ export default function CorporateRetreat() {
 
           .hero {
             height:100vh;
-            background:url('/public/corporate.webp') center/cover;
+            background:url('/corporate.webp') center/cover;
           }
 
           h1 { font-size:2.5rem; color: white;}

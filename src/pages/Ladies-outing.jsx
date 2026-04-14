@@ -46,7 +46,7 @@ export default function LadiesOuting() {
 
           .hero {
             height:100vh;
-            background:url('/public/ladies.webp') center/cover;
+            background:url('/ladies.webp') center/cover;
           }
 
           .overlay {
