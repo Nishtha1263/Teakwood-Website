@@ -19,20 +19,9 @@ const EventPopup = () => {
     }
   }, [location.pathname]);
 
-  /* ---------- AUTO STEP ---------- */
-  useEffect(() => {
-    if (!visible) return;
-
-    const interval = setInterval(() => {
-      setStep((prev) => (prev >= 2 ? prev : prev + 1));
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [visible]);
-
   /* ---------- COUNTDOWN ---------- */
   useEffect(() => {
-    if (step !== 2) return;
+    if (step !== 1) return;
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -59,43 +48,32 @@ const EventPopup = () => {
   /* ---------- CTA LINKS ---------- */
   const getCtaLink = () => {
     if (step === 0) return "/events";
-    if (step === 1) return "/events";
     return "/mawla-ghaati-run";
   };
+
+  /* ---------- NAVIGATION ---------- */
+  const next = () => setStep((prev) => (prev === 1 ? 0 : prev + 1));
+  const prev = () => setStep((prev) => (prev === 0 ? 1 : prev - 1));
 
   return (
     <div style={overlayStyle}>
       <div style={{ ...popupStyle, ...getTheme(step) }}>
-        
-        {/* SKIP */}
+
+        {/* CLOSE */}
         <button style={closeBtn} onClick={() => setVisible(false)}>
-          Skip ✕
+          ✕
+        </button>
+
+        {/* NAV */}
+        <button style={{ ...navBtn, left: "10px" }} onClick={prev}>
+          ‹
+        </button>
+        <button style={{ ...navBtn, right: "10px" }} onClick={next}>
+          ›
         </button>
 
         {/* ---------- POPUP 1 ---------- */}
         {step === 0 && (
-          <>
-            <h2 style={headlineStyle}>OFF-ROAD EXPERIENCE</h2>
-
-            <p style={subTextStyle}>
-              Playtime ends. Trail time begins.
-            </p>
-
-            <p style={detailsStyle}>
-              📅 18 April 2026 <br />
-              ⏰ 6:00 AM – 10:00 AM
-            </p>
-
-            <p style={detailsStyle}>
-              Breakfast Included • Private Track Access
-            </p>
-
-            <p style={noteStyle}>Limited slots. Riders only.</p>
-          </>
-        )}
-
-        {/* ---------- POPUP 2 ---------- */}
-        {step === 1 && (
           <>
             <h2 style={headlineStyle}>SUMMER CAMP 2026</h2>
 
@@ -116,8 +94,8 @@ const EventPopup = () => {
           </>
         )}
 
-        {/* ---------- POPUP 3 ---------- */}
-        {step === 2 && (
+        {/* ---------- POPUP 2 ---------- */}
+        {step === 1 && (
           <>
             <h2 style={headlineStyle}>
               MAWLA GHAATI ULTRA 2026
@@ -139,17 +117,20 @@ const EventPopup = () => {
 
         {/* CTA */}
         <Link to={getCtaLink()} style={ctaStyle}>
-          KNOW MORE
+          Explore →
         </Link>
 
         {/* DOTS */}
         <div style={dotsWrapper}>
-          {[0, 1, 2].map((i) => (
+          {[0, 1].map((i) => (
             <span
               key={i}
+              onClick={() => setStep(i)}
               style={{
                 ...dot,
-                opacity: step === i ? 1 : 0.3,
+                transform: step === i ? "scale(1.4)" : "scale(1)",
+                opacity: step === i ? 1 : 0.4,
+                cursor: "pointer",
               }}
             />
           ))}
@@ -164,20 +145,17 @@ const EventPopup = () => {
 const getTheme = (step) => {
   if (step === 0) {
     return {
-      background: "linear-gradient(135deg, #1a1a1a, #3a1f0f)",
-      border: "1px solid rgba(255,140,66,0.4)",
-    };
-  }
-
-  if (step === 1) {
-    return {
-      background: "linear-gradient(135deg, #1c3b26, #3e7d4f)",
-      border: "1px solid rgba(144,238,144,0.4)",
+      background: "linear-gradient(135deg, #ff7e00, #ffb347)", // bright summer
+      backdropFilter: "blur(10px)",
+      border: "1px solid rgba(255,255,255,0.3)",
+      boxShadow: "0 15px 50px rgba(255,126,0,0.5)",
     };
   }
 
   return {
-    background: "linear-gradient(135deg, #1c3b26, #2f6f42)",
+    background: "linear-gradient(135deg, #1f7a4c, #34c759)", // rich green
+    backdropFilter: "blur(10px)",
+    boxShadow: "0 15px 50px rgba(0,0,0,0.4)",
   };
 };
 
@@ -189,6 +167,7 @@ const renderBox = (value, label, animate) => (
       style={{
         ...timeNumber,
         transform: animate ? "rotateX(0deg)" : "rotateX(90deg)",
+        transition: "0.4s",
       }}
     >
       {value || 0}
@@ -204,7 +183,7 @@ export default EventPopup;
 const overlayStyle = {
   position: "fixed",
   inset: 0,
-  background: "rgba(0,0,0,0.7)",
+  background: "rgba(0,0,0,0.75)",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -215,21 +194,39 @@ const overlayStyle = {
 const popupStyle = {
   width: "100%",
   maxWidth: "420px",
-  padding: "28px 20px",
-  borderRadius: "16px",
+  padding: "30px 22px",
+  borderRadius: "20px",
   textAlign: "center",
   color: "#fff",
   position: "relative",
+  transition: "0.4s",
 };
 
 const closeBtn = {
   position: "absolute",
-  top: "12px",
-  right: "14px",
-  background: "transparent",
+  top: "14px",
+  right: "16px",
+  background: "rgba(255,255,255,0.15)",
   border: "none",
   color: "#fff",
-  fontSize: "13px",
+  width: "30px",
+  height: "30px",
+  borderRadius: "50%",
+  cursor: "pointer",
+  fontSize: "14px",
+};
+
+const navBtn = {
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  background: "rgba(255,255,255,0.2)",
+  border: "none",
+  color: "#fff",
+  fontSize: "22px",
+  width: "34px",
+  height: "34px",
+  borderRadius: "50%",
   cursor: "pointer",
 };
 
@@ -237,24 +234,23 @@ const headlineStyle = {
   fontSize: "22px",
   fontWeight: "900",
   marginBottom: "10px",
-  color: "white",
+  color: "#ffffff",
+  letterSpacing: "0.5px",
+  textShadow: "0 2px 8px rgba(0,0,0,0.4)",
 };
 
 const subTextStyle = {
   fontSize: "14px",
   marginBottom: "14px",
   lineHeight: "1.5",
+  color: "rgba(255,255,255,0.95)",
 };
 
 const detailsStyle = {
   fontSize: "13px",
   marginBottom: "10px",
-  lineHeight: "1.5",
-};
-
-const noteStyle = {
-  fontSize: "12px",
-  color: "#ffb366",
+  lineHeight: "1.6",
+  color: "rgba(255,255,255,0.9)",
 };
 
 const countdownWrapper = {
@@ -265,8 +261,8 @@ const countdownWrapper = {
 
 const timeBox = {
   width: "22%",
-  background: "rgba(255,255,255,0.12)",
-  borderRadius: "10px",
+  background: "rgba(255,255,255,0.2)",
+  borderRadius: "12px",
   padding: "10px 4px",
 };
 
@@ -277,28 +273,32 @@ const timeNumber = {
 
 const timeLabel = {
   fontSize: "10px",
+  opacity: 0.8,
 };
 
 const ctaStyle = {
   display: "block",
-  marginTop: "12px",
+  marginTop: "14px",
   padding: "14px",
-  background: "#ff8c42",
+  background: "linear-gradient(135deg, #ff3d00, #ff7a00)",
   color: "#fff",
   textDecoration: "none",
-  borderRadius: "8px",
+  borderRadius: "10px",
   fontWeight: "900",
+  letterSpacing: "0.5px",
+  boxShadow: "0 8px 20px rgba(255,61,0,0.4)",
 };
 
 const dotsWrapper = {
-  marginTop: "14px",
+  marginTop: "16px",
 };
 
 const dot = {
   display: "inline-block",
-  width: "6px",
-  height: "6px",
+  width: "7px",
+  height: "7px",
   borderRadius: "50%",
   background: "#fff",
-  margin: "0 4px",
+  margin: "0 5px",
+  transition: "0.3s",
 };
