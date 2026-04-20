@@ -1,13 +1,3 @@
-Title: Off-Road Experience Day
-Category: upcoming
-Date: April 18, 2026
-Time: 6:00 AM – 10:00 AM
-Price: Free Registration
-Image: /offroading.webp
-ImagePage: /offroading.webp
-Description: Kickstart your morning with an adrenaline-filled off-road riding experience at Teakwood Forest Resort. Designed for riders who enjoy rugged terrain and thrill, the session includes exclusive access to a private track along with a hearty breakfast. It’s a perfect short escape for biking enthusiasts looking to challenge themselves and ride with a like-minded community.
----
-
 Title: Summer Camp 2026
 Category: upcoming
 Date: May 8–10, 2026
@@ -28,14 +18,14 @@ ImagePage: /mawlabgpage.webp
 Description: Challenge yourself in the thrilling Mawla Ghaati Ultra Run across the breathtaking Sahyadri trails. Experience rugged terrain, lush greenery, and misty mountain paths while pushing your limits. Participants will enjoy aid stations, refreshment points, and safety support throughout the race. A perfect event for trail running enthusiasts seeking adventure, endurance, and scenic beauty!
 ---
 
-Title: Holi Party
+Title: Off-Road Experience Day
 Category: past
-Date: March 4, 2026
-Time: 8:00 AM - 4:00 PM
-Price: Rs 1000/- per person
-Image: /holi26.webp
-ImagePage: /holi26p.webp
-Description: Enjoy an electrifying DJ, splash into an exciting rain dance, and play with unlimited colours in a lively outdoor setting. Indulge in delicious food & snacks, and bring your own beverages (BYOB) to keep the party going your way. All this for just Rs. 1000 per person — a perfect day of music, masti, colours, and unforgettable memories with friends and family!
+Date: April 18, 2026
+Time: 6:00 AM – 10:00 AM
+Price: Free Registration
+Image: /offroad.webp
+ImagePage: /offroad.webp
+Description: Kickstart your morning with an adrenaline-filled off-road riding experience at Teakwood Forest Resort. Designed for riders who enjoy rugged terrain and thrill, the session includes exclusive access to a private track along with a hearty breakfast. It’s a perfect short escape for biking enthusiasts looking to challenge themselves and ride with a like-minded community.
 ---
 
 Title: Sunday Breakfast Ride
@@ -43,8 +33,8 @@ Category: past
 Date: January 4, 2026
 Time: 6:30 AM - 2:00 PM
 Price: Rs 350/- per person
-Image: /biking.webp
-ImagePage: /bikingpage.webp
+Image: /breakfast.webp
+ImagePage: /breakfast.webp
 Description: Scenic ride from Pune to Teakwood Resort with a photo stop at Baneshwar Waterfall, breakfast at the resort, off-roading adventure on Malegao biking track, and a return ride.
 ---
 
