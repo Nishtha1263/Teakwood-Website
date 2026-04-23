@@ -28,6 +28,26 @@ ImagePage: /offroad.webp
 Description: Kickstart your morning with an adrenaline-filled off-road riding experience at Teakwood Forest Resort. Designed for riders who enjoy rugged terrain and thrill, the session includes exclusive access to a private track along with a hearty breakfast. It’s a perfect short escape for biking enthusiasts looking to challenge themselves and ride with a like-minded community.
 ---
 
+Title: Valentine's Day
+Category: past
+Date: February 14, 2026
+Time: 8:00 AM - 5:00 PM
+Price: Rs 1200/- per person
+Image: /valentines.webp
+ImagePage: /valentines.webp
+Description: Valentine’s Day isn’t just about expressing love—it’s about experiencing it in a warm, relaxed, and truly special setting. This year at Teakwood, the celebration felt uniquely magical, with a gentle morning breeze and a thoughtfully curated program setting the perfect tone. From heartfelt moments at the beautiful bamboo Moongate to fun, memorable proposals through engaging games, every experience was designed to spark joy, connection, and a deeper sense of togetherness.
+---
+
+Title: Birthday Celebrations
+Category: past
+Date: February, 2026
+Time: 4:00 PM - 10:00 AM
+Price: Rs 2000/- per person
+Image: /birthday.webp
+ImagePage: /birthday.webp
+Description: Birthday celebrations are always special, but this one was about creating the perfect experience for a daughter who wanted a safe, elegant, and completely private space to celebrate her 21st with friends flying in. At Teakwood, the resort was exclusively reserved, offering the ideal setting for uninterrupted fun—from late-night singing and cozy campfire moments to a magical midnight cake-cutting. Filled with laughter, freedom, and togetherness, it became more than just a birthday—it was an unforgettable celebration of friendship.
+---
+
 Title: Sunday Breakfast Ride
 Category: past
 Date: January 4, 2026
@@ -46,6 +66,16 @@ Price: Rs 3000/- per person
 Image: /newyears.webp
 ImagePage: /2.webp
 Description: Bring in the New Year surrounded by nature, good vibes, and great company! &nbsp; Join us for an unforgettable celebration in a rustic hideaway, nestled amid lush greenery and serene forest trails. Welcome Drink | Forest Trails | Waterfall | Bonfire | Barbecue | Music & Dance | Dinner | Karaoke | Stay | Breakfast
+---
+
+Title: Rotary Club of Poona Anual Picnic
+Category: past
+Date: December 28, 2025
+Time: 8:00 AM - 5:00 PM
+Price: Rs 1200/- per person
+Image: /rotary.webp
+ImagePage: /rotary.webp
+Description: Every Rotary Club looks forward to its annual picnic as a chance to unwind, celebrate, and strengthen bonds rooted in “Service Above Self,” and the Rotary Club of Poona was no different in seeking a serene, nature-filled escape near Pune. Knowing Rotarians value both a relaxed atmosphere and exceptional food, we curated an experience that met their expectations—filled with delicious meals, lively music, fun games, and meaningful fellowship. The karaoke session added an extra spark of joy, bringing out laughter and camaraderie, making it a truly memorable gathering of connection and togetherness.
 ---
 
 Title: Holi Bash 2025
