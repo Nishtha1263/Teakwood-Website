@@ -10,6 +10,7 @@ import Packages from "./pages/Packages";
 import Stay from "./pages/Stay";
 import Contact from "./pages/Contact";
 import Events from "./pages/Events";
+import Gallery from "./pages/Gallery";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import ScrollToTop from "./components/ScrollToTop";
 import ActivitiesExperiences from "./pages/Activities-Experiences";
@@ -98,6 +99,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/terms" element={<TermsAndConditions />} />
               <Route path="/events" element={<Events />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="/activities" element={<ActivitiesExperiences />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/mawla-ghaati-run" element={<Mawla />} />

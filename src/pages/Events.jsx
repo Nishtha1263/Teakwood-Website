@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "./SEO";
 
+const SEE_MORE_LINK = "https://www.instagram.com/p/DXD9qoRiMTt/";
+
 const EventsPage = () => {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -26,8 +29,7 @@ const EventsPage = () => {
         );
         const past = events.filter(
           (event) =>
-            event.Category &&
-            event.Category.toLowerCase().includes("past")
+            event.Category && event.Category.toLowerCase().includes("past")
         );
 
         setUpcomingEvents(upcoming);
@@ -58,88 +60,90 @@ const EventsPage = () => {
     return desc.replace(/&nbsp;/g, "<br />");
   };
 
-  const EventCard = ({ event }) => (
-    <div style={styles.card}>
-      {event.ImagePage && (
-        <img
-          src={event.ImagePage}
-          alt={event.Title}
-          style={{
-            ...styles.image,
-            height:
-              event.Category?.toLowerCase() === "upcoming"
-                ? isMobile
-                  ? "160px"
-                  : "400px"
-                : "400px",
-          }}
-        />
-      )}
-      <div style={styles.info}>
-        <h3 style={styles.eventTitle}>{event.Title}</h3>
-        <p><strong>Date:</strong> {event.Date}</p>
-        <p><strong>Time:</strong> {event.Time}</p>
-        <p><strong>Price:</strong> {event.Price}</p>
-        <p
-          style={styles.desc}
-          dangerouslySetInnerHTML={{
-            __html: formatDescription(event.Description),
-          }}
-        ></p>
+  const EventCard = ({ event }) => {
+    const title = event.Title?.toLowerCase() || "";
+    const isUpcoming = event.Category?.toLowerCase() === "upcoming";
+    let link = "";
+    let isInternal = false;
 
-        {event.Category?.toLowerCase() === "upcoming" && (() => {
-          const title = event.Title?.toLowerCase() || "";
+    if (title.includes("off-road")) {
+      link = "https://forms.gle/DWC3DsnMxa7HGGZHA";
+    } else if (title.includes("summer camp")) {
+      link =
+        "https://docs.google.com/forms/d/e/1FAIpQLSeuiXRJfZLyP0syk49mUQjdFmCgg1wovQJpCujd0hW5bxtX8A/viewform?usp=send_form";
+    } else if (title.includes("mawla")) {
+      link = "/mawla-ghaati-run";
+      isInternal = true;
+    }
 
-          let link = "";
-          let isInternal = false;
+    return (
+      <div style={styles.card}>
+        {event.ImagePage && (
+          <img
+            src={event.ImagePage}
+            alt={event.Title}
+            style={{
+              ...styles.image,
+              height: isUpcoming ? (isMobile ? "160px" : "400px") : "400px",
+            }}
+          />
+        )}
+        <div style={styles.info}>
+          <h3 style={styles.eventTitle}>{event.Title}</h3>
+          <p>
+            <strong>Date:</strong> {event.Date}
+          </p>
+          <p>
+            <strong>Time:</strong> {event.Time}
+          </p>
+          <p>
+            <strong>Price:</strong> {event.Price}
+          </p>
+          <p
+            style={styles.desc}
+            dangerouslySetInnerHTML={{
+              __html: formatDescription(event.Description),
+            }}
+          ></p>
 
-          // OFF-ROAD → WhatsApp
-          if (title.includes("off-road")) {
-            link =
-              "https://forms.gle/DWC3DsnMxa7HGGZHA";
-          }
-
-          // SUMMER CAMP → Form
-          else if (title.includes("summer camp")) {
-            link =
-              "https://docs.google.com/forms/d/e/1FAIpQLSeuiXRJfZLyP0syk49mUQjdFmCgg1wovQJpCujd0hW5bxtX8A/viewform?usp=send_form";
-          }
-
-          // MAWLA → Internal page
-          else if (title.includes("mawla")) {
-            link = "/mawla-ghaati-run";
-            isInternal = true;
-          }
-
-          // RENDER
-          if (isInternal) {
-            return (
-              <Link to={link} style={styles.bookBtn}>
-                Book Now
-              </Link>
-            );
-          }
-
-          return (
+          <div style={styles.ctaRow}>
+            {isUpcoming && link && (
+              <>
+                {isInternal ? (
+                  <Link to={link} style={styles.bookBtn}>
+                    Book Now
+                  </Link>
+                ) : (
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={styles.bookBtn}
+                  >
+                    Book Now
+                  </a>
+                )}
+              </>
+            )}
             <a
-              href={link}
+              href={SEE_MORE_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              style={styles.bookBtn}
+              style={styles.secondaryBtn}
             >
-              Book Now
+              See More
             </a>
-          );
-        })()}
+          </div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div style={styles.page}>
       <SEO
-        title="Events & Celebrations – Corporate, Family & Group Events Near Pune"
-        description="Host your event at Teakwood Forest Resort – ideal for corporate offsites, birthdays, family get-togethers, weddings, yoga retreats, and weekend celebrations surrounded by lush nature near Pune."
+        title="Events & Celebrations - Corporate, Family & Group Events Near Pune"
+        description="Host your event at Teakwood Forest Resort - ideal for corporate offsites, birthdays, family get-togethers, weddings, yoga retreats, and weekend celebrations surrounded by lush nature near Pune."
         keywords="Corporate events near Pune, Family celebrations Pune, Wedding venue Pune, Resort events Pune, Group outings Pune, Yoga retreat Pune, Birthday party resort Pune, Corporate retreat Pune, Team building Pune"
         url="https://teakwoodcamping.com/events"
       />
@@ -225,11 +229,26 @@ const styles = {
     opacity: "0.9",
     lineHeight: "1.6",
   },
+  ctaRow: {
+    display: "flex",
+    gap: "10px",
+    flexWrap: "wrap",
+    marginTop: "15px",
+  },
   bookBtn: {
     display: "inline-block",
-    marginTop: "15px",
     backgroundColor: "#7b8d64",
     color: "white",
+    padding: "10px 24px",
+    borderRadius: "25px",
+    textDecoration: "none",
+    fontWeight: "600",
+    transition: "all 0.3s ease",
+  },
+  secondaryBtn: {
+    display: "inline-block",
+    backgroundColor: "#e6ecdc",
+    color: "#3f5239",
     padding: "10px 24px",
     borderRadius: "25px",
     textDecoration: "none",
