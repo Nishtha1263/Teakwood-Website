@@ -28,6 +28,44 @@ function App() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    const optimizeImage = (img) => {
+      if (!(img instanceof HTMLImageElement)) return;
+      if (!img.hasAttribute("loading")) {
+        img.setAttribute("loading", "lazy");
+      }
+      if (!img.hasAttribute("decoding")) {
+        img.setAttribute("decoding", "async");
+      }
+      if (!img.hasAttribute("fetchpriority")) {
+        img.setAttribute("fetchpriority", "low");
+      }
+    };
+
+    document.querySelectorAll("img").forEach(optimizeImage);
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof HTMLImageElement) {
+            optimizeImage(node);
+            return;
+          }
+          if (node instanceof Element) {
+            node.querySelectorAll("img").forEach(optimizeImage);
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     const images = Array.from(document.images);
     const totalImages = images.length;
     let loadedCount = 0;

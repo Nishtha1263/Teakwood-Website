@@ -4,8 +4,6 @@ import { useLocation, Link } from "react-router-dom";
 export default function EventPopup() {
   const location = useLocation();
   const [visible, setVisible] = useState(false);
-  const [step, setStep] = useState(0);
-
   const [timeLeft, setTimeLeft] = useState({});
   const [animate, setAnimate] = useState(false);
 
@@ -19,7 +17,7 @@ export default function EventPopup() {
   }, [location.pathname]);
 
   useEffect(() => {
-    if (step !== 1) return;
+    if (!visible) return;
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -39,103 +37,37 @@ export default function EventPopup() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [step]);
+  }, [visible, raceDate]);
 
   if (!visible || location.pathname !== "/") return null;
 
-  const next = () => setStep((prev) => (prev === 1 ? 0 : prev + 1));
-  const prev = () => setStep((prev) => (prev === 0 ? 1 : prev - 1));
-
-  const getCtaLink = () => (step === 0 ? "/events" : "/mawla-ghaati-run");
-
   return (
     <div style={overlayStyle}>
-      <div style={{ ...popupStyle, ...getTheme(step) }}>
+      <div style={popupStyle}>
+        <button style={closeBtn} onClick={() => setVisible(false)}>
+          x
+        </button>
 
-        {/* CLOSE */}
-        <button style={closeBtn} onClick={() => setVisible(false)}>✕</button>
+        <h2 style={headlineStyle}>MAWLA GHAATI ULTRA 2026</h2>
+        <p style={subTextStyle}>
+          Official Basecamp <br />
+          <strong>Teakwood Forest Resort</strong>
+        </p>
 
-        {/* NAV */}
-        <button style={{ ...navBtn, left: "10px" }} onClick={prev}>‹</button>
-        <button style={{ ...navBtn, right: "10px" }} onClick={next}>›</button>
-
-        {/* CONTENT */}
-        {step === 0 ? (
-          <>
-            <h2 style={headlineStyle}>SUMMER CAMP 2026</h2>
-            <p style={subTextStyle}>3 days of adventure, learning & nature</p>
-
-            <p style={detailsStyle}>
-              📅 8–10 May <br />
-              ₹8000 per person <br />
-              ₹7500 (Group of 3+)
-            </p>
-
-            <p style={detailsStyle}>
-              Trekking • Waterfall • Rifle Shooting <br />
-              Carpentry • Camping • Star Gazing
-            </p>
-          </>
-        ) : (
-          <>
-            <h2 style={headlineStyle}>MAWLA GHAATI ULTRA 2026</h2>
-            <p style={subTextStyle}>
-              Official Basecamp <br />
-              <strong>Teakwood Forest Resort</strong>
-            </p>
-
-            <div style={countdownWrapper}>
-              {renderBox(timeLeft.days, "D", animate)}
-              {renderBox(timeLeft.hours, "H", animate)}
-              {renderBox(timeLeft.minutes, "M", animate)}
-              {renderBox(timeLeft.seconds, "S", animate)}
-            </div>
-          </>
-        )}
-
-        {/* CTA */}
-        <Link to={getCtaLink()} style={ctaStyle}>
-          Explore →
-        </Link>
-
-        {/* DOTS */}
-        <div style={dotsWrapper}>
-          {[0, 1].map((i) => (
-            <span
-              key={i}
-              onClick={() => setStep(i)}
-              style={{
-                ...dot,
-                opacity: step === i ? 1 : 0.4,
-                transform: step === i ? "scale(1.3)" : "scale(1)",
-              }}
-            />
-          ))}
+        <div style={countdownWrapper}>
+          {renderBox(timeLeft.days, "D", animate)}
+          {renderBox(timeLeft.hours, "H", animate)}
+          {renderBox(timeLeft.minutes, "M", animate)}
+          {renderBox(timeLeft.seconds, "S", animate)}
         </div>
+
+        <Link to="/mawla-ghaati-run" style={ctaStyle}>
+          Explore
+        </Link>
       </div>
     </div>
   );
 }
-
-/* ---------- THEME ---------- */
-
-const getTheme = (step) => {
-  if (step === 0) {
-    return {
-      background: "linear-gradient(135deg, #ff7a18, #c94b00)",
-      border: "1px solid rgba(255,255,255,0.25)",
-      boxShadow: "0 25px 70px rgba(0,0,0,0.6)",
-    };
-  }
-
-  return {
-    background: "linear-gradient(135deg, #1e5f3a, #2d8a57)",
-    border: "1px solid rgba(255,255,255,0.2)",
-    boxShadow: "0 25px 70px rgba(0,0,0,0.6)",
-  };
-};
-
-/* ---------- COUNTDOWN ---------- */
 
 const renderBox = (value, label, animate) => (
   <div style={timeBox}>
@@ -151,8 +83,6 @@ const renderBox = (value, label, animate) => (
     <div style={timeLabel}>{label}</div>
   </div>
 );
-
-/* ---------- STYLES ---------- */
 
 const overlayStyle = {
   position: "fixed",
@@ -173,9 +103,10 @@ const popupStyle = {
   color: "#fff",
   position: "relative",
   backdropFilter: "blur(12px)",
+  background: "linear-gradient(135deg, #1e5f3a, #2d8a57)",
+  border: "1px solid rgba(255,255,255,0.2)",
+  boxShadow: "0 25px 70px rgba(0,0,0,0.6)",
 };
-
-/* Buttons */
 
 const closeBtn = {
   position: "absolute",
@@ -190,21 +121,6 @@ const closeBtn = {
   cursor: "pointer",
 };
 
-const navBtn = {
-  position: "absolute",
-  top: "50%",
-  transform: "translateY(-50%)",
-  background: "rgba(255,255,255,0.12)",
-  border: "1px solid rgba(255,255,255,0.2)",
-  color: "#fff",
-  borderRadius: "50%",
-  width: "32px",
-  height: "32px",
-  cursor: "pointer",
-};
-
-/* Text */
-
 const headlineStyle = {
   fontSize: "22px",
   fontWeight: "900",
@@ -217,14 +133,6 @@ const subTextStyle = {
   opacity: 0.9,
   marginBottom: "12px",
 };
-
-const detailsStyle = {
-  fontSize: "13px",
-  opacity: 0.85,
-  marginBottom: "10px",
-};
-
-/* Countdown */
 
 const countdownWrapper = {
   display: "flex",
@@ -249,32 +157,15 @@ const timeLabel = {
   fontSize: "10px",
 };
 
-/* CTA */
-
 const ctaStyle = {
   display: "block",
   marginTop: "14px",
   padding: "13px",
-  background: "#ffffff", // contrast CTA
+  background: "#ffffff",
   color: "#111",
   borderRadius: "10px",
   textDecoration: "none",
   fontWeight: "900",
   letterSpacing: "0.5px",
   transition: "0.3s",
-};
-
-/* Dots */
-
-const dotsWrapper = {
-  marginTop: "14px",
-};
-
-const dot = {
-  width: "6px",
-  height: "6px",
-  borderRadius: "50%",
-  background: "#fff",
-  display: "inline-block",
-  margin: "0 4px",
 };

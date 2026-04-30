@@ -36,10 +36,12 @@ const galleryImages = [
 
 const bentoPattern = [
   { col: "span 2", row: "span 2" },
-  { col: "span 1", row: "span 1" },
+  { col: "span 1", row: "span 2" },
   { col: "span 1", row: "span 1" },
   { col: "span 2", row: "span 1" },
+  { col: "span 1", row: "span 1" },
   { col: "span 1", row: "span 2" },
+  { col: "span 2", row: "span 2" },
   { col: "span 1", row: "span 1" },
 ];
 
@@ -83,7 +85,7 @@ const GalleryPage = () => {
           }}
         >
           {galleryImages.map((image, index) => (
-            <figure key={image} style={getGalleryTileStyle(index)}>
+            <figure key={`${image}-${index}`} style={getGalleryTileStyle(index)}>
               <img
                 src={image}
                 alt={`Teakwood gallery ${index + 1}`}
@@ -121,6 +123,7 @@ const styles = {
   galleryGrid: {
     display: "grid",
     gap: "14px",
+    gridAutoFlow: "dense",
   },
   galleryTile: {
     margin: 0,
