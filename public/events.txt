@@ -58,7 +58,7 @@ ImagePage: /2.webp
 Description: Bring in the New Year surrounded by nature, good vibes, and great company! &nbsp; Join us for an unforgettable celebration in a rustic hideaway, nestled amid lush greenery and serene forest trails. Welcome Drink | Forest Trails | Waterfall | Bonfire | Barbecue | Music & Dance | Dinner | Karaoke | Stay | Breakfast
 ---
 
-Title: Rotary Club of Poona Anual Picnic
+Title: Rotary Club - Annual Picnic
 Category: past
 Date: December 28, 2025
 Time: 8:00 AM - 5:00 PM

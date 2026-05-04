@@ -2,7 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "./SEO";
 
-const SEE_MORE_LINK = "https://www.instagram.com/p/DXD9qoRiMTt/";
+const SEE_MORE_LINKS = {
+  mawlaghaatiultrarun: "https://www.instagram.com/p/DX6xfkxClOB/?img_index=1",
+  offroadexperienceday: "https://www.instagram.com/p/DXzBMnQiPO0/?img_index=1",
+  valentinesday: "https://www.instagram.com/p/DUxP0mxgp4c/?img_index=1",
+  birthdaycelebrations: "https://www.instagram.com/p/DCMo54XI1eU/",
+  sundaybreakfastride: "https://www.instagram.com/p/DRzajWIiBpG/",
+  newyearsevebash: "https://www.instagram.com/p/DEH1UhNoHNO/",
+  rotaryclubannualpicnic: "https://www.instagram.com/p/DV71BxdCCGB/",
+  holibash2025: "https://www.instagram.com/p/DHOKPwHIJyx/",
+  summercamp2025: "https://www.instagram.com/p/DLOrQtAozO1/",
+};
 
 const EventsPage = () => {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
@@ -60,8 +70,13 @@ const EventsPage = () => {
     return desc.replace(/&nbsp;/g, "<br />");
   };
 
+  const normalizeTitle = (title = "") =>
+    title.toLowerCase().replace(/[^a-z0-9]/g, "");
+
   const EventCard = ({ event }) => {
     const title = event.Title?.toLowerCase() || "";
+    const normalizedTitle = normalizeTitle(event.Title);
+    const seeMoreLink = SEE_MORE_LINKS[normalizedTitle] || "#";
     const isUpcoming = event.Category?.toLowerCase() === "upcoming";
     let link = "";
     let isInternal = false;
@@ -126,7 +141,7 @@ const EventsPage = () => {
               </>
             )}
             <a
-              href={SEE_MORE_LINK}
+              href={seeMoreLink}
               target="_blank"
               rel="noopener noreferrer"
               style={styles.secondaryBtn}

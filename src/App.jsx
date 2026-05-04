@@ -1,105 +1,42 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import FloatingButtons from "./components/FloatingButtons/Floating";
-import Home from "./pages/Home";
-import Packages from "./pages/Packages";
-import Stay from "./pages/Stay";
-import Contact from "./pages/Contact";
-import Events from "./pages/Events";
-import Gallery from "./pages/Gallery";
-import TermsAndConditions from "./pages/TermsAndConditions";
 import ScrollToTop from "./components/ScrollToTop";
-import ActivitiesExperiences from "./pages/Activities-Experiences";
-import FAQ from "./pages/FAQ";
 import EventPopup from "./components/EventPopup";
-import Mawla from "./pages/Mawla";
-import DayOuting from "./pages/Day-outing";
-import OvernightStay from "./pages/Overnight-stay";
-import LadiesOuting from "./pages/Ladies-outing";
-import CorporateRetreat from "./pages/Corporate-retreat";
 import "./App.css";
+
+const Home = lazy(() => import("./pages/Home"));
+const Packages = lazy(() => import("./pages/Packages"));
+const Stay = lazy(() => import("./pages/Stay"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Events = lazy(() => import("./pages/Events"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
+const ActivitiesExperiences = lazy(() =>
+  import("./pages/Activities-Experiences")
+);
+const FAQ = lazy(() => import("./pages/FAQ"));
+const Mawla = lazy(() => import("./pages/Mawla"));
+const DayOuting = lazy(() => import("./pages/Day-outing"));
+const OvernightStay = lazy(() => import("./pages/Overnight-stay"));
+const LadiesOuting = lazy(() => import("./pages/Ladies-outing"));
+const CorporateRetreat = lazy(() => import("./pages/Corporate-retreat"));
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const optimizeImage = (img) => {
-      if (!(img instanceof HTMLImageElement)) return;
-      if (!img.hasAttribute("loading")) {
-        img.setAttribute("loading", "lazy");
-      }
-      if (!img.hasAttribute("decoding")) {
-        img.setAttribute("decoding", "async");
-      }
-      if (!img.hasAttribute("fetchpriority")) {
-        img.setAttribute("fetchpriority", "low");
-      }
-    };
-
-    document.querySelectorAll("img").forEach(optimizeImage);
-
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach((node) => {
-          if (node instanceof HTMLImageElement) {
-            optimizeImage(node);
-            return;
-          }
-          if (node instanceof Element) {
-            node.querySelectorAll("img").forEach(optimizeImage);
-          }
-        });
-      });
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const images = Array.from(document.images);
-    const totalImages = images.length;
-    let loadedCount = 0;
-
-    if (totalImages === 0) {
+    const timer = setTimeout(() => {
+      setProgress(100);
       setLoading(false);
-      return;
-    }
+    }, 450);
 
-    const handleImageLoad = () => {
-      loadedCount++;
-      const newProgress = Math.round((loadedCount / totalImages) * 100);
-      setProgress(newProgress);
-
-      if (loadedCount === totalImages) {
-        setTimeout(() => setLoading(false), 500); 
-      }
-    };
-
-    images.forEach((img) => {
-      if (img.complete) {
-        handleImageLoad();
-      } else {
-        img.addEventListener("load", handleImageLoad);
-        img.addEventListener("error", handleImageLoad);
-      }
-    });
-
-    return () => {
-      images.forEach((img) => {
-        img.removeEventListener("load", handleImageLoad);
-        img.removeEventListener("error", handleImageLoad);
-      });
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -130,22 +67,27 @@ function App() {
           <EventPopup />
           <FloatingButtons />
           <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/packages" element={<Packages />} />
-              <Route path="/stay" element={<Stay />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/terms" element={<TermsAndConditions />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/activities" element={<ActivitiesExperiences />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/mawla-ghaati-run" element={<Mawla />} />
-              <Route path="/day-outing" element={<DayOuting />} />
-              <Route path="/overnight-stay" element={<OvernightStay />} />
-              <Route path="/ladies-outing" element={<LadiesOuting />} />
-              <Route path="/corporate-retreat" element={<CorporateRetreat />} />
-            </Routes>
+            <Suspense fallback={null}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/packages" element={<Packages />} />
+                <Route path="/stay" element={<Stay />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/terms" element={<TermsAndConditions />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/activities" element={<ActivitiesExperiences />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/mawla-ghaati-run" element={<Mawla />} />
+                <Route path="/day-outing" element={<DayOuting />} />
+                <Route path="/overnight-stay" element={<OvernightStay />} />
+                <Route path="/ladies-outing" element={<LadiesOuting />} />
+                <Route
+                  path="/corporate-retreat"
+                  element={<CorporateRetreat />}
+                />
+              </Routes>
+            </Suspense>
           </main>
           <Footer />
         </>

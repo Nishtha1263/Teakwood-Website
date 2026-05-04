@@ -2,47 +2,47 @@ import React, { useEffect, useState } from "react";
 import SEO from "./SEO";
 
 const galleryImages = [
-  "/hero.webp",
-  "/hero1.webp",
-  "/hero3.webp",
-  "/corporate.webp",
-  "/birthday.webp",
-  "/day.webp",
-  "/night.webp",
-  "/pool.webp",
-  "/cottage.webp",
-  "/room.webp",
-  "/dining.webp",
-  "/tent.webp",
-  "/bbq.webp",
-  "/bonfire.webp",
-  "/offroading.webp",
-  "/biking.webp",
-  "/zipline.webp",
-  "/rifle.webp",
-  "/obstacle.webp",
-  "/balancebeam.webp",
-  "/bridge.webp",
-  "/burma.webp",
-  "/karaoke.webp",
-  "/dance.webp",
-  "/boardgames.webp",
-  "/tabletennis.webp",
-  "/carrom.webp",
-  "/chess.webp",
-  "/farm.webp",
-  "/trek.webp",
-];
-
-const bentoPattern = [
-  { col: "span 2", row: "span 2" },
-  { col: "span 1", row: "span 2" },
-  { col: "span 1", row: "span 1" },
-  { col: "span 2", row: "span 1" },
-  { col: "span 1", row: "span 1" },
-  { col: "span 1", row: "span 2" },
-  { col: "span 2", row: "span 2" },
-  { col: "span 1", row: "span 1" },
+  "/group/teakwood-group-001.webp",
+  "/group/teakwood-group-002.webp",
+  "/group/teakwood-group-003.webp",
+  "/group/teakwood-group-004.webp",
+  "/group/teakwood-group-005.webp",
+  "/group/teakwood-group-006.webp",
+  "/group/teakwood-group-007.webp",
+  "/group/teakwood-group-008.webp",
+  "/group/teakwood-group-009.webp",
+  "/group/teakwood-group-010.webp",
+  "/group/teakwood-group-011.webp",
+  "/group/teakwood-group-012.webp",
+  "/group/teakwood-group-013.webp",
+  "/group/teakwood-group-014.webp",
+  "/group/teakwood-group-015.webp",
+  "/group/teakwood-group-016.webp",
+  "/group/teakwood-group-017.webp",
+  "/group/teakwood-group-018.webp",
+  "/group/teakwood-group-019.webp",
+  "/group/teakwood-group-020.webp",
+  "/group/teakwood-group-021.webp",
+  "/group/teakwood-group-022.webp",
+  "/group/teakwood-group-023.webp",
+  "/group/teakwood-group-024.webp",
+  "/group/teakwood-group-025.webp",
+  "/group/teakwood-group-026.webp",
+  "/group/teakwood-group-027.webp",
+  "/group/teakwood-group-028.webp",
+  "/group/teakwood-group-029.webp",
+  "/group/teakwood-group-030.webp",
+  "/group/teakwood-group-031.webp",
+  "/group/teakwood-group-032.webp",
+  "/group/teakwood-group-033.webp",
+  "/group/teakwood-group-034.webp",
+  "/group/teakwood-group-035.webp",
+  "/group/teakwood-group-036.webp",
+  "/group/teakwood-group-037.webp",
+  "/group/teakwood-group-038.webp",
+  "/group/teakwood-group-039.webp",
+  "/group/teakwood-group-040.webp",
+  "/group/teakwood-group-041.webp",
 ];
 
 const GalleryPage = () => {
@@ -54,16 +54,6 @@ const GalleryPage = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const getGalleryTileStyle = (index) => {
-    if (isMobile) return styles.galleryTile;
-    const pattern = bentoPattern[index % bentoPattern.length];
-    return {
-      ...styles.galleryTile,
-      gridColumn: pattern.col,
-      gridRow: pattern.row,
-    };
-  };
 
   return (
     <div style={styles.page}>
@@ -78,19 +68,18 @@ const GalleryPage = () => {
         <div
           style={{
             ...styles.galleryGrid,
-            gridTemplateColumns: isMobile
-              ? "repeat(2, minmax(0, 1fr))"
-              : "repeat(4, minmax(0, 1fr))",
-            gridAutoRows: isMobile ? "140px" : "170px",
+            columnCount: isMobile ? 2 : 4,
           }}
         >
           {galleryImages.map((image, index) => (
-            <figure key={`${image}-${index}`} style={getGalleryTileStyle(index)}>
+            <figure key={`${image}-${index}`} style={styles.galleryTile}>
               <img
                 src={image}
                 alt={`Teakwood gallery ${index + 1}`}
                 loading="lazy"
                 decoding="async"
+                fetchPriority="low"
+                sizes="(max-width: 768px) 50vw, 25vw"
                 style={styles.galleryImage}
               />
             </figure>
@@ -121,20 +110,22 @@ const styles = {
     color: "#4b6043",
   },
   galleryGrid: {
-    display: "grid",
-    gap: "14px",
-    gridAutoFlow: "dense",
+    columnGap: "12px",
   },
   galleryTile: {
     margin: 0,
-    borderRadius: "12px",
+    marginBottom: "12px",
+    borderRadius: "8px",
     overflow: "hidden",
-    backgroundColor: "#dde4d3",
+    contentVisibility: "auto",
+    containIntrinsicSize: "240px 320px",
+    breakInside: "avoid",
   },
   galleryImage: {
     width: "100%",
-    height: "100%",
-    objectFit: "cover",
+    height: "auto",
+    objectFit: "contain",
+    objectPosition: "center",
     display: "block",
   },
 };
