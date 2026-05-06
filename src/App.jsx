@@ -1,6 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -26,6 +32,41 @@ const OvernightStay = lazy(() => import("./pages/Overnight-stay"));
 const LadiesOuting = lazy(() => import("./pages/Ladies-outing"));
 const CorporateRetreat = lazy(() => import("./pages/Corporate-retreat"));
 
+function RouteImagePriorityManager() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const updateImagePriority = () => {
+      const images = Array.from(document.querySelectorAll("main img"));
+
+      images.forEach((img, index) => {
+        if (!(img instanceof HTMLImageElement)) return;
+
+        if (index === 0) {
+          img.loading = "eager";
+          img.decoding = "sync";
+          img.fetchPriority = "high";
+          return;
+        }
+
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.fetchPriority = "low";
+      });
+    };
+
+    const animationFrame = window.requestAnimationFrame(updateImagePriority);
+    const delayedPass = window.setTimeout(updateImagePriority, 180);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+      window.clearTimeout(delayedPass);
+    };
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
@@ -42,6 +83,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <RouteImagePriorityManager />
       <AnimatePresence>
         {loading && (
           <motion.div
@@ -92,6 +134,7 @@ function App() {
           <Footer />
         </>
       )}
+      <SpeedInsights />
     </Router>
   );
 }
