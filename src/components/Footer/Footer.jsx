@@ -11,7 +11,8 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section about">
           <p>
-            <strong>About Us</strong><br />
+            <strong>About Us</strong>
+            <br />
             Nestled in the lush wilderness, Teakwood Forest Resort & Camp offers
             a serene escape where comfort meets nature. Perfect for families,
             corporate retreats, and group getaways.
@@ -71,7 +72,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>
-          © {new Date().getFullYear()} Teakwood Forest Resort & Camp — All Rights Reserved |{" "}
+          © {new Date().getFullYear()} Teakwood Forest Resort & Camp - All Rights Reserved |{" "}
           <Link to="/terms" className="footer-link">
             Terms & Conditions
           </Link>

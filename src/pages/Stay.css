@@ -31,7 +31,6 @@
   justify-content: space-between;
   gap: 3rem;
   padding: 1rem 8%;
-  transition: all 0.4s ease-in-out;
 }
 
 .stay-section.reverse {
@@ -114,19 +113,20 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  contain: layout paint style;
 }
 
 .common-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease;
+  transition: transform 0.3s ease;
 }
 
 .common-card:hover img {
-  transform: scale(1.08);
+  transform: scale(1.04);
 }
 
 .common-card h3 {
@@ -141,8 +141,8 @@
 }
 
 .common-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
 }
 
 @media (max-width: 768px) {
@@ -159,10 +159,21 @@
   .common-card {
     width: 100%;
     height: 180px;
+    transition: none;
   }
 
   .common-card h3{
     display: none;
+  }
+
+  .common-card img {
+    transition: none;
+  }
+
+  .common-card:hover img,
+  .common-card:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   }
 }
 

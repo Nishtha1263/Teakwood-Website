@@ -4,10 +4,9 @@
   position: relative;
   font-family: 'Poppins', sans-serif;
   padding: 50px 0 20px;
-  overflow: hidden;
+  overflow: clip;
   font-size: 0.85rem;
-  -webkit-font-smoothing: antialiased; 
-  -webkit-transform: translateZ(0); 
+  -webkit-font-smoothing: antialiased;
 }
 
 .footer-container {
@@ -21,7 +20,6 @@
   padding: 0 30px;
   position: relative;
   z-index: 1;
-  -webkit-transform: translateZ(0); 
 }
 
 .footer-section {
@@ -34,7 +32,6 @@
   text-align: center;
   position: relative;
   z-index: 2;
-  -webkit-transform: translateZ(0);
 }
 
 .footer-section h4 {
@@ -95,7 +92,6 @@
   margin-top: 20px;
   position: relative;
   z-index: 1;
-  -webkit-transform: translateZ(0);
 }
 
 .footer-section.contact p {
@@ -109,12 +105,6 @@
 
 .footer-section.contact a {
   color: #fff;
-}
-
-@supports (-webkit-touch-callout: none) {
-  .footer {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -147,5 +137,14 @@
     margin-top: 25px;
     padding-top: 12px;
     font-size: 0.75rem;
+  }
+
+  .footer,
+  .footer-container,
+  .footer-section,
+  .footer-bottom {
+    transform: none !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 }

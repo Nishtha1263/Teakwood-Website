@@ -25,7 +25,7 @@ const FAQ = () => {
     },
     {
       q: "Can I carry my own food and alcohol?",
-      a: "Outside food and beverages are strictly prohibited.You can carry your own liquor, but it must be consumed in designated areas. Mixers, cold water, and ice are available for a charge.",
+      a: "Outside food and beverages are strictly prohibited. You can carry your own liquor, but it must be consumed in designated areas. Mixers, cold water, and ice are available for a charge.",
     },
     { q: "Is there a power backup just in case?", a: "Yes. A 45KVA generator supports the complete Resort." },
     { q: "Is it pet friendly?", a: "No. We do not allow pets in the resort." },
@@ -41,11 +41,15 @@ const FAQ = () => {
       q: "How is the accommodation for Tent Camping?",
       a: "Tents are set up based on the group size. Each tent has a bed, bedding, pillow, blanket and access to well-maintained and clean washrooms with western toilets and shower area. The tent camping experience includes access to indoor gaming area as well as outdoor adventure area.",
     },
+    {
+      q: "How to reach the resort by public transport?",
+      a: "Travel Tips:\n1. The nearest bus stand is NASTRAPUR Bus Stop.\n2. From Pune, take any bus going towards Bhor, Velhe, Satara, Kolhapur and get down at village Malegao. If Malegao bus stop is not possible, ask for CHELADI bus stop.\n3. From CHELADI, take any shared jeep to Malegao village.\n4. Teakwood is 800 meters from village centre.\n5. From Pune, you can book an Ola/Uber to reach Teakwood Resort.",
+    },
   ];
 
   return (
     <section style={styles.wrapper}>
-      <h2 style={styles.title}>FAQ’s</h2>
+      <h2 style={styles.title}>FAQ's</h2>
       <div style={styles.container}>
         {faqs.map((item, i) => (
           <div key={i} style={styles.item}>
@@ -57,12 +61,12 @@ const FAQ = () => {
               }}
             >
               <span>{item.q}</span>
-              <span style={styles.icon}>{active === i ? "−" : "+"}</span>
+              <span style={styles.icon}>{active === i ? "-" : "+"}</span>
             </button>
             <div
               style={{
                 ...styles.answer,
-                maxHeight: active === i ? "300px" : "0",
+                maxHeight: active === i ? "320px" : "0",
                 padding: active === i ? "10px 15px 20px" : "0 15px",
               }}
             >
@@ -128,6 +132,7 @@ const styles = {
     fontSize: "0.95rem",
     lineHeight: "1.6",
     color: "#444",
+    whiteSpace: "pre-line",
   },
 };
 

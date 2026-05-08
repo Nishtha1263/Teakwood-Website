@@ -7,6 +7,7 @@ import {
 import { lazy, Suspense, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -135,6 +136,7 @@ function App() {
         </>
       )}
       <SpeedInsights />
+      <Analytics />
     </Router>
   );
 }
