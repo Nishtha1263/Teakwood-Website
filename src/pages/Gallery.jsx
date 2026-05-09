@@ -27,6 +27,59 @@ const sections = [
   { id: "corporate", title: "Corporate" },
 ];
 
+const GallerySection = ({ sectionItem, sectionIndex, columns }) => {
+  const [isActive, setIsActive] = useState(sectionIndex === 0);
+  const sectionRef = React.useRef(null);
+
+  useEffect(() => {
+    if (isActive) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsActive(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: "350px 0px" }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, [isActive]);
+
+  return (
+    <div id={sectionItem.id} ref={sectionRef} style={styles.sectionBlock}>
+      <h2 style={styles.sectionTitle}>{sectionItem.title}</h2>
+      {isActive ? (
+        <div
+          style={{
+            ...styles.galleryGrid,
+            columnCount: columns,
+          }}
+        >
+          {(sectionImages[sectionItem.id] || []).map((image, index) => (
+            <figure key={`${sectionItem.id}-${index}`} style={styles.galleryTile}>
+              <img
+                src={image}
+                alt={`${sectionItem.title} gallery ${index + 1}`}
+                loading={sectionIndex === 0 && index < 4 ? "eager" : "lazy"}
+                decoding={sectionIndex === 0 && index < 4 ? "sync" : "async"}
+                fetchPriority={sectionIndex === 0 && index < 4 ? "high" : "low"}
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                style={styles.galleryImage}
+              />
+            </figure>
+          ))}
+        </div>
+      ) : (
+        <div style={styles.sectionPlaceholder} />
+      )}
+    </div>
+  );
+};
+
 const GalleryPage = () => {
   const [columns, setColumns] = useState(2);
 
@@ -61,29 +114,12 @@ const GalleryPage = () => {
         <h1 style={styles.heading}>Gallery</h1>
 
         {sections.map((sectionItem, sectionIndex) => (
-          <div id={sectionItem.id} key={sectionItem.id} style={styles.sectionBlock}>
-            <h2 style={styles.sectionTitle}>{sectionItem.title}</h2>
-            <div
-              style={{
-                ...styles.galleryGrid,
-                columnCount: columns,
-              }}
-            >
-              {(sectionImages[sectionItem.id] || []).map((image, index) => (
-                <figure key={`${sectionItem.id}-${index}`} style={styles.galleryTile}>
-                  <img
-                    src={image}
-                    alt={`${sectionItem.title} gallery ${index + 1}`}
-                    loading={sectionIndex === 0 && index < 2 ? "eager" : "lazy"}
-                    decoding="async"
-                    fetchPriority={sectionIndex === 0 && index < 2 ? "high" : "low"}
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                    style={styles.galleryImage}
-                  />
-                </figure>
-              ))}
-            </div>
-          </div>
+          <GallerySection
+            key={sectionItem.id}
+            sectionItem={sectionItem}
+            sectionIndex={sectionIndex}
+            columns={columns}
+          />
         ))}
       </section>
     </div>
@@ -145,6 +181,11 @@ const styles = {
     objectFit: "contain",
     objectPosition: "center",
     display: "block",
+  },
+  sectionPlaceholder: {
+    height: "220px",
+    borderRadius: "10px",
+    background: "#e7ede0",
   },
 };
 
