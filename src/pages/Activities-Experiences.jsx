@@ -30,7 +30,7 @@ import baneshwar from "/baneshwar.webp";
 import bridge from "/bridge.webp";
 import dance from "/dance.webp";
 import bonfire from "/bonfire.webp";
-import trek from "/trek.webp";
+import trek from "/gallery/Summer_Camp/teakwood-summer-camp-006.webp";
 import bbq from "/bbq.webp";
 import foosball from "/foosball.webp";
 
@@ -46,13 +46,13 @@ const activities = [
   { title: "Dance and Music", desc: "Enjoy lively music and dance sessions under the stars.", img: dance },
   { title: "Bonfire", desc: "Gather around the warm bonfire for stories, laughter, and good company.", img: bonfire },
   { title: "Farm Walk", desc: "Stroll through the green farmland and experience rural tranquility.", img: farm },
-  { title: "BBQ", desc: "End your day with delicious barbecue under the open sky.", img: bbq },
   { title: "Foosball", desc: "Enjoy quick, competitive foosball matches with friends and family.", img: foosball },
   { title: "8 Ball Pool", desc: "Relax and play a few friendly rounds of pool.", img: pool },
   { title: "Table Tennis", desc: "Challenge friends to a fast-paced indoor table tennis match.", img: tabletennis },
   { title: "Carrom", desc: "Enjoy this classic indoor board game with friends and family.", img: carrom },
   { title: "Chess", desc: "Exercise your mind with a quiet and strategic game of chess.", img: chess },
   { title: "Board Games", desc: "Spend time indoors playing your favorite board games.", img: boardgames },
+  { title: "BBQ", desc: "End your day with delicious barbecue under the open sky.", img: bbq },
 ];
 
 const attractions = [
@@ -73,6 +73,8 @@ const attractions = [
 const ActivitiesExperiences = () => {
   const [view, setView] = useState("activities");
   const data = view === "activities" ? activities : attractions;
+  const imageSizes =
+    "(max-width: 480px) 92vw, (max-width: 768px) 46vw, (max-width: 1200px) 31vw, 23vw";
 
   return (
     <section className="attractions-section">
@@ -117,9 +119,10 @@ const ActivitiesExperiences = () => {
                 src={exp.img}
                 alt={exp.title}
                 className="exp-img"
-                loading={i < 2 ? "eager" : "lazy"}
-                decoding="async"
-                fetchPriority={i < 2 ? "high" : "low"}
+                loading={i < 6 ? "eager" : "lazy"}
+                decoding={i < 6 ? "sync" : "async"}
+                fetchPriority={i < 4 ? "high" : "low"}
+                sizes={imageSizes}
               />
               <div className="exp-overlay">
                 <h3>{exp.title}</h3>

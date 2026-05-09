@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import SEO from "./SEO";
 
 const SEE_MORE_LINKS = {
-  mawlaghaatiultrarun: "https://www.instagram.com/p/DX6xfkxClOB/?img_index=1",
-  offroadexperienceday: "https://www.instagram.com/p/DXzBMnQiPO0/?img_index=1",
-  valentinesday: "https://www.instagram.com/p/DUxP0mxgp4c/?img_index=1",
-  birthdaycelebrations: "https://www.instagram.com/p/DCMo54XI1eU/",
-  sundaybreakfastride: "https://www.instagram.com/p/DRzajWIiBpG/",
-  newyearsevebash: "https://www.instagram.com/p/DEH1UhNoHNO/",
-  rotaryclubannualpicnic: "https://www.instagram.com/p/DV71BxdCCGB/",
-  holibash2025: "https://www.instagram.com/p/DHOKPwHIJyx/",
-  summercamp2025: "https://www.instagram.com/p/DLOrQtAozO1/",
+  mawlaghaatiultrarun: "/gallery#group-events",
+  valentinesday: "/gallery#group-events",
+  birthdaycelebrations: "/gallery#group-events",
+  newyearsevebash: "/gallery#group-events",
+  rotaryclubannualpicnic: "/gallery#group-events",
+  holibash2025: "/gallery#group-events",
+  offroadexperienceday: "/gallery#biking",
+  sundaybreakfastride: "/gallery#biking",
+  summercamp2025: "/gallery#summer-camp",
 };
 
 const EventsPage = () => {
@@ -140,14 +140,20 @@ const EventsPage = () => {
                 )}
               </>
             )}
-            <a
-              href={seeMoreLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={styles.secondaryBtn}
-            >
-              See More
-            </a>
+            {seeMoreLink.startsWith("/") ? (
+              <Link to={seeMoreLink} style={styles.secondaryBtn}>
+                See More
+              </Link>
+            ) : (
+              <a
+                href={seeMoreLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={styles.secondaryBtn}
+              >
+                See More
+              </a>
+            )}
           </div>
         </div>
       </div>
