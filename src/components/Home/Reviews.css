@@ -18,12 +18,13 @@
 .reviews-slider {
   display: flex;
   gap: 30px;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   scroll-behavior: smooth;
   padding: 10px 60px 40px;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  touch-action: pan-y;
 }
 
 .reviews-slider::-webkit-scrollbar {

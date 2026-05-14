@@ -60,8 +60,9 @@ const reviews = [
 
 const Reviews = () => {
   const x = useMotionValue(0);
-  const contentWidth = useRef(0);
-  const containerWidth = useRef(0);
+  const sliderRef = useRef(null);
+  const innerRef = useRef(null);
+  const loopWidth = useRef(0);
   const duplicatedReviews = [...reviews, ...reviews];
   const paused = useRef(false);
 
@@ -70,24 +71,44 @@ const Reviews = () => {
   }, []);
 
   useEffect(() => {
-    let startTime;
+    const setWidths = () => {
+      if (!innerRef.current) return;
+      loopWidth.current = innerRef.current.scrollWidth / 2;
+    };
+
+    setWidths();
+    const resizeObserver = new ResizeObserver(setWidths);
+    if (sliderRef.current) resizeObserver.observe(sliderRef.current);
+
+    let lastTime;
     let frameId;
+    const speed = 28; // px/sec
 
     const loop = (timestamp) => {
-      if (!startTime) startTime = timestamp;
+      if (!lastTime) lastTime = timestamp;
 
-      if (!paused.current) {
-        const distance = contentWidth.current - containerWidth.current / 2;
-        const progress = ((timestamp - startTime) / 80000) * distance;
-        const newX = -(progress % distance);
-        x.set(newX);
+      const delta = (timestamp - lastTime) / 1000;
+      lastTime = timestamp;
+
+      if (!paused.current && loopWidth.current > 0) {
+        const currentX = x.get();
+        let nextX = currentX - speed * delta;
+
+        if (Math.abs(nextX) >= loopWidth.current) {
+          nextX += loopWidth.current;
+        }
+
+        x.set(nextX);
       }
 
       frameId = requestAnimationFrame(loop);
     };
 
     frameId = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(frameId);
+    return () => {
+      cancelAnimationFrame(frameId);
+      resizeObserver.disconnect();
+    };
   }, [x]);
 
   return (
@@ -98,18 +119,14 @@ const Reviews = () => {
 
       <div
         className="reviews-slider"
-        ref={(el) => {
-          if (el) containerWidth.current = el.offsetWidth;
-        }}
-        onMouseEnter={() => (paused.current = true)}   
-        onMouseLeave={() => (paused.current = false)}  
+        ref={sliderRef}
+        onMouseEnter={() => (paused.current = true)}
+        onMouseLeave={() => (paused.current = false)}
       >
         <motion.div
           className="reviews-inner"
           style={{ display: "flex", gap: "30px", x }}
-          ref={(el) => {
-            if (el) contentWidth.current = el.scrollWidth;
-          }}
+          ref={innerRef}
         >
           {duplicatedReviews.map((review, index) => (
             <div className="review" key={index} data-aos="fade-up">
