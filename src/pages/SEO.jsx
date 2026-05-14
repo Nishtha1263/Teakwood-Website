@@ -10,10 +10,10 @@ export default function SEO({
 }) {
   const fullTitle = title
     ? `${title} | Teakwood Forest Resort & Camp`
-    : "Teakwood Forest Resort & Camp - Boutique Farm Stay Near Pune";
+    : "Best Resort Near Pune | Teakwood Forest Resort & Camp";
   const finalDescription =
     description ||
-    "Teakwood Forest Resort and Camp is a boutique eco resort and farm stay near Pune, ideal for weekend getaways, retreats, and family stays.";
+    "Teakwood Forest Resort and Camp is among the best resorts near Pune for family stays, day outings, corporate retreats, events, and weekend getaways, with nature trails, adventure activities, and comfortable accommodation near Bhor.";
   const finalUrl = url || "https://teakwoodcamping.com";
 
   return (
@@ -72,7 +72,7 @@ export default function SEO({
           },
           priceRange: "INR",
           description:
-            "Teakwood Forest Resort and Camp is a boutique eco resort and farm stay near Pune, perfect for weekend getaways, yoga retreats, family vacations, and corporate events.",
+            "Teakwood Forest Resort and Camp is one of the best resorts near Pune for weekend getaways, family vacations, yoga retreats, corporate events, and nature-based experiences.",
           sameAs: [
             "https://www.instagram.com/teakwoodforestresort/",
             "https://www.facebook.com/teakwoodforestresort/",
