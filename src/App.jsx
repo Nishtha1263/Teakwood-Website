@@ -13,7 +13,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import FloatingButtons from "./components/FloatingButtons/Floating";
 import ScrollToTop from "./components/ScrollToTop";
-import EventPopup from "./components/EventPopup";
 import "./App.css";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -107,7 +106,6 @@ function App() {
       {!loading && (
         <>
           <Header />
-          <EventPopup />
           <FloatingButtons />
           <main>
             <Suspense fallback={null}>

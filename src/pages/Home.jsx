@@ -7,7 +7,6 @@ import Packages from "../components/Home/PackagesHome";
 import Reviews from "../components/Home/Reviews";
 import Events from "../components/Home/EventsHome";
 import Property from "../components/Home/Property";
-import MawlaRaceBanner from "../components/Home/MawlaRaceBanner";
 import SEO from "./SEO";
 
 const HomePage = () => {
@@ -21,7 +20,6 @@ const HomePage = () => {
       />
       <HomeCarousel />
       <Welcome />
-      <MawlaRaceBanner />
       <Events />
       <Amenities />
       <Stay />
